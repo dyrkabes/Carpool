@@ -16,6 +16,6 @@ final class HelperTests: XCTestCase {
         let bundle = Bundle(for: type(of: self))
         
         XCTAssertNotNil(dataLoader.loadFromJSONFile("locations", bundle: bundle))
-        XCTAssertNil(dataLoader.loadFromJSONFile("whatIsLife", bundle: bundle))
+        XCTAssertNil(dataLoader.loadFromJSONFile("whatIsLifeAnswer", bundle: bundle))
     }
 }

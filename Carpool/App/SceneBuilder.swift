@@ -23,15 +23,21 @@ fileprivate extension UIStoryboard {
 }
 
 enum SceneBuilder {
-    static func createTabBar() -> UITabBarController {
-        return UIStoryboard.main.instantiateInitialViewController() as! UITabBarController
+    static func createTabBar() -> TabBarController {
+        guard let tabBarController = UIStoryboard.main.instantiateViewController(withIdentifier: "TabBarController") as? TabBarController else {
+            fatalError("Tabbar cannot be initialized")
+        }
+        return tabBarController
     }
     
-    static func createCarListViewController() -> UIViewController {
-        return UIStoryboard.main.instantiateInitialViewController()!
+    static func createCarListViewController() -> CarListViewController {
+        guard let carListVC = UIStoryboard.carList.instantiateInitialViewController() as? CarListViewController else {
+            fatalError("Car list cannot be initialized")
+        }
+        return carListVC
     }
     
     static func createMapViewController() -> UIViewController {
-        return UIStoryboard.main.instantiateInitialViewController()!
+        return UIStoryboard.map.instantiateInitialViewController()!
     }
 }

@@ -8,10 +8,39 @@
 
 import Foundation
 
-class BaseCarListInteractor: CarListInteractor {
-    private weak var view: CarListViewController?
+final class BaseCarListInteractor: CarListInteractor {
+    // MARK: - Injected
+    private var presenter: CarListPresenter!
+    private unowned var parentInteractor: MainInteractor
     
-    required init(viewController: CarListViewController) {
-        self.view = viewController
+    // MARK: - Instance properties
+    fileprivate var placemarks: [Placemark] = []
+    
+    // MARK: - Init
+    init(parentInteractor: MainInteractor) {
+        self.parentInteractor = parentInteractor
+    }
+    
+    // MARK: - Public func
+    func setPresenter(_ presenter: CarListPresenter) {
+        self.presenter = presenter
+    }
+    
+    func getData(success: @escaping EmptySuccessHandler, failure: @escaping ErrorHandler) {
+        parentInteractor.getData(success: { [weak self] (placemarks) in
+            self?.placemarks = placemarks
+            success()
+            }, failure: failure)
+    }
+    
+    func reloadData(success: @escaping EmptySuccessHandler, failure: @escaping ErrorHandler) {
+        parentInteractor.loadDataFromNetwork(success: { [weak self] (placemarks) in
+            self?.placemarks = placemarks
+            success()
+            }, failure: failure)
+    }
+    
+    func getPlacemarks() -> [Placemark] {
+        return placemarks
     }
 }

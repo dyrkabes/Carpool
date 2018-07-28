@@ -1,5 +1,5 @@
 //
-//  BaseTabBarInteractor.swift
+//  MainInteractorState.swift
 //  Carpool
 //
 //  Created by Pavel Stepanov on 28/07/2018.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-final class BaseTabBarInteractor: TabBarInteractor {
-    
+enum MainInteractorState {
+    case hasNotLoaded
+    case isLoading
+    case hasLoaded
 }

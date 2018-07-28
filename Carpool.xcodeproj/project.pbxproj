@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4452C2FB210C70BD0040FD25 /* CarListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C2FA210C70BD0040FD25 /* CarListPresenter.swift */; };
+		4452C2FD210C70DA0040FD25 /* BaseCarListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C2FC210C70DA0040FD25 /* BaseCarListPresenter.swift */; };
+		4452C300210C71E00040FD25 /* PlacemarkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C2FF210C71E00040FD25 /* PlacemarkListViewModel.swift */; };
+		4452C306210C87310040FD25 /* CarListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C305210C87310040FD25 /* CarListCell.swift */; };
+		4452C308210C89C60040FD25 /* CarListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4452C307210C89C60040FD25 /* CarListCell.xib */; };
+		4452C311210CA8E20040FD25 /* BaseCarListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C30F210CA8E10040FD25 /* BaseCarListInteractor.swift */; };
+		4452C312210CA8E20040FD25 /* CarListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C310210CA8E10040FD25 /* CarListInteractor.swift */; };
+		4452C314210CA9B40040FD25 /* MainInteractorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C313210CA9B40040FD25 /* MainInteractorState.swift */; };
+		4452C316210CBB660040FD25 /* InMemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C315210CBB660040FD25 /* InMemoryStorage.swift */; };
+		4452C318210CDB400040FD25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4452C317210CDB400040FD25 /* Main.storyboard */; };
+		4452C31E210CE7650040FD25 /* PlacemarkHandlerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C31D210CE7650040FD25 /* PlacemarkHandlerWrapper.swift */; };
 		445BF480210BB883000F3ED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF47F210BB883000F3ED1 /* AppDelegate.swift */; };
 		445BF482210BB883000F3ED1 /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF481210BB883000F3ED1 /* CarListViewController.swift */; };
 		445BF484210BB883000F3ED1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF483210BB883000F3ED1 /* MapViewController.swift */; };
-		445BF487210BB883000F3ED1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445BF485210BB883000F3ED1 /* Main.storyboard */; };
 		445BF489210BB884000F3ED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 445BF488210BB884000F3ED1 /* Assets.xcassets */; };
 		445BF48C210BB884000F3ED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445BF48A210BB884000F3ED1 /* LaunchScreen.storyboard */; };
 		445BF497210BB884000F3ED1 /* CarpoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF496210BB884000F3ED1 /* CarpoolTests.swift */; };
@@ -26,13 +36,19 @@
 		44FCBD7B210C441800EBBD30 /* CarList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FCBD7A210C441800EBBD30 /* CarList.storyboard */; };
 		44FCBD87210C4B9E00EBBD30 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD86210C4B9E00EBBD30 /* AppCoordinator.swift */; };
 		44FCBD8A210C4C8B00EBBD30 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD89210C4C8B00EBBD30 /* TabBarController.swift */; };
-		44FCBD8C210C4CBC00EBBD30 /* BaseTabBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD8B210C4CBC00EBBD30 /* BaseTabBarInteractor.swift */; };
-		44FCBD8E210C4CF100EBBD30 /* TabBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD8D210C4CF100EBBD30 /* TabBarInteractor.swift */; };
+		44FCBD8C210C4CBC00EBBD30 /* BaseMainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD8B210C4CBC00EBBD30 /* BaseMainInteractor.swift */; };
+		44FCBD8E210C4CF100EBBD30 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD8D210C4CF100EBBD30 /* MainInteractor.swift */; };
 		44FCBD90210C4DA500EBBD30 /* SceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD8F210C4DA500EBBD30 /* SceneBuilder.swift */; };
-		44FCBD93210C516500EBBD30 /* CarListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD92210C516500EBBD30 /* CarListInteractor.swift */; };
-		44FCBD95210C517C00EBBD30 /* BaseCarListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD94210C517C00EBBD30 /* BaseCarListInteractor.swift */; };
 		44FCBD97210C51C400EBBD30 /* CarListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD96210C51C400EBBD30 /* CarListView.swift */; };
 		44FCBD9C210C541600EBBD30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44FCBD9E210C541600EBBD30 /* InfoPlist.strings */; };
+		44FCBDA4210C5C0200EBBD30 /* CarListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDA3210C5C0200EBBD30 /* CarListCoordinator.swift */; };
+		44FCBDA9210C5F5C00EBBD30 /* StubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDA8210C5F5C00EBBD30 /* StubData.swift */; };
+		44FCBDAF210C610000EBBD30 /* PlacemarksNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDAE210C610000EBBD30 /* PlacemarksNetworkWorker.swift */; };
+		44FCBDB1210C617C00EBBD30 /* StubbedCarsNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDB0210C617C00EBBD30 /* StubbedCarsNetworkWorker.swift */; };
+		44FCBDB3210C629B00EBBD30 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDB2210C629B00EBBD30 /* NetworkError.swift */; };
+		44FCBDB6210C633100EBBD30 /* AppTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDB5210C633100EBBD30 /* AppTexts.swift */; };
+		44FCBDBC210C6AAE00EBBD30 /* PersistentStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDBB210C6AAE00EBBD30 /* PersistentStorageWorker.swift */; };
+		44FCBDBE210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDBD210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,11 +76,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4452C2FA210C70BD0040FD25 /* CarListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListPresenter.swift; sourceTree = "<group>"; };
+		4452C2FC210C70DA0040FD25 /* BaseCarListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCarListPresenter.swift; sourceTree = "<group>"; };
+		4452C2FF210C71E00040FD25 /* PlacemarkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkListViewModel.swift; sourceTree = "<group>"; };
+		4452C305210C87310040FD25 /* CarListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListCell.swift; sourceTree = "<group>"; };
+		4452C307210C89C60040FD25 /* CarListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarListCell.xib; sourceTree = "<group>"; };
+		4452C30F210CA8E10040FD25 /* BaseCarListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCarListInteractor.swift; sourceTree = "<group>"; };
+		4452C310210CA8E10040FD25 /* CarListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarListInteractor.swift; sourceTree = "<group>"; };
+		4452C313210CA9B40040FD25 /* MainInteractorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorState.swift; sourceTree = "<group>"; };
+		4452C315210CBB660040FD25 /* InMemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryStorage.swift; sourceTree = "<group>"; };
+		4452C317210CDB400040FD25 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4452C31D210CE7650040FD25 /* PlacemarkHandlerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkHandlerWrapper.swift; sourceTree = "<group>"; };
 		445BF47C210BB883000F3ED1 /* Carpool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carpool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		445BF47F210BB883000F3ED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		445BF481210BB883000F3ED1 /* CarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
 		445BF483210BB883000F3ED1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		445BF486210BB883000F3ED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		445BF488210BB884000F3ED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		445BF48B210BB884000F3ED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		445BF492210BB884000F3ED1 /* CarpoolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarpoolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,15 +107,20 @@
 		44FCBD7A210C441800EBBD30 /* CarList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CarList.storyboard; sourceTree = "<group>"; };
 		44FCBD86210C4B9E00EBBD30 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		44FCBD89210C4C8B00EBBD30 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		44FCBD8B210C4CBC00EBBD30 /* BaseTabBarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarInteractor.swift; sourceTree = "<group>"; };
-		44FCBD8D210C4CF100EBBD30 /* TabBarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInteractor.swift; sourceTree = "<group>"; };
+		44FCBD8B210C4CBC00EBBD30 /* BaseMainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMainInteractor.swift; sourceTree = "<group>"; };
+		44FCBD8D210C4CF100EBBD30 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		44FCBD8F210C4DA500EBBD30 /* SceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneBuilder.swift; sourceTree = "<group>"; };
-		44FCBD92210C516500EBBD30 /* CarListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListInteractor.swift; sourceTree = "<group>"; };
-		44FCBD94210C517C00EBBD30 /* BaseCarListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCarListInteractor.swift; sourceTree = "<group>"; };
 		44FCBD96210C51C400EBBD30 /* CarListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListView.swift; sourceTree = "<group>"; };
-		44FCBD9A210C540800EBBD30 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		44FCBD9B210C540800EBBD30 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		44FCBD9D210C541600EBBD30 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		44FCBDA3210C5C0200EBBD30 /* CarListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListCoordinator.swift; sourceTree = "<group>"; };
+		44FCBDA8210C5F5C00EBBD30 /* StubData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubData.swift; sourceTree = "<group>"; };
+		44FCBDAE210C610000EBBD30 /* PlacemarksNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarksNetworkWorker.swift; sourceTree = "<group>"; };
+		44FCBDB0210C617C00EBBD30 /* StubbedCarsNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubbedCarsNetworkWorker.swift; sourceTree = "<group>"; };
+		44FCBDB2210C629B00EBBD30 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		44FCBDB5210C633100EBBD30 /* AppTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTexts.swift; sourceTree = "<group>"; };
+		44FCBDBB210C6AAE00EBBD30 /* PersistentStorageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageWorker.swift; sourceTree = "<group>"; };
+		44FCBDBD210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPersistentStorageWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +143,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4452C2FE210C71DA0040FD25 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4452C2FF210C71E00040FD25 /* PlacemarkListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4452C30E210CA8CB0040FD25 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				4452C30F210CA8E10040FD25 /* BaseCarListInteractor.swift */,
+				4452C310210CA8E10040FD25 /* CarListInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
 		445BF473210BB883000F3ED1 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				445BF4A4210BB8F5000F3ED1 /* App */,
+				44FCBDA7210C5F4000EBBD30 /* NetworkWorkers */,
+				44FCBDBA210C6A7A00EBBD30 /* PersistenStorageWorkers */,
 				445BF4A6210C3CD5000F3ED1 /* Screens */,
 				445BF4A3210BB8B5000F3ED1 /* Resources */,
 				445BF4A5210BB901000F3ED1 /* Supporting */,
@@ -154,6 +204,7 @@
 		445BF4A3210BB8B5000F3ED1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				44FCBDB4210C632900EBBD30 /* Localization */,
 				445BF4A1210BB8B1000F3ED1 /* locations.json */,
 				445BF488210BB884000F3ED1 /* Assets.xcassets */,
 			);
@@ -193,7 +244,10 @@
 		445BF4A7210C3CF6000F3ED1 /* CarsList */ = {
 			isa = PBXGroup;
 			children = (
-				44FCBD91210C515A00EBBD30 /* Interactors */,
+				4452C30E210CA8CB0040FD25 /* Interactors */,
+				44FCBDA2210C5BF100EBBD30 /* Coordinators */,
+				4452C2FE210C71DA0040FD25 /* ViewModels */,
+				44FCBDB9210C68A500EBBD30 /* Presenters */,
 				44FCBD79210C440C00EBBD30 /* Views */,
 				44FCBD75210C43D300EBBD30 /* ViewControllers */,
 			);
@@ -217,17 +271,17 @@
 				44FCBD88210C4C7100EBBD30 /* ViewControllers */,
 				44FCBD85210C4B3C00EBBD30 /* Interactors */,
 				44FCBD76210C43F200EBBD30 /* Views */,
-				445BF4AA210C3D4D000F3ED1 /* Models */,
+				445BF4AA210C3D4D000F3ED1 /* Entities */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		445BF4AA210C3D4D000F3ED1 /* Models */ = {
+		445BF4AA210C3D4D000F3ED1 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				445BF4AB210C3D60000F3ED1 /* Placemark.swift */,
 			);
-			path = Models;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		445BF4AD210C3D77000F3ED1 /* ViewModels */ = {
@@ -249,8 +303,8 @@
 		445BF4B3210C3E05000F3ED1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				445BF4B4210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift */,
 				44FCBD77210C440600EBBD30 /* Map.storyboard */,
+				445BF4B4210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -284,7 +338,7 @@
 		44FCBD76210C43F200EBBD30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				445BF485210BB883000F3ED1 /* Main.storyboard */,
+				4452C317210CDB400040FD25 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,6 +347,8 @@
 			isa = PBXGroup;
 			children = (
 				44FCBD7A210C441800EBBD30 /* CarList.storyboard */,
+				4452C305210C87310040FD25 /* CarListCell.swift */,
+				4452C307210C89C60040FD25 /* CarListCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,8 +356,10 @@
 		44FCBD85210C4B3C00EBBD30 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
-				44FCBD8B210C4CBC00EBBD30 /* BaseTabBarInteractor.swift */,
-				44FCBD8D210C4CF100EBBD30 /* TabBarInteractor.swift */,
+				44FCBD8D210C4CF100EBBD30 /* MainInteractor.swift */,
+				44FCBD8B210C4CBC00EBBD30 /* BaseMainInteractor.swift */,
+				4452C313210CA9B40040FD25 /* MainInteractorState.swift */,
+				4452C31D210CE7650040FD25 /* PlacemarkHandlerWrapper.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -314,20 +372,57 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		44FCBD91210C515A00EBBD30 /* Interactors */ = {
-			isa = PBXGroup;
-			children = (
-				44FCBD92210C516500EBBD30 /* CarListInteractor.swift */,
-				44FCBD94210C517C00EBBD30 /* BaseCarListInteractor.swift */,
-			);
-			path = Interactors;
-			sourceTree = "<group>";
-		};
 		44FCBD9F210C55A800EBBD30 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		44FCBDA2210C5BF100EBBD30 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				44FCBDA3210C5C0200EBBD30 /* CarListCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		44FCBDA7210C5F4000EBBD30 /* NetworkWorkers */ = {
+			isa = PBXGroup;
+			children = (
+				44FCBDA8210C5F5C00EBBD30 /* StubData.swift */,
+				44FCBDAE210C610000EBBD30 /* PlacemarksNetworkWorker.swift */,
+				44FCBDB0210C617C00EBBD30 /* StubbedCarsNetworkWorker.swift */,
+				44FCBDB2210C629B00EBBD30 /* NetworkError.swift */,
+			);
+			path = NetworkWorkers;
+			sourceTree = "<group>";
+		};
+		44FCBDB4210C632900EBBD30 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				44FCBDB5210C633100EBBD30 /* AppTexts.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		44FCBDB9210C68A500EBBD30 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				4452C2FA210C70BD0040FD25 /* CarListPresenter.swift */,
+				4452C2FC210C70DA0040FD25 /* BaseCarListPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		44FCBDBA210C6A7A00EBBD30 /* PersistenStorageWorkers */ = {
+			isa = PBXGroup;
+			children = (
+				44FCBDBB210C6AAE00EBBD30 /* PersistentStorageWorker.swift */,
+				44FCBDBD210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift */,
+				4452C315210CBB660040FD25 /* InMemoryStorage.swift */,
+			);
+			path = PersistenStorageWorkers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,10 +509,11 @@
 			files = (
 				445BF48C210BB884000F3ED1 /* LaunchScreen.storyboard in Resources */,
 				44FCBD9C210C541600EBBD30 /* InfoPlist.strings in Resources */,
+				4452C308210C89C60040FD25 /* CarListCell.xib in Resources */,
+				4452C318210CDB400040FD25 /* Main.storyboard in Resources */,
 				445BF489210BB884000F3ED1 /* Assets.xcassets in Resources */,
 				44FCBD78210C440600EBBD30 /* Map.storyboard in Resources */,
 				445BF4A2210BB8B1000F3ED1 /* locations.json in Resources */,
-				445BF487210BB883000F3ED1 /* Main.storyboard in Resources */,
 				44FCBD7B210C441800EBBD30 /* CarList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,20 +533,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				44FCBD8A210C4C8B00EBBD30 /* TabBarController.swift in Sources */,
-				44FCBD8E210C4CF100EBBD30 /* TabBarInteractor.swift in Sources */,
-				44FCBD95210C517C00EBBD30 /* BaseCarListInteractor.swift in Sources */,
+				44FCBD8E210C4CF100EBBD30 /* MainInteractor.swift in Sources */,
+				44FCBDB1210C617C00EBBD30 /* StubbedCarsNetworkWorker.swift in Sources */,
 				44FCBD90210C4DA500EBBD30 /* SceneBuilder.swift in Sources */,
 				445BF484210BB883000F3ED1 /* MapViewController.swift in Sources */,
 				445BF480210BB883000F3ED1 /* AppDelegate.swift in Sources */,
 				445BF4AF210C3D89000F3ED1 /* PlacemarkMapViewModel.swift in Sources */,
+				44FCBDA9210C5F5C00EBBD30 /* StubData.swift in Sources */,
+				44FCBDB3210C629B00EBBD30 /* NetworkError.swift in Sources */,
 				445BF4AC210C3D60000F3ED1 /* Placemark.swift in Sources */,
-				44FCBD93210C516500EBBD30 /* CarListInteractor.swift in Sources */,
+				4452C2FB210C70BD0040FD25 /* CarListPresenter.swift in Sources */,
+				44FCBDBC210C6AAE00EBBD30 /* PersistentStorageWorker.swift in Sources */,
+				44FCBDA4210C5C0200EBBD30 /* CarListCoordinator.swift in Sources */,
+				4452C300210C71E00040FD25 /* PlacemarkListViewModel.swift in Sources */,
 				44FCBD87210C4B9E00EBBD30 /* AppCoordinator.swift in Sources */,
-				44FCBD8C210C4CBC00EBBD30 /* BaseTabBarInteractor.swift in Sources */,
+				44FCBDB6210C633100EBBD30 /* AppTexts.swift in Sources */,
+				44FCBD8C210C4CBC00EBBD30 /* BaseMainInteractor.swift in Sources */,
+				4452C314210CA9B40040FD25 /* MainInteractorState.swift in Sources */,
+				44FCBDAF210C610000EBBD30 /* PlacemarksNetworkWorker.swift in Sources */,
 				44FCBD97210C51C400EBBD30 /* CarListView.swift in Sources */,
 				445BF482210BB883000F3ED1 /* CarListViewController.swift in Sources */,
+				4452C311210CA8E20040FD25 /* BaseCarListInteractor.swift in Sources */,
+				4452C2FD210C70DA0040FD25 /* BaseCarListPresenter.swift in Sources */,
+				4452C316210CBB660040FD25 /* InMemoryStorage.swift in Sources */,
 				445BF4B2210C3DE7000F3ED1 /* CLLocationCoordinate2D+Init.swift in Sources */,
+				4452C306210C87310040FD25 /* CarListCell.swift in Sources */,
 				445BF4B5210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift in Sources */,
+				4452C312210CA8E20040FD25 /* CarListInteractor.swift in Sources */,
+				44FCBDBE210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift in Sources */,
+				4452C31E210CE7650040FD25 /* PlacemarkHandlerWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,15 +584,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		445BF485210BB883000F3ED1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				445BF486210BB883000F3ED1 /* Base */,
-				44FCBD9A210C540800EBBD30 /* ru */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		445BF48A210BB884000F3ED1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

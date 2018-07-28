@@ -6,8 +6,9 @@
 //  Copyright © 2018 Pavel Stepanov. All rights reserved.
 //
 
-import Foundation
+import CPCommon
 
-protocol CarListView: class {
-//    <#requirements#>
+protocol CarListView: AppViewController {
+    func setPresenter(_ presenter: CarListPresenter)
+    func reloadData()
 }

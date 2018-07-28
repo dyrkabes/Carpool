@@ -8,6 +8,12 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
-    var interactor: TabBarInteractor!
+final class TabBarController: UITabBarController, UITabBarControllerDelegate {
+    // MARK: - Injected
+    private var interactor: MainInteractor!
+    
+    // MARK: - Public func
+    func setInteractor(_ interactor: MainInteractor) {
+        self.interactor = interactor
+    }
 }

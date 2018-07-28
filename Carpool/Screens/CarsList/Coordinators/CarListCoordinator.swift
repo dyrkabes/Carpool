@@ -1,0 +1,27 @@
+//
+//  CarListCoordinator.swift
+//  Carpool
+//
+//  Created by Pavel Stepanov on 28/07/2018.
+//  Copyright © 2018 Pavel Stepanov. All rights reserved.
+//
+
+import CPCommon
+
+struct CarListCoordinator: Coordinator {
+    private let parentInteractor: MainInteractor
+    
+    init(parentInteractor interactor: MainInteractor) {
+        self.parentInteractor = interactor
+    }
+    
+    func start() -> UIViewController {
+        let carListViewController = SceneBuilder.createCarListViewController()
+        
+        let carListInteractor = BaseCarListInteractor(parentInteractor: parentInteractor)
+        let carListPresenter = BaseCarListPresenter(view: carListViewController, interactor: carListInteractor)
+        carListViewController.setPresenter(carListPresenter)
+        
+        return carListViewController
+    }
+}

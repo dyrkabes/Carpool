@@ -7,13 +7,31 @@
 //
 
 import UIKit
+import CPCommon
 
-struct AppCoordinator {
+struct AppCoordinator: Coordinator {
     func start() -> UIViewController {
+        // MARK: - TabBar
         let tabBar = SceneBuilder.createTabBar()
         
-        let carListViewController = SceneBuilder.createCarListViewController()
+        let networker = StubbedPlacemarksNetworkWorker()
+        let storageWorker = CoreDataPersistentStorageWorker()
+        
+        let tabBarInteractor = BaseMainInteractor(networkWorker: networker, storageWorker: storageWorker)
+        tabBar.setInteractor(tabBarInteractor)
+        
+        
+        // MARK: - CarList
+        let carListCoordinator = CarListCoordinator(parentInteractor: tabBarInteractor)
+        let carListViewController: UIViewController = carListCoordinator.start()
+        carListViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+        
+        
+        // MARK: - Map
+        // TODO: Map coordinator
         let mapViewController = SceneBuilder.createMapViewController()
+        mapViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
+        
         
         tabBar.viewControllers = [carListViewController, mapViewController]
         

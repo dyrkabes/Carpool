@@ -8,11 +8,14 @@
 
 import UIKit
 
-class MapViewController: UIViewController {
+final class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // TODO: Implement
+//        setupView()
+//        presenter.getData()
+
     }
 
     override func didReceiveMemoryWarning() {
