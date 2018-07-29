@@ -42,6 +42,8 @@
 		4477849D210E1DE700FE4812 /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4477849C210E1DE700FE4812 /* AppImages.swift */; };
 		447784A9210E2F6100FE4812 /* CarListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 447784AB210E2F6100FE4812 /* CarListCell.xib */; };
 		447784B8210E523300FE4812 /* VisualCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447784B7210E523300FE4812 /* VisualCondition.swift */; };
+		447784BB210E53ED00FE4812 /* Carpool.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 447784B9210E53ED00FE4812 /* Carpool.xcdatamodeld */; };
+		447784ED210E58A600FE4812 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447784EC210E58A600FE4812 /* CoreDataStack.swift */; };
 		44FCBD6C210C418D00EBBD30 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCBD6B210C418D00EBBD30 /* MapKit.framework */; };
 		44FCBD72210C423E00EBBD30 /* CPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCBD71210C423E00EBBD30 /* CPCommon.framework */; };
 		44FCBD73210C423E00EBBD30 /* CPCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCBD71210C423E00EBBD30 /* CPCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -126,6 +128,8 @@
 		447784AA210E2F6100FE4812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CarListCell.xib; sourceTree = "<group>"; };
 		447784AE210E2F9B00FE4812 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		447784B7210E523300FE4812 /* VisualCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualCondition.swift; sourceTree = "<group>"; };
+		447784BA210E53ED00FE4812 /* Carpool.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Carpool.xcdatamodel; sourceTree = "<group>"; };
+		447784EC210E58A600FE4812 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		44FCBD6B210C418D00EBBD30 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		44FCBD71210C423E00EBBD30 /* CPCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CPCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FCBD77210C440600EBBD30 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
@@ -264,7 +268,7 @@
 			children = (
 				445BF4A4210BB8F5000F3ED1 /* App */,
 				44FCBDA7210C5F4000EBBD30 /* NetworkWorkers */,
-				44FCBDBA210C6A7A00EBBD30 /* PersistenStorageWorkers */,
+				44FCBDBA210C6A7A00EBBD30 /* PersistenStorage */,
 				445BF4A6210C3CD5000F3ED1 /* Screens */,
 				445BF4A3210BB8B5000F3ED1 /* Resources */,
 				445BF4A5210BB901000F3ED1 /* Supporting */,
@@ -396,6 +400,14 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		447784EB210E589200FE4812 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				447784EC210E58A600FE4812 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		44FCBD68210C413F00EBBD30 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,14 +508,16 @@
 			path = Presenters;
 			sourceTree = "<group>";
 		};
-		44FCBDBA210C6A7A00EBBD30 /* PersistenStorageWorkers */ = {
+		44FCBDBA210C6A7A00EBBD30 /* PersistenStorage */ = {
 			isa = PBXGroup;
 			children = (
+				447784EB210E589200FE4812 /* CoreData */,
 				44FCBDBB210C6AAE00EBBD30 /* PersistentStorageWorker.swift */,
 				44FCBDBD210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift */,
 				4452C315210CBB660040FD25 /* InMemoryStorage.swift */,
+				447784B9210E53ED00FE4812 /* Carpool.xcdatamodeld */,
 			);
-			path = PersistenStorageWorkers;
+			path = PersistenStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -641,7 +655,9 @@
 				4452C314210CA9B40040FD25 /* MainInteractorState.swift in Sources */,
 				447784B8210E523300FE4812 /* VisualCondition.swift in Sources */,
 				4477849D210E1DE700FE4812 /* AppImages.swift in Sources */,
+				447784BB210E53ED00FE4812 /* Carpool.xcdatamodeld in Sources */,
 				44FCBDAF210C610000EBBD30 /* PlacemarksNetworkWorker.swift in Sources */,
+				447784ED210E58A600FE4812 /* CoreDataStack.swift in Sources */,
 				44FCBD97210C51C400EBBD30 /* CarListView.swift in Sources */,
 				445BF482210BB883000F3ED1 /* CarListViewController.swift in Sources */,
 				4452C311210CA8E20040FD25 /* BaseCarListInteractor.swift in Sources */,
@@ -933,6 +949,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		447784B9210E53ED00FE4812 /* Carpool.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				447784BA210E53ED00FE4812 /* Carpool.xcdatamodel */,
+			);
+			currentVersion = 447784BA210E53ED00FE4812 /* Carpool.xcdatamodel */;
+			path = Carpool.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 445BF474210BB883000F3ED1 /* Project object */;
 }
