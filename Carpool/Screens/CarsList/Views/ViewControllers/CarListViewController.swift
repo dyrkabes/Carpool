@@ -21,7 +21,7 @@ final class CarListViewController: BaseViewController, CarListView {
     // MARK: - UI
     @IBOutlet weak var tableView: UITableView!
     
-    fileprivate lazy var refreshControl: UIRefreshControl = {
+    private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self,
                                  action: #selector(handleRefresh(_:)),
@@ -64,18 +64,14 @@ extension CarListViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        tableView.estimatedRowHeight = 130
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
 extension CarListViewController: UITableViewDataSource, UITableViewDelegate {
-    enum Constants {
-        static let cellIdentifier = "ProductCell"
-        static let cellHeight: CGFloat = 90
-        static let sectionHeaderHeight: CGFloat = 40
-        static let firstSection = 0
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.getPlacemarksCount()
     }
@@ -88,10 +84,6 @@ extension CarListViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.setup(withViewModel: presenter.getViewModelForRow(row: indexPath.row))
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90  // To const
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -142,52 +134,3 @@ extension CarListViewController: UITableViewDataSource, UITableViewDelegate {
 //        }
 //    }
 //}
-
-//// MARK: - UI Helpers
-//extension ProductsListViewController {
-//    fileprivate func setupView() {
-//        tableView.backgroundView = UIView()
-//        tableView.tableFooterView = UIView()
-//        tableView.emptyDataSetSource = emptySearchDelegate
-//        tableView.emptyDataSetDelegate = emptySearchDelegate
-//
-//        if shouldShowFavorites { return }
-//
-//        setupSearchController()
-//        tableView.tableHeaderView = searchController.searchBar
-//
-//        tableView.addSubview(refreshControl)
-//    }
-//
-//    fileprivate func hideTableHeader(animated: Bool = false) {
-//        if interactor.countProducts(forSection: 0) > 0 {
-//            let indexPath = IndexPath(row: 0, section: 0)
-//            tableView.scrollToRow(at: indexPath, at: .top, animated: animated)
-//        }
-//    }
-//
-//    fileprivate func reloadTable(completion: (() -> Void)? = nil) {
-//        tableView.reloadData()
-//        completion?()
-//    }
-//
-//    fileprivate func scrollTableToFilteredSection(animated: Bool = false) {
-//        if interactor.countProducts(forSection: interactor.filteredSectionIndex()) > 0 {
-//            let indexPath = IndexPath(row: 0, section: interactor.filteredSectionIndex())
-//            tableView.scrollToRow(at: indexPath, at: .top, animated: animated)
-//        }
-//    }
-//
-//    @objc fileprivate func setNeedsUpdate() {
-//        needsUpdate = true
-//    }
-//}
-
-
-
-
-
-
-
-
-

@@ -27,13 +27,10 @@ struct AppCoordinator: Coordinator {
         // MARK: - CarList
         let carListCoordinator = CarListCoordinator(parentInteractor: tabBarInteractor)
         let carListViewController = carListCoordinator.start()
-        carListViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
-        
         
         // MARK: - Map
         let mapCoordinator = MapCoordinator(parentInteractor: tabBarInteractor)
         let mapViewController = mapCoordinator.start()
-        mapViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
         
         
         tabBar.viewControllers = [carListViewController, mapViewController]

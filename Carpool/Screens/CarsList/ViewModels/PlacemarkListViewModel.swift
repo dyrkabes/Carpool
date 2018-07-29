@@ -11,13 +11,13 @@ import Foundation
 struct PlacemarkListViewModel {
     let address: String
     let engineType: String
-    let exterior: String
+    let exterior: VisualCondition
     let fuel: Int
-    let interior: String
+    let interior: VisualCondition
     let name: String
     let vin: String
     
     static var empty: PlacemarkListViewModel {
-        return PlacemarkListViewModel(address: "", engineType: "", exterior: "", fuel: 0, interior: "", name: "", vin: "")
+        return PlacemarkListViewModel(address: "", engineType: "", exterior: .unacceptable, fuel: 0, interior: .unacceptable, name: "", vin: "")
     }
 }

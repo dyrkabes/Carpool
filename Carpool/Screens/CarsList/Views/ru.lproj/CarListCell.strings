@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "<interior>"; ObjectID = "5cW-P1-UgR"; */
+"5cW-P1-UgR.text" = "<interior>";
+
+/* Class = "UILabel"; text = "<exterior>"; ObjectID = "MSv-fJ-Lmr"; */
+"MSv-fJ-Lmr.text" = "<exterior>";
+
+/* Class = "UILabel"; text = "<fuel>"; ObjectID = "OsK-uS-GnX"; */
+"OsK-uS-GnX.text" = "<fuel>";
+
+/* Class = "UILabel"; text = "Name:"; ObjectID = "VNc-43-hMR"; */
+"VNc-43-hMR.text" = "Name:";
+
+/* Class = "UILabel"; text = "Interior:"; ObjectID = "VRY-r7-hoX"; */
+"VRY-r7-hoX.text" = "Interior:";
+
+/* Class = "UILabel"; text = "Exterior:"; ObjectID = "gSK-p6-5JT"; */
+"gSK-p6-5JT.text" = "Exterior:";
+
+/* Class = "UILabel"; text = "Address:"; ObjectID = "iGT-yw-jcE"; */
+"iGT-yw-jcE.text" = "Address:";
+
+/* Class = "UILabel"; text = "<address>"; ObjectID = "lT8-gi-GXP"; */
+"lT8-gi-GXP.text" = "<address>";
+
+/* Class = "UILabel"; text = "<name>"; ObjectID = "oei-lb-VeU"; */
+"oei-lb-VeU.text" = "<name>";
+
+/* Class = "UILabel"; text = "<engine>"; ObjectID = "wka-WJ-n9T"; */
+"wka-WJ-n9T.text" = "<engine>";

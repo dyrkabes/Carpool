@@ -13,9 +13,9 @@ final class PlacemarkMapViewModel: NSObject, MKAnnotation {
     let address: String
     let coordinate: CLLocationCoordinate2D
     let engineType: String
-    let exterior: String
+    let exterior: VisualCondition
     let fuel: Int
-    let interior: String
+    let interior: VisualCondition
     let name: String
     let vin: String
     
@@ -23,7 +23,7 @@ final class PlacemarkMapViewModel: NSObject, MKAnnotation {
         return name
     }
     
-    init(address: String, coordinates: CGPoint, engineType: String, exterior: String, fuel: Int, interior: String,  name: String, vin: String) {
+    init(address: String, coordinates: CGPoint, engineType: String, exterior: VisualCondition, fuel: Int, interior: VisualCondition, name: String, vin: String) {
         self.address = address
         self.coordinate = CLLocationCoordinate2D(coordinates: coordinates)
         self.engineType = engineType

@@ -10,7 +10,12 @@ import Foundation
 
 extension String {
     public func localized() -> String {
-        let result = Bundle.main.localizedString(forKey: self, value: nil, table: nil)
+        // TODO: Create more universal bundle retrieving mechanics
+        guard let bundle = Bundle(identifier: "com.dyrkabes.CPCommon") else {
+            print(" **** Error: could not retrieve bundle \(self.self) \(#line)")
+            return ""
+        }
+        let result = bundle.localizedString(forKey: self, value: nil, table: nil)
         return result
     }
 }

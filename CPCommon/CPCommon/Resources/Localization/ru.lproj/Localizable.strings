@@ -1,0 +1,13 @@
+// parsingFailure
+"Parsing failure" = "Ошибка парсинга";
+// unknownError
+"Unknown error" = "Неизвестная ошибка";
+// list
+"List" = "Список";
+// map
+"Map" = "Карта";
+
+"Interior:" = "Интерьер:";
+"Exterior:" = "Экстерьер:";
+"Address:" = "Адрес:";
+"Name:" = "Имя:";

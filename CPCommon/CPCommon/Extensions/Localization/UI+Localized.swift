@@ -1,0 +1,54 @@
+//
+//  UIButton+Localized.swift
+//  CPCommon
+//
+//  Created by Pavel Stepanov on 29/07/2018.
+//  Copyright © 2018 Pavel Stepanov. All rights reserved.
+//
+
+import Foundation
+
+extension UIButton {
+    override open func awakeFromNib() {
+        super.awakeFromNib()
+        setLocalized()
+    }
+    
+    func setLocalized() {
+        let title = self.title(for: .normal)?.localized()
+        self.setTitle(title, for: .normal)
+    }
+}
+
+extension UILabel {
+    override open func awakeFromNib() {
+        super.awakeFromNib()
+        setLocalized()
+    }
+    
+    func setLocalized() {
+        self.text = self.text?.localized()
+    }
+}
+
+extension UIBarButtonItem {
+    override open func awakeFromNib() {
+        super.awakeFromNib()
+        setLocalized()
+    }
+    
+    func setLocalized() {
+        self.title = self.title?.localized()
+    }
+}
+
+extension UITabBarItem {
+    override open func awakeFromNib() {
+        super.awakeFromNib()
+        setLocalized()
+    }
+    
+    func setLocalized() {
+        self.title = self.title?.localized()
+    }
+}

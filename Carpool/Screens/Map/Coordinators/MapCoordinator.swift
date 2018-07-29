@@ -26,6 +26,8 @@ struct MapCoordinator: Coordinator {
         let presenter = BaseMapViewPresenter(view: mapViewController, interactor: interactor)
         mapViewController.setPresenter(presenter)
         
+        mapViewController.tabBarItem = UITabBarItem(title: AppTexts.map, image: AppImages.map, tag: 1)
+        
         return mapViewController
     }
 }

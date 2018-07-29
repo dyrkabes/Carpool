@@ -9,4 +9,7 @@
 public enum AppTexts {
     public static let parsingFailure = "Parsing failure".localized()
     public static let unknownError = "Unknown error".localized()
+    
+    public static let list = "List".localized()
+    public static let map = "Map".localized()
 }

@@ -1,0 +1,16 @@
+// parsingFailure
+"Parsing failure" = "Fehler beim Parsen";
+// unknownError
+"Unknown error" = "Unbekannter Fehler";
+// list
+"List" = "Liste";
+// map
+"Map" = "Karte";
+
+"Interior:" = "Interieur:";
+"Exterior:" = "Äußere:";
+"Address:" = "Addresse:";
+"Name:" = "Name:";
+
+"good" = "gut";
+"unacceptable" = "unannehmbar";

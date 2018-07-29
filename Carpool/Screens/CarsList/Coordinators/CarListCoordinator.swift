@@ -17,11 +17,17 @@ struct CarListCoordinator: Coordinator {
     
     func start() -> UIViewController {
         let carListViewController = SceneBuilder.createCarListViewController()
+        carListViewController.title = AppTexts.list
         
         let carListInteractor = BaseCarListInteractor(parentInteractor: parentInteractor)
         let carListPresenter = BaseCarListPresenter(view: carListViewController, interactor: carListInteractor)
         carListViewController.setPresenter(carListPresenter)
         
-        return carListViewController
+        let navigationController = UINavigationController(rootViewController: carListViewController)
+        navigationController.title = AppTexts.list
+        
+        navigationController.tabBarItem = UITabBarItem(title: AppTexts.list, image: AppImages.carList, tag: 0)
+        
+        return navigationController
     }
 }

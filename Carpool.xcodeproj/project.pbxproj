@@ -11,7 +11,6 @@
 		4452C2FD210C70DA0040FD25 /* BaseCarListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C2FC210C70DA0040FD25 /* BaseCarListPresenter.swift */; };
 		4452C300210C71E00040FD25 /* PlacemarkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C2FF210C71E00040FD25 /* PlacemarkListViewModel.swift */; };
 		4452C306210C87310040FD25 /* CarListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C305210C87310040FD25 /* CarListCell.swift */; };
-		4452C308210C89C60040FD25 /* CarListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4452C307210C89C60040FD25 /* CarListCell.xib */; };
 		4452C311210CA8E20040FD25 /* BaseCarListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C30F210CA8E10040FD25 /* BaseCarListInteractor.swift */; };
 		4452C312210CA8E20040FD25 /* CarListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C310210CA8E10040FD25 /* CarListInteractor.swift */; };
 		4452C314210CA9B40040FD25 /* MainInteractorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C313210CA9B40040FD25 /* MainInteractorState.swift */; };
@@ -40,6 +39,9 @@
 		445BF4AF210C3D89000F3ED1 /* PlacemarkMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF4AE210C3D89000F3ED1 /* PlacemarkMapViewModel.swift */; };
 		445BF4B5210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF4B4210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift */; };
 		4477849B210DD2E000FE4812 /* AppMainInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4477849A210DD2E000FE4812 /* AppMainInteractorTests.swift */; };
+		4477849D210E1DE700FE4812 /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4477849C210E1DE700FE4812 /* AppImages.swift */; };
+		447784A9210E2F6100FE4812 /* CarListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 447784AB210E2F6100FE4812 /* CarListCell.xib */; };
+		447784B8210E523300FE4812 /* VisualCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447784B7210E523300FE4812 /* VisualCondition.swift */; };
 		44FCBD6C210C418D00EBBD30 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCBD6B210C418D00EBBD30 /* MapKit.framework */; };
 		44FCBD72210C423E00EBBD30 /* CPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCBD71210C423E00EBBD30 /* CPCommon.framework */; };
 		44FCBD73210C423E00EBBD30 /* CPCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCBD71210C423E00EBBD30 /* CPCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -89,7 +91,6 @@
 		4452C2FC210C70DA0040FD25 /* BaseCarListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCarListPresenter.swift; sourceTree = "<group>"; };
 		4452C2FF210C71E00040FD25 /* PlacemarkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkListViewModel.swift; sourceTree = "<group>"; };
 		4452C305210C87310040FD25 /* CarListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListCell.swift; sourceTree = "<group>"; };
-		4452C307210C89C60040FD25 /* CarListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarListCell.xib; sourceTree = "<group>"; };
 		4452C30F210CA8E10040FD25 /* BaseCarListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCarListInteractor.swift; sourceTree = "<group>"; };
 		4452C310210CA8E10040FD25 /* CarListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarListInteractor.swift; sourceTree = "<group>"; };
 		4452C313210CA9B40040FD25 /* MainInteractorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorState.swift; sourceTree = "<group>"; };
@@ -121,6 +122,10 @@
 		445BF4AE210C3D89000F3ED1 /* PlacemarkMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkMapViewModel.swift; sourceTree = "<group>"; };
 		445BF4B4210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkAnnotationView.swift; sourceTree = "<group>"; };
 		4477849A210DD2E000FE4812 /* AppMainInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainInteractorTests.swift; sourceTree = "<group>"; };
+		4477849C210E1DE700FE4812 /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
+		447784AA210E2F6100FE4812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CarListCell.xib; sourceTree = "<group>"; };
+		447784AE210E2F9B00FE4812 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		447784B7210E523300FE4812 /* VisualCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualCondition.swift; sourceTree = "<group>"; };
 		44FCBD6B210C418D00EBBD30 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		44FCBD71210C423E00EBBD30 /* CPCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CPCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FCBD77210C440600EBBD30 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
@@ -131,7 +136,6 @@
 		44FCBD8D210C4CF100EBBD30 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		44FCBD8F210C4DA500EBBD30 /* SceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneBuilder.swift; sourceTree = "<group>"; };
 		44FCBD96210C51C400EBBD30 /* CarListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListView.swift; sourceTree = "<group>"; };
-		44FCBD9B210C540800EBBD30 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		44FCBD9D210C541600EBBD30 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		44FCBDA3210C5C0200EBBD30 /* CarListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListCoordinator.swift; sourceTree = "<group>"; };
 		44FCBDA8210C5F5C00EBBD30 /* StubDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubDataProvider.swift; sourceTree = "<group>"; };
@@ -285,6 +289,7 @@
 		445BF4A3210BB8B5000F3ED1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4477849C210E1DE700FE4812 /* AppImages.swift */,
 				445BF4A1210BB8B1000F3ED1 /* locations.json */,
 				445BF488210BB884000F3ED1 /* Assets.xcassets */,
 			);
@@ -329,7 +334,6 @@
 				4452C2FE210C71DA0040FD25 /* ViewModels */,
 				44FCBDB9210C68A500EBBD30 /* Presenters */,
 				44FCBD79210C440C00EBBD30 /* Views */,
-				44FCBD75210C43D300EBBD30 /* ViewControllers */,
 			);
 			path = CarsList;
 			sourceTree = "<group>";
@@ -360,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				445BF4AB210C3D60000F3ED1 /* Placemark.swift */,
+				447784B7210E523300FE4812 /* VisualCondition.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -432,7 +437,8 @@
 			children = (
 				44FCBD7A210C441800EBBD30 /* CarList.storyboard */,
 				4452C305210C87310040FD25 /* CarListCell.swift */,
-				4452C307210C89C60040FD25 /* CarListCell.xib */,
+				447784AB210E2F6100FE4812 /* CarListCell.xib */,
+				44FCBD75210C43D300EBBD30 /* ViewControllers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -565,6 +571,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				de,
 			);
 			mainGroup = 445BF473210BB883000F3ED1;
 			productRefGroup = 445BF47D210BB883000F3ED1 /* Products */;
@@ -584,7 +592,7 @@
 			files = (
 				445BF48C210BB884000F3ED1 /* LaunchScreen.storyboard in Resources */,
 				44FCBD9C210C541600EBBD30 /* InfoPlist.strings in Resources */,
-				4452C308210C89C60040FD25 /* CarListCell.xib in Resources */,
+				447784A9210E2F6100FE4812 /* CarListCell.xib in Resources */,
 				4452C318210CDB400040FD25 /* Main.storyboard in Resources */,
 				445BF489210BB884000F3ED1 /* Assets.xcassets in Resources */,
 				44FCBD78210C440600EBBD30 /* Map.storyboard in Resources */,
@@ -631,6 +639,8 @@
 				44FCBD8C210C4CBC00EBBD30 /* AppMainInteractor.swift in Sources */,
 				4452C33B210D15390040FD25 /* MapViewInteractor.swift in Sources */,
 				4452C314210CA9B40040FD25 /* MainInteractorState.swift in Sources */,
+				447784B8210E523300FE4812 /* VisualCondition.swift in Sources */,
+				4477849D210E1DE700FE4812 /* AppImages.swift in Sources */,
 				44FCBDAF210C610000EBBD30 /* PlacemarksNetworkWorker.swift in Sources */,
 				44FCBD97210C51C400EBBD30 /* CarListView.swift in Sources */,
 				445BF482210BB883000F3ED1 /* CarListViewController.swift in Sources */,
@@ -672,15 +682,23 @@
 			isa = PBXVariantGroup;
 			children = (
 				445BF48B210BB884000F3ED1 /* Base */,
-				44FCBD9B210C540800EBBD30 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		447784AB210E2F6100FE4812 /* CarListCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				447784AA210E2F6100FE4812 /* Base */,
+			);
+			name = CarListCell.xib;
 			sourceTree = "<group>";
 		};
 		44FCBD9E210C541600EBBD30 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				44FCBD9D210C541600EBBD30 /* ru */,
+				447784AE210E2F9B00FE4812 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
