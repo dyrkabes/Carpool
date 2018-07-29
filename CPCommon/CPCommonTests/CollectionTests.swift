@@ -6,7 +6,6 @@
 //  Copyright © 2018 Flinesoft. All rights reserved.
 //
 
-@testable import HandySwift
 import XCTest
 
 class CollectionExtensionTests: XCTestCase {

@@ -10,7 +10,10 @@ import Foundation
 
 protocol CarListPresenter {
     init(view: CarListView, interactor: CarListInteractor)
-    func getData()
+    
+    func getPlacemarks()
+    func reloadData()
+    
     func getViewModelForRow(row: Int) -> PlacemarkListViewModel
     func getPlacemarksCount() -> Int
 }

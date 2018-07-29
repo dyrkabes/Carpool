@@ -12,7 +12,7 @@ import CPCommon
 class BaseCarListPresenter: CarListPresenter {
     // MARK: - Injected
     private var interactor: CarListInteractor
-    private weak var view: CarListView?
+    private unowned var view: CarListView
     
     // MARK: - Init
     required init(view: CarListView, interactor: CarListInteractor) {
@@ -21,20 +21,29 @@ class BaseCarListPresenter: CarListPresenter {
     }
     
     // MARK: - Public func
-    func getData() {
-        view?.startLoading()
+    func getPlacemarks() {
+        view.startLoading()
         
         interactor.getData(success: { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.view?.finishLoading()
-            strongSelf.view?.reloadData()
+            strongSelf.view.finishLoading()
+            strongSelf.view.reloadData()
         }) { [weak self] (error) in
-            self?.view?.finishLoading()
-            self?.view?.showError(error: error)
+            self?.view.finishLoading()
+            self?.view.showError(error: error)
         }
     }
     
-    // TODO: Reload data
+    func reloadData() {
+        interactor.reloadData(success: { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.view.finishLoading()
+            strongSelf.view.reloadData()
+        }) { [weak self] (error) in
+            self?.view.finishLoading()
+            self?.view.showError(error: error)
+        }
+    }
     
     func getViewModelForRow(row: Int) -> PlacemarkListViewModel {
         guard let placemark = interactor.getPlacemarks()[try: row] else {

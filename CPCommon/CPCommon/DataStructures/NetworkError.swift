@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum NetworkError: Error {
+public enum NetworkError: Error {
     case parsingFailure
     case webServiceError(String)
     case networkProblem(Error)
@@ -16,12 +16,12 @@ enum NetworkError: Error {
     case unknown
     
     // MARK: - Init
-    init(error: Error) {
+    public init(error: Error) {
         self = .networkProblem(error)
     }
     
     // MARK: - Public
-    var statusCode: Int {
+    public var statusCode: Int {
         switch self {
         case .parsingFailure:
             return 1001
@@ -57,7 +57,7 @@ extension NetworkError: LocalizedError {
 
 // MARK: - Equatable
 extension NetworkError: Equatable {
-    static func ==(lhs: NetworkError, rhs: NetworkError) -> Bool {
+    public static func ==(lhs: NetworkError, rhs: NetworkError) -> Bool {
         return lhs.statusCode == rhs.statusCode
     }
 }

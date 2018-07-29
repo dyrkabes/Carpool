@@ -10,7 +10,7 @@ import Foundation
 
 struct InMemoryStorage: PersistentStorageWorker {
     // MARK: - Instance properties
-    fileprivate var placemarks: [Placemark]
+    fileprivate var placemarks: [Placemark] = []
     
     // MARK: - Public func
     func getPlacemarks() -> [Placemark] {

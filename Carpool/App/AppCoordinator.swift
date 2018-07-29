@@ -9,27 +9,30 @@
 import UIKit
 import CPCommon
 
+/// Configuares the main screen.
 struct AppCoordinator: Coordinator {
     func start() -> UIViewController {
         // MARK: - TabBar
         let tabBar = SceneBuilder.createTabBar()
         
-        let networker = StubbedPlacemarksNetworkWorker()
-        let storageWorker = CoreDataPersistentStorageWorker()
+        let networker = LocalPlacemarksNetworkWorker(placemarksData: StubDataProvider.locations.data)
+        let storageWorker = InMemoryStorage()
+        // TODO: Persist in core data
+//            CoreDataPersistentStorageWorker()
         
-        let tabBarInteractor = BaseMainInteractor(networkWorker: networker, storageWorker: storageWorker)
+        let tabBarInteractor = AppMainInteractor(networkWorker: networker, storageWorker: storageWorker)
         tabBar.setInteractor(tabBarInteractor)
         
         
         // MARK: - CarList
         let carListCoordinator = CarListCoordinator(parentInteractor: tabBarInteractor)
-        let carListViewController: UIViewController = carListCoordinator.start()
+        let carListViewController = carListCoordinator.start()
         carListViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
         
         
         // MARK: - Map
-        // TODO: Map coordinator
-        let mapViewController = SceneBuilder.createMapViewController()
+        let mapCoordinator = MapCoordinator(parentInteractor: tabBarInteractor)
+        let mapViewController = mapCoordinator.start()
         mapViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
         
         

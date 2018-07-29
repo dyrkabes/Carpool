@@ -37,7 +37,11 @@ enum SceneBuilder {
         return carListVC
     }
     
-    static func createMapViewController() -> UIViewController {
-        return UIStoryboard.map.instantiateInitialViewController()!
+    static func createMapViewController() -> MapViewController {
+        guard let mapViewController = UIStoryboard.map.instantiateInitialViewController() as? MapViewController else {
+            fatalError("MapView cannot be initialized")
+        }
+        
+        return mapViewController
     }
 }

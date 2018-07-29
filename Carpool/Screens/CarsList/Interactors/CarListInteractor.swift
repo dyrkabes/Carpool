@@ -8,11 +8,10 @@
 
 import Foundation
 
-protocol CarListInteractor {
+protocol CarListInteractor: class {
     init(parentInteractor: MainInteractor)
     
     func getPlacemarks() -> [Placemark]
-    func setPresenter(_ presenter: CarListPresenter)
     
     func getData(success: @escaping EmptySuccessHandler, failure: @escaping ErrorHandler)
     func reloadData(success: @escaping EmptySuccessHandler, failure: @escaping ErrorHandler)

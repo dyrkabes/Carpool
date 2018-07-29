@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 extension CLLocationCoordinate2D {
-    init(coordinates: CGPoint) {
-        self.init(latitude: CLLocationDegrees(coordinates.x), longitude: CLLocationDegrees(coordinates.y))
+    public init(coordinates: CGPoint) {
+        self.init(latitude: CLLocationDegrees(coordinates.y), longitude: CLLocationDegrees(coordinates.x))
     }
 }

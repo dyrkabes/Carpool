@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		4452C302210C813F0040FD25 /* Collection+try.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C301210C813F0040FD25 /* Collection+try.swift */; };
 		4452C304210C818B0040FD25 /* CollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C303210C818B0040FD25 /* CollectionTests.swift */; };
+		4452C344210DC51C0040FD25 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 4452C343210DC51B0040FD25 /* locations.json */; };
+		4452C348210DCBF40040FD25 /* CLLocationCoordinate2D+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C347210DCBF30040FD25 /* CLLocationCoordinate2D+Init.swift */; };
+		44778493210DD16300FE4812 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44778492210DD16300FE4812 /* NetworkError.swift */; };
+		44778498210DD1E100FE4812 /* AppTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44778495210DD1A800FE4812 /* AppTexts.swift */; };
 		44FCBD54210C3F2000EBBD30 /* CPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCBD4A210C3F2000EBBD30 /* CPCommon.framework */; };
 		44FCBD59210C3F2000EBBD30 /* CPCommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD58210C3F2000EBBD30 /* CPCommonTests.swift */; };
 		44FCBD5B210C3F2000EBBD30 /* CPCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 44FCBD4D210C3F2000EBBD30 /* CPCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		44FCBD67210C40F600EBBD30 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD66210C40F600EBBD30 /* Identifiable.swift */; };
 		44FCBD7E210C464900EBBD30 /* FileDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD7D210C464900EBBD30 /* FileDataLoader.swift */; };
 		44FCBD84210C469700EBBD30 /* HelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD83210C469700EBBD30 /* HelpersTests.swift */; };
-		44FCBDA1210C570C00EBBD30 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 44FCBDA0210C570C00EBBD30 /* locations.json */; };
 		44FCBDA6210C5C2900EBBD30 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDA5210C5C2900EBBD30 /* Coordinator.swift */; };
 		44FCBDAB210C5FB200EBBD30 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDAA210C5FB200EBBD30 /* BaseViewController.swift */; };
 		44FCBDAD210C5FDA00EBBD30 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDAC210C5FDA00EBBD30 /* AppViewController.swift */; };
@@ -35,6 +38,10 @@
 /* Begin PBXFileReference section */
 		4452C301210C813F0040FD25 /* Collection+try.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+try.swift"; sourceTree = "<group>"; };
 		4452C303210C818B0040FD25 /* CollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTests.swift; sourceTree = "<group>"; };
+		4452C343210DC51B0040FD25 /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = locations.json; path = ../../../Carpool/Resources/locations.json; sourceTree = "<group>"; };
+		4452C347210DCBF30040FD25 /* CLLocationCoordinate2D+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Init.swift"; sourceTree = "<group>"; };
+		44778492210DD16300FE4812 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		44778495210DD1A800FE4812 /* AppTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTexts.swift; sourceTree = "<group>"; };
 		44FCBD4A210C3F2000EBBD30 /* CPCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CPCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FCBD4D210C3F2000EBBD30 /* CPCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPCommon.h; sourceTree = "<group>"; };
 		44FCBD4E210C3F2000EBBD30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,7 +51,6 @@
 		44FCBD66210C40F600EBBD30 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		44FCBD7D210C464900EBBD30 /* FileDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDataLoader.swift; sourceTree = "<group>"; };
 		44FCBD83210C469700EBBD30 /* HelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpersTests.swift; sourceTree = "<group>"; };
-		44FCBDA0210C570C00EBBD30 /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = locations.json; path = ../../../Carpool/Resources/locations.json; sourceTree = "<group>"; };
 		44FCBDA5210C5C2900EBBD30 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		44FCBDAA210C5FB200EBBD30 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		44FCBDAC210C5FDA00EBBD30 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +76,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44778491210DD14300FE4812 /* DataStructures */ = {
+			isa = PBXGroup;
+			children = (
+				44778492210DD16300FE4812 /* NetworkError.swift */,
+			);
+			path = DataStructures;
+			sourceTree = "<group>";
+		};
+		44778494210DD18D00FE4812 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		44778496210DD1A800FE4812 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				44778495210DD1A800FE4812 /* AppTexts.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		44778497210DD1AB00FE4812 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				44778496210DD1A800FE4812 /* Localization */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		44FCBD40210C3F2000EBBD30 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +128,9 @@
 		44FCBD4C210C3F2000EBBD30 /* CPCommon */ = {
 			isa = PBXGroup;
 			children = (
+				44778497210DD1AB00FE4812 /* Resources */,
+				44778494210DD18D00FE4812 /* Constants */,
+				44778491210DD14300FE4812 /* DataStructures */,
 				44FCBD7C210C463600EBBD30 /* Helpers */,
 				44FCBD65210C40E800EBBD30 /* Protocols */,
 				44FCBD64210C40D500EBBD30 /* Extensions */,
@@ -117,6 +157,7 @@
 			children = (
 				44FCBDB7210C63AE00EBBD30 /* String+Localized.swift */,
 				4452C301210C813F0040FD25 /* Collection+try.swift */,
+				4452C347210DCBF30040FD25 /* CLLocationCoordinate2D+Init.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -143,7 +184,7 @@
 		44FCBD81210C467600EBBD30 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				44FCBDA0210C570C00EBBD30 /* locations.json */,
+				4452C343210DC51B0040FD25 /* locations.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -247,7 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44FCBDA1210C570C00EBBD30 /* locations.json in Resources */,
+				4452C344210DC51C0040FD25 /* locations.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,11 +299,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44778498210DD1E100FE4812 /* AppTexts.swift in Sources */,
 				4452C302210C813F0040FD25 /* Collection+try.swift in Sources */,
 				44FCBDB8210C63AE00EBBD30 /* String+Localized.swift in Sources */,
 				44FCBDAD210C5FDA00EBBD30 /* AppViewController.swift in Sources */,
+				4452C348210DCBF40040FD25 /* CLLocationCoordinate2D+Init.swift in Sources */,
 				44FCBD7E210C464900EBBD30 /* FileDataLoader.swift in Sources */,
 				44FCBDAB210C5FB200EBBD30 /* BaseViewController.swift in Sources */,
+				44778493210DD16300FE4812 /* NetworkError.swift in Sources */,
 				44FCBD67210C40F600EBBD30 /* Identifiable.swift in Sources */,
 				44FCBDA6210C5C2900EBBD30 /* Coordinator.swift in Sources */,
 			);

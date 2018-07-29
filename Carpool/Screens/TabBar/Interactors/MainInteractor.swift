@@ -8,10 +8,11 @@
 
 import Foundation
 
+/// Is responsible for getting and loading data.
 protocol MainInteractor: class {
-    init(networkWorker: PlacemarksNetworkWorker, storageWorker: PersistentStorageWorker)
-    
-    func loadDataFromNetwork(success: @escaping PlacemarksSuccessHandler, failure: @escaping ErrorHandler)
-    
+    /// Gets data from the persistent storage.
     func getData(success: @escaping PlacemarksSuccessHandler, failure: @escaping ErrorHandler)
+    
+    /// Updates data from network.
+    func loadDataFromNetwork(success: @escaping PlacemarksSuccessHandler, failure: @escaping ErrorHandler)
 }

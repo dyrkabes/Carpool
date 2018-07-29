@@ -9,12 +9,29 @@
 import Foundation
 import MapKit
 
-class PlacemarkMapViewModel: NSObject, MKAnnotation {
-    let name: String
+final class PlacemarkMapViewModel: NSObject, MKAnnotation {
+    let address: String
     let coordinate: CLLocationCoordinate2D
+    let engineType: String
+    let exterior: String
+    let fuel: Int
+    let interior: String
+    let name: String
+    let vin: String
     
-    init(name: String, coordinates: CGPoint) {
-        self.name = name
+    var title: String? {
+        return name
+    }
+    
+    init(address: String, coordinates: CGPoint, engineType: String, exterior: String, fuel: Int, interior: String,  name: String, vin: String) {
+        self.address = address
         self.coordinate = CLLocationCoordinate2D(coordinates: coordinates)
+        self.engineType = engineType
+        self.exterior = exterior
+        self.fuel = fuel
+        self.interior = interior
+        self.name = name
+        self.vin = vin
     }
 }
+

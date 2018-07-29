@@ -33,7 +33,11 @@ final class CarListViewController: BaseViewController, CarListView {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        presenter.getData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.getPlacemarks()
     }
     
     // MARK: - Public func
@@ -48,7 +52,7 @@ final class CarListViewController: BaseViewController, CarListView {
     
     // MARK: - Actions
     @objc private func handleRefresh(_ refreshControl: UIRefreshControl) {
-        presenter.getData() // TODO: Implement
+        presenter.getPlacemarks() // TODO: Implement
     }
 }
 

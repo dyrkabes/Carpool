@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class BaseMainInteractor: MainInteractor {
+final class AppMainInteractor: MainInteractor {
     // MARK: - Injected
     private var networkWorker: PlacemarksNetworkWorker
     private var storageWorker: PersistentStorageWorker
@@ -18,7 +18,7 @@ final class BaseMainInteractor: MainInteractor {
     fileprivate var requestHandlers: [PlacemarkHandlerWrapper] = []
     
     // MARK: - Init
-    required init(networkWorker: PlacemarksNetworkWorker, storageWorker: PersistentStorageWorker) {
+    init(networkWorker: PlacemarksNetworkWorker, storageWorker: PersistentStorageWorker) {
         self.networkWorker = networkWorker
         self.storageWorker = storageWorker
     }

@@ -10,7 +10,6 @@ import Foundation
 
 final class BaseCarListInteractor: CarListInteractor {
     // MARK: - Injected
-    private var presenter: CarListPresenter!
     private unowned var parentInteractor: MainInteractor
     
     // MARK: - Instance properties
@@ -22,10 +21,6 @@ final class BaseCarListInteractor: CarListInteractor {
     }
     
     // MARK: - Public func
-    func setPresenter(_ presenter: CarListPresenter) {
-        self.presenter = presenter
-    }
-    
     func getData(success: @escaping EmptySuccessHandler, failure: @escaping ErrorHandler) {
         parentInteractor.getData(success: { [weak self] (placemarks) in
             self?.placemarks = placemarks

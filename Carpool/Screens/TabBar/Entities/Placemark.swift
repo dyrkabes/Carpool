@@ -17,4 +17,8 @@ struct Placemark: Codable {
     let interior: String
     let name: String
     let vin: String
+    
+    static var empty: Placemark {
+        return Placemark(address: "", coordinates: CGPoint.zero, engineType: "", exterior: "", fuel: 0, interior: "", name: "", vin: "")
+    }
 }

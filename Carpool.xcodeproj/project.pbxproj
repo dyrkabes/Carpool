@@ -18,17 +18,28 @@
 		4452C316210CBB660040FD25 /* InMemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C315210CBB660040FD25 /* InMemoryStorage.swift */; };
 		4452C318210CDB400040FD25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4452C317210CDB400040FD25 /* Main.storyboard */; };
 		4452C31E210CE7650040FD25 /* PlacemarkHandlerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C31D210CE7650040FD25 /* PlacemarkHandlerWrapper.swift */; };
+		4452C333210D14690040FD25 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C332210D14690040FD25 /* MapView.swift */; };
+		4452C336210D14FD0040FD25 /* MapViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C335210D14FD0040FD25 /* MapViewPresenter.swift */; };
+		4452C338210D150B0040FD25 /* BaseMapViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C337210D150B0040FD25 /* BaseMapViewPresenter.swift */; };
+		4452C33B210D15390040FD25 /* MapViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C33A210D15390040FD25 /* MapViewInteractor.swift */; };
+		4452C33D210D15430040FD25 /* BaseMapViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C33C210D15430040FD25 /* BaseMapViewInteractor.swift */; };
+		4452C340210D1BE10040FD25 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C33F210D1BE10040FD25 /* MapCoordinator.swift */; };
+		4452C342210DAC890040FD25 /* ClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C341210DAC890040FD25 /* ClusterAnnotationView.swift */; };
+		4452C346210DC58F0040FD25 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4452C345210DC58F0040FD25 /* Info.plist */; };
+		4452C34A210DCC3E0040FD25 /* StubbedDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C349210DCC3E0040FD25 /* StubbedDataTests.swift */; };
+		4452C34C210DCE240040FD25 /* StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C34B210DCE240040FD25 /* StorageTests.swift */; };
+		4452C352210DCF160040FD25 /* BaseMapInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C351210DCF160040FD25 /* BaseMapInteractorTests.swift */; };
 		445BF480210BB883000F3ED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF47F210BB883000F3ED1 /* AppDelegate.swift */; };
 		445BF482210BB883000F3ED1 /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF481210BB883000F3ED1 /* CarListViewController.swift */; };
 		445BF484210BB883000F3ED1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF483210BB883000F3ED1 /* MapViewController.swift */; };
 		445BF489210BB884000F3ED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 445BF488210BB884000F3ED1 /* Assets.xcassets */; };
 		445BF48C210BB884000F3ED1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445BF48A210BB884000F3ED1 /* LaunchScreen.storyboard */; };
-		445BF497210BB884000F3ED1 /* CarpoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF496210BB884000F3ED1 /* CarpoolTests.swift */; };
+		445BF497210BB884000F3ED1 /* StubbedPlacemarksNetworkWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF496210BB884000F3ED1 /* StubbedPlacemarksNetworkWorkerTests.swift */; };
 		445BF4A2210BB8B1000F3ED1 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 445BF4A1210BB8B1000F3ED1 /* locations.json */; };
 		445BF4AC210C3D60000F3ED1 /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF4AB210C3D60000F3ED1 /* Placemark.swift */; };
 		445BF4AF210C3D89000F3ED1 /* PlacemarkMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF4AE210C3D89000F3ED1 /* PlacemarkMapViewModel.swift */; };
-		445BF4B2210C3DE7000F3ED1 /* CLLocationCoordinate2D+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF4B1210C3DE7000F3ED1 /* CLLocationCoordinate2D+Init.swift */; };
 		445BF4B5210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF4B4210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift */; };
+		4477849B210DD2E000FE4812 /* AppMainInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4477849A210DD2E000FE4812 /* AppMainInteractorTests.swift */; };
 		44FCBD6C210C418D00EBBD30 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCBD6B210C418D00EBBD30 /* MapKit.framework */; };
 		44FCBD72210C423E00EBBD30 /* CPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCBD71210C423E00EBBD30 /* CPCommon.framework */; };
 		44FCBD73210C423E00EBBD30 /* CPCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCBD71210C423E00EBBD30 /* CPCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -36,17 +47,15 @@
 		44FCBD7B210C441800EBBD30 /* CarList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FCBD7A210C441800EBBD30 /* CarList.storyboard */; };
 		44FCBD87210C4B9E00EBBD30 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD86210C4B9E00EBBD30 /* AppCoordinator.swift */; };
 		44FCBD8A210C4C8B00EBBD30 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD89210C4C8B00EBBD30 /* TabBarController.swift */; };
-		44FCBD8C210C4CBC00EBBD30 /* BaseMainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD8B210C4CBC00EBBD30 /* BaseMainInteractor.swift */; };
+		44FCBD8C210C4CBC00EBBD30 /* AppMainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD8B210C4CBC00EBBD30 /* AppMainInteractor.swift */; };
 		44FCBD8E210C4CF100EBBD30 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD8D210C4CF100EBBD30 /* MainInteractor.swift */; };
 		44FCBD90210C4DA500EBBD30 /* SceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD8F210C4DA500EBBD30 /* SceneBuilder.swift */; };
 		44FCBD97210C51C400EBBD30 /* CarListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD96210C51C400EBBD30 /* CarListView.swift */; };
 		44FCBD9C210C541600EBBD30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44FCBD9E210C541600EBBD30 /* InfoPlist.strings */; };
 		44FCBDA4210C5C0200EBBD30 /* CarListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDA3210C5C0200EBBD30 /* CarListCoordinator.swift */; };
-		44FCBDA9210C5F5C00EBBD30 /* StubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDA8210C5F5C00EBBD30 /* StubData.swift */; };
+		44FCBDA9210C5F5C00EBBD30 /* StubDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDA8210C5F5C00EBBD30 /* StubDataProvider.swift */; };
 		44FCBDAF210C610000EBBD30 /* PlacemarksNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDAE210C610000EBBD30 /* PlacemarksNetworkWorker.swift */; };
-		44FCBDB1210C617C00EBBD30 /* StubbedCarsNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDB0210C617C00EBBD30 /* StubbedCarsNetworkWorker.swift */; };
-		44FCBDB3210C629B00EBBD30 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDB2210C629B00EBBD30 /* NetworkError.swift */; };
-		44FCBDB6210C633100EBBD30 /* AppTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDB5210C633100EBBD30 /* AppTexts.swift */; };
+		44FCBDB1210C617C00EBBD30 /* LocalPlacemarksNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDB0210C617C00EBBD30 /* LocalPlacemarksNetworkWorker.swift */; };
 		44FCBDBC210C6AAE00EBBD30 /* PersistentStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDBB210C6AAE00EBBD30 /* PersistentStorageWorker.swift */; };
 		44FCBDBE210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDBD210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift */; };
 /* End PBXBuildFile section */
@@ -87,6 +96,17 @@
 		4452C315210CBB660040FD25 /* InMemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryStorage.swift; sourceTree = "<group>"; };
 		4452C317210CDB400040FD25 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4452C31D210CE7650040FD25 /* PlacemarkHandlerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkHandlerWrapper.swift; sourceTree = "<group>"; };
+		4452C332210D14690040FD25 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		4452C335210D14FD0040FD25 /* MapViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewPresenter.swift; sourceTree = "<group>"; };
+		4452C337210D150B0040FD25 /* BaseMapViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMapViewPresenter.swift; sourceTree = "<group>"; };
+		4452C33A210D15390040FD25 /* MapViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewInteractor.swift; sourceTree = "<group>"; };
+		4452C33C210D15430040FD25 /* BaseMapViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMapViewInteractor.swift; sourceTree = "<group>"; };
+		4452C33F210D1BE10040FD25 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
+		4452C341210DAC890040FD25 /* ClusterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterAnnotationView.swift; sourceTree = "<group>"; };
+		4452C345210DC58F0040FD25 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4452C349210DCC3E0040FD25 /* StubbedDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubbedDataTests.swift; sourceTree = "<group>"; };
+		4452C34B210DCE240040FD25 /* StorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTests.swift; sourceTree = "<group>"; };
+		4452C351210DCF160040FD25 /* BaseMapInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMapInteractorTests.swift; sourceTree = "<group>"; };
 		445BF47C210BB883000F3ED1 /* Carpool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carpool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		445BF47F210BB883000F3ED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		445BF481210BB883000F3ED1 /* CarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
@@ -94,31 +114,29 @@
 		445BF488210BB884000F3ED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		445BF48B210BB884000F3ED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		445BF492210BB884000F3ED1 /* CarpoolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarpoolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		445BF496210BB884000F3ED1 /* CarpoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarpoolTests.swift; sourceTree = "<group>"; };
+		445BF496210BB884000F3ED1 /* StubbedPlacemarksNetworkWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubbedPlacemarksNetworkWorkerTests.swift; sourceTree = "<group>"; };
 		445BF498210BB884000F3ED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		445BF4A1210BB8B1000F3ED1 /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
 		445BF4AB210C3D60000F3ED1 /* Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemark.swift; sourceTree = "<group>"; };
 		445BF4AE210C3D89000F3ED1 /* PlacemarkMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkMapViewModel.swift; sourceTree = "<group>"; };
-		445BF4B1210C3DE7000F3ED1 /* CLLocationCoordinate2D+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Init.swift"; sourceTree = "<group>"; };
 		445BF4B4210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkAnnotationView.swift; sourceTree = "<group>"; };
+		4477849A210DD2E000FE4812 /* AppMainInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainInteractorTests.swift; sourceTree = "<group>"; };
 		44FCBD6B210C418D00EBBD30 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		44FCBD71210C423E00EBBD30 /* CPCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CPCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FCBD77210C440600EBBD30 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		44FCBD7A210C441800EBBD30 /* CarList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CarList.storyboard; sourceTree = "<group>"; };
 		44FCBD86210C4B9E00EBBD30 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		44FCBD89210C4C8B00EBBD30 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		44FCBD8B210C4CBC00EBBD30 /* BaseMainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMainInteractor.swift; sourceTree = "<group>"; };
+		44FCBD8B210C4CBC00EBBD30 /* AppMainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainInteractor.swift; sourceTree = "<group>"; };
 		44FCBD8D210C4CF100EBBD30 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		44FCBD8F210C4DA500EBBD30 /* SceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneBuilder.swift; sourceTree = "<group>"; };
 		44FCBD96210C51C400EBBD30 /* CarListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListView.swift; sourceTree = "<group>"; };
 		44FCBD9B210C540800EBBD30 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		44FCBD9D210C541600EBBD30 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		44FCBDA3210C5C0200EBBD30 /* CarListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListCoordinator.swift; sourceTree = "<group>"; };
-		44FCBDA8210C5F5C00EBBD30 /* StubData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubData.swift; sourceTree = "<group>"; };
+		44FCBDA8210C5F5C00EBBD30 /* StubDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubDataProvider.swift; sourceTree = "<group>"; };
 		44FCBDAE210C610000EBBD30 /* PlacemarksNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarksNetworkWorker.swift; sourceTree = "<group>"; };
-		44FCBDB0210C617C00EBBD30 /* StubbedCarsNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubbedCarsNetworkWorker.swift; sourceTree = "<group>"; };
-		44FCBDB2210C629B00EBBD30 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		44FCBDB5210C633100EBBD30 /* AppTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTexts.swift; sourceTree = "<group>"; };
+		44FCBDB0210C617C00EBBD30 /* LocalPlacemarksNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPlacemarksNetworkWorker.swift; sourceTree = "<group>"; };
 		44FCBDBB210C6AAE00EBBD30 /* PersistentStorageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageWorker.swift; sourceTree = "<group>"; };
 		44FCBDBD210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPersistentStorageWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,10 +172,68 @@
 		4452C30E210CA8CB0040FD25 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
-				4452C30F210CA8E10040FD25 /* BaseCarListInteractor.swift */,
 				4452C310210CA8E10040FD25 /* CarListInteractor.swift */,
+				4452C30F210CA8E10040FD25 /* BaseCarListInteractor.swift */,
 			);
 			path = Interactors;
+			sourceTree = "<group>";
+		};
+		4452C334210D14F20040FD25 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				4452C335210D14FD0040FD25 /* MapViewPresenter.swift */,
+				4452C337210D150B0040FD25 /* BaseMapViewPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		4452C339210D15310040FD25 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				4452C33A210D15390040FD25 /* MapViewInteractor.swift */,
+				4452C33C210D15430040FD25 /* BaseMapViewInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		4452C33E210D1BD60040FD25 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				4452C33F210D1BE10040FD25 /* MapCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		4452C34D210DCEC60040FD25 /* NetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				445BF496210BB884000F3ED1 /* StubbedPlacemarksNetworkWorkerTests.swift */,
+			);
+			path = NetworkTests;
+			sourceTree = "<group>";
+		};
+		4452C34E210DCECE0040FD25 /* StubbedDataTests */ = {
+			isa = PBXGroup;
+			children = (
+				4452C349210DCC3E0040FD25 /* StubbedDataTests.swift */,
+			);
+			path = StubbedDataTests;
+			sourceTree = "<group>";
+		};
+		4452C34F210DCEDB0040FD25 /* StorageTests */ = {
+			isa = PBXGroup;
+			children = (
+				4452C34B210DCE240040FD25 /* StorageTests.swift */,
+			);
+			path = StorageTests;
+			sourceTree = "<group>";
+		};
+		4452C350210DCEFC0040FD25 /* MapScreenTests */ = {
+			isa = PBXGroup;
+			children = (
+				4452C351210DCF160040FD25 /* BaseMapInteractorTests.swift */,
+			);
+			path = MapScreenTests;
 			sourceTree = "<group>";
 		};
 		445BF473210BB883000F3ED1 = {
@@ -196,7 +272,12 @@
 		445BF495210BB884000F3ED1 /* CarpoolTests */ = {
 			isa = PBXGroup;
 			children = (
-				445BF496210BB884000F3ED1 /* CarpoolTests.swift */,
+				44778499210DD2D500FE4812 /* App */,
+				4452C350210DCEFC0040FD25 /* MapScreenTests */,
+				4452C34F210DCEDB0040FD25 /* StorageTests */,
+				4452C34E210DCECE0040FD25 /* StubbedDataTests */,
+				4452C34D210DCEC60040FD25 /* NetworkTests */,
+				4452C345210DC58F0040FD25 /* Info.plist */,
 			);
 			path = CarpoolTests;
 			sourceTree = "<group>";
@@ -204,7 +285,6 @@
 		445BF4A3210BB8B5000F3ED1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				44FCBDB4210C632900EBBD30 /* Localization */,
 				445BF4A1210BB8B1000F3ED1 /* locations.json */,
 				445BF488210BB884000F3ED1 /* Assets.xcassets */,
 			);
@@ -257,10 +337,11 @@
 		445BF4A8210C3CFE000F3ED1 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				44FCBD74210C439D00EBBD30 /* ViewControllers */,
+				4452C33E210D1BD60040FD25 /* Coordinators */,
+				4452C339210D15310040FD25 /* Interactors */,
+				4452C334210D14F20040FD25 /* Presenters */,
 				445BF4B3210C3E05000F3ED1 /* Views */,
 				445BF4AD210C3D77000F3ED1 /* ViewModels */,
-				445BF4B0210C3DB8000F3ED1 /* Helpers */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -268,7 +349,6 @@
 		445BF4A9210C3D40000F3ED1 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				44FCBD88210C4C7100EBBD30 /* ViewControllers */,
 				44FCBD85210C4B3C00EBBD30 /* Interactors */,
 				44FCBD76210C43F200EBBD30 /* Views */,
 				445BF4AA210C3D4D000F3ED1 /* Entities */,
@@ -292,21 +372,23 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		445BF4B0210C3DB8000F3ED1 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				445BF4B1210C3DE7000F3ED1 /* CLLocationCoordinate2D+Init.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		445BF4B3210C3E05000F3ED1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				44FCBD77210C440600EBBD30 /* Map.storyboard */,
 				445BF4B4210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift */,
+				4452C341210DAC890040FD25 /* ClusterAnnotationView.swift */,
+				44FCBD74210C439D00EBBD30 /* ViewControllers */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		44778499210DD2D500FE4812 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4477849A210DD2E000FE4812 /* AppMainInteractorTests.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		44FCBD68210C413F00EBBD30 /* Frameworks */ = {
@@ -321,6 +403,7 @@
 		44FCBD74210C439D00EBBD30 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4452C332210D14690040FD25 /* MapView.swift */,
 				445BF483210BB883000F3ED1 /* MapViewController.swift */,
 			);
 			path = ViewControllers;
@@ -339,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				4452C317210CDB400040FD25 /* Main.storyboard */,
+				44FCBD88210C4C7100EBBD30 /* ViewControllers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -357,7 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				44FCBD8D210C4CF100EBBD30 /* MainInteractor.swift */,
-				44FCBD8B210C4CBC00EBBD30 /* BaseMainInteractor.swift */,
+				44FCBD8B210C4CBC00EBBD30 /* AppMainInteractor.swift */,
 				4452C313210CA9B40040FD25 /* MainInteractorState.swift */,
 				4452C31D210CE7650040FD25 /* PlacemarkHandlerWrapper.swift */,
 			);
@@ -390,20 +474,11 @@
 		44FCBDA7210C5F4000EBBD30 /* NetworkWorkers */ = {
 			isa = PBXGroup;
 			children = (
-				44FCBDA8210C5F5C00EBBD30 /* StubData.swift */,
+				44FCBDA8210C5F5C00EBBD30 /* StubDataProvider.swift */,
 				44FCBDAE210C610000EBBD30 /* PlacemarksNetworkWorker.swift */,
-				44FCBDB0210C617C00EBBD30 /* StubbedCarsNetworkWorker.swift */,
-				44FCBDB2210C629B00EBBD30 /* NetworkError.swift */,
+				44FCBDB0210C617C00EBBD30 /* LocalPlacemarksNetworkWorker.swift */,
 			);
 			path = NetworkWorkers;
-			sourceTree = "<group>";
-		};
-		44FCBDB4210C632900EBBD30 /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-				44FCBDB5210C633100EBBD30 /* AppTexts.swift */,
-			);
-			path = Localization;
 			sourceTree = "<group>";
 		};
 		44FCBDB9210C68A500EBBD30 /* Presenters */ = {
@@ -522,6 +597,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4452C346210DC58F0040FD25 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,23 +608,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4452C342210DAC890040FD25 /* ClusterAnnotationView.swift in Sources */,
 				44FCBD8A210C4C8B00EBBD30 /* TabBarController.swift in Sources */,
 				44FCBD8E210C4CF100EBBD30 /* MainInteractor.swift in Sources */,
-				44FCBDB1210C617C00EBBD30 /* StubbedCarsNetworkWorker.swift in Sources */,
+				4452C336210D14FD0040FD25 /* MapViewPresenter.swift in Sources */,
+				44FCBDB1210C617C00EBBD30 /* LocalPlacemarksNetworkWorker.swift in Sources */,
 				44FCBD90210C4DA500EBBD30 /* SceneBuilder.swift in Sources */,
 				445BF484210BB883000F3ED1 /* MapViewController.swift in Sources */,
 				445BF480210BB883000F3ED1 /* AppDelegate.swift in Sources */,
 				445BF4AF210C3D89000F3ED1 /* PlacemarkMapViewModel.swift in Sources */,
-				44FCBDA9210C5F5C00EBBD30 /* StubData.swift in Sources */,
-				44FCBDB3210C629B00EBBD30 /* NetworkError.swift in Sources */,
+				44FCBDA9210C5F5C00EBBD30 /* StubDataProvider.swift in Sources */,
+				4452C340210D1BE10040FD25 /* MapCoordinator.swift in Sources */,
 				445BF4AC210C3D60000F3ED1 /* Placemark.swift in Sources */,
+				4452C333210D14690040FD25 /* MapView.swift in Sources */,
 				4452C2FB210C70BD0040FD25 /* CarListPresenter.swift in Sources */,
 				44FCBDBC210C6AAE00EBBD30 /* PersistentStorageWorker.swift in Sources */,
 				44FCBDA4210C5C0200EBBD30 /* CarListCoordinator.swift in Sources */,
 				4452C300210C71E00040FD25 /* PlacemarkListViewModel.swift in Sources */,
 				44FCBD87210C4B9E00EBBD30 /* AppCoordinator.swift in Sources */,
-				44FCBDB6210C633100EBBD30 /* AppTexts.swift in Sources */,
-				44FCBD8C210C4CBC00EBBD30 /* BaseMainInteractor.swift in Sources */,
+				4452C33D210D15430040FD25 /* BaseMapViewInteractor.swift in Sources */,
+				4452C338210D150B0040FD25 /* BaseMapViewPresenter.swift in Sources */,
+				44FCBD8C210C4CBC00EBBD30 /* AppMainInteractor.swift in Sources */,
+				4452C33B210D15390040FD25 /* MapViewInteractor.swift in Sources */,
 				4452C314210CA9B40040FD25 /* MainInteractorState.swift in Sources */,
 				44FCBDAF210C610000EBBD30 /* PlacemarksNetworkWorker.swift in Sources */,
 				44FCBD97210C51C400EBBD30 /* CarListView.swift in Sources */,
@@ -556,7 +637,6 @@
 				4452C311210CA8E20040FD25 /* BaseCarListInteractor.swift in Sources */,
 				4452C2FD210C70DA0040FD25 /* BaseCarListPresenter.swift in Sources */,
 				4452C316210CBB660040FD25 /* InMemoryStorage.swift in Sources */,
-				445BF4B2210C3DE7000F3ED1 /* CLLocationCoordinate2D+Init.swift in Sources */,
 				4452C306210C87310040FD25 /* CarListCell.swift in Sources */,
 				445BF4B5210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift in Sources */,
 				4452C312210CA8E20040FD25 /* CarListInteractor.swift in Sources */,
@@ -569,7 +649,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				445BF497210BB884000F3ED1 /* CarpoolTests.swift in Sources */,
+				4477849B210DD2E000FE4812 /* AppMainInteractorTests.swift in Sources */,
+				4452C34C210DCE240040FD25 /* StorageTests.swift in Sources */,
+				445BF497210BB884000F3ED1 /* StubbedPlacemarksNetworkWorkerTests.swift in Sources */,
+				4452C352210DCF160040FD25 /* BaseMapInteractorTests.swift in Sources */,
+				4452C34A210DCC3E0040FD25 /* StubbedDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,7 +811,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WMEZ5A4A5;
 				INFOPLIST_FILE = "$(SRCROOT)/Carpool/Supporting/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -746,7 +830,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WMEZ5A4A5;
 				INFOPLIST_FILE = "$(SRCROOT)/Carpool/Supporting/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -764,6 +848,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9WMEZ5A4A5;
 				INFOPLIST_FILE = CarpoolTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -773,7 +858,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dyrkabes.CarpoolTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Carpool.app/Carpool";
 			};
 			name = Debug;
@@ -784,6 +869,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9WMEZ5A4A5;
 				INFOPLIST_FILE = CarpoolTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -793,7 +879,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dyrkabes.CarpoolTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Carpool.app/Carpool";
 			};
 			name = Release;
