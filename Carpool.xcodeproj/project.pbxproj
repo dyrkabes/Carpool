@@ -352,11 +352,11 @@
 		445BF4A7210C3CF6000F3ED1 /* CarsList */ = {
 			isa = PBXGroup;
 			children = (
-				4452C30E210CA8CB0040FD25 /* Interactors */,
 				44FCBDA2210C5BF100EBBD30 /* Coordinators */,
-				4452C2FE210C71DA0040FD25 /* ViewModels */,
+				4452C30E210CA8CB0040FD25 /* Interactors */,
 				44FCBDB9210C68A500EBBD30 /* Presenters */,
 				44FCBD79210C440C00EBBD30 /* Views */,
+				4452C2FE210C71DA0040FD25 /* ViewModels */,
 			);
 			path = CarsList;
 			sourceTree = "<group>";
@@ -377,8 +377,8 @@
 			isa = PBXGroup;
 			children = (
 				44FCBD85210C4B3C00EBBD30 /* Interactors */,
-				44FCBD76210C43F200EBBD30 /* Views */,
 				445BF4AA210C3D4D000F3ED1 /* Entities */,
+				44FCBD76210C43F200EBBD30 /* Views */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";

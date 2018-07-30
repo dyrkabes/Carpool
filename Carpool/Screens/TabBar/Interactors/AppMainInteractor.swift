@@ -35,8 +35,8 @@ final class AppMainInteractor: AppDataWorker {
         networkWorker.loadPlacemarks(success: { [weak self] (placemarks) in
             guard let strongSelf = self else { return }
             strongSelf.state = .hasLoaded
-            strongSelf.savePlacemarks(placemarks)
             DispatchQueue.main.async {
+                strongSelf.savePlacemarks(placemarks)
                 strongSelf.requestHandlers.forEach { $0.success(placemarks) }
                 success(placemarks)
             }

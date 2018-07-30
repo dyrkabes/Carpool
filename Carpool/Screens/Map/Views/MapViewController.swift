@@ -81,7 +81,7 @@ extension MapViewController: MKMapViewDelegate {
             view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
         
-        view.clusteringIdentifier = PlacemarkAnnotationView.identifier
+        view.clusteringIdentifier = ClusterAnnotationView.identifier
         return view
     }
 }
@@ -92,21 +92,27 @@ extension MapViewController {
         mapView.delegate = self
         registerAnnotationViewClass()
         
+        // TODO: User's location
         let center = CLLocationCoordinate2DMake(53.54, 10.1)
-        let region = MKCoordinateRegionMakeWithDistance(center, 30000, 30000)
-        mapView.setRegion(region, animated: false)
+        centerMap(center: center, isAnimated: false)
         
         title = AppTexts.map
     }
     
     private func registerAnnotationViewClass() {
-        mapView.register(PlacemarkAnnotationView.self, forAnnotationViewWithReuseIdentifier: PlacemarkAnnotationView.identifier)
+        mapView.register(PlacemarkAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        mapView.register(ClusterAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
     }
     
     private func createLocationManager() -> CLLocationManager {
         let manager = CLLocationManager()
         manager.startUpdatingLocation()
         return manager
+    }
+    
+    private func centerMap(center: CLLocationCoordinate2D, isAnimated: Bool) {
+        let region = MKCoordinateRegionMakeWithDistance(center, 30000, 30000)
+        mapView.setRegion(region, animated: false)
     }
 }
 
