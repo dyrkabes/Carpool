@@ -24,6 +24,7 @@ final class MapViewController: BaseViewController, MapView {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        locationManager.requestWhenInUseAuthorization()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,7 +96,7 @@ extension MapViewController {
         let region = MKCoordinateRegionMakeWithDistance(center, 30000, 30000)
         mapView.setRegion(region, animated: false)
         
-        locationManager.requestWhenInUseAuthorization()
+        title = AppTexts.map
     }
     
     private func registerAnnotationViewClass() {

@@ -138,11 +138,11 @@ private class PlacemarksNetworkWorkerFake: PlacemarksNetworkWorker {
     func loadPlacemarks(success: @escaping PlacemarksSuccessHandler, failure: @escaping ErrorHandler) {
         loadPlacemarksCallsCount += 1
         if shouldSucceed {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
                 success([Placemark.empty])
             }
         } else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
                 failure(NetworkError.unknown)
             }
         }

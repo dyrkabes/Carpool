@@ -21,7 +21,6 @@ struct MapCoordinator: Coordinator {
     // MARK: - Public
     func start() -> UIViewController {
         let mapViewController = SceneBuilder.createMapViewController()
-        mapViewController.title = AppTexts.map
         
         let interactor = BaseMapViewInteractor(parentInteractor: parentInteractor)
         let presenter = BaseMapViewPresenter(view: mapViewController, interactor: interactor)

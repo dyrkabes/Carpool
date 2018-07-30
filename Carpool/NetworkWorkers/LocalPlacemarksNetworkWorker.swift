@@ -32,7 +32,7 @@ struct LocalPlacemarksNetworkWorker: PlacemarksNetworkWorker {
             return
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.8) {
             success(placemarks)
         }
     }

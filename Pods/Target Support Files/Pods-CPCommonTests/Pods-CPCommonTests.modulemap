@@ -1,0 +1,6 @@
+framework module Pods_CPCommonTests {
+  umbrella header "Pods-CPCommonTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

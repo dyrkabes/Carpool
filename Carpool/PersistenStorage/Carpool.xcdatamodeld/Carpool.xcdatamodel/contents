@@ -10,6 +10,11 @@
         <attribute name="vin" attributeType="String" syncable="YES"/>
         <attribute name="xCoordinate" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="yCoordinate" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="vin"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
         <element name="PlacemarkManaged" positionX="-54" positionY="-9" width="128" height="180"/>

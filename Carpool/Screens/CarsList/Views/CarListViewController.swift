@@ -109,11 +109,17 @@ extension CarListViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.estimatedRowHeight = 130
+        tableView.estimatedRowHeight = Constants.estimatedRowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         
         tableView.refreshControl = refreshControl
+        
+        title = AppTexts.list
     }
+}
+
+private enum Constants {
+    static let estimatedRowHeight: CGFloat = 120.0
 }
 
 //

@@ -8,23 +8,21 @@
 
 import Foundation
 import CoreData
+import CPCommon
 
 final class CoreDataStack {
     private let modelName: String
-//    private let storeType: CoreDataPersistentStoreType
+    private let storeType: CoreDataPersistentStoreType
     
     private lazy var documentDirectory: URL? = {
-        let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-        let storeName = modelName + ".sqlite"
-        let storeURL = documentDirectory?.appendingPathComponent(storeName)
-        return storeURL
+        return storeType.getUrl(modelName: modelName)
     }()
     
     lazy var context: NSManagedObjectContext = {
         return managedObjectContext
     }()
     
-    private lazy var maangedObjectModel: NSManagedObjectModel = {
+    private lazy var mangedObjectModel: NSManagedObjectModel = {
         guard let modelURL = Bundle.main.url(forResource: modelName, withExtension: "momd") else {
             fatalError("NSManagedObjectModel \(self.self) \(#function) could not initialized")
         }
@@ -37,10 +35,10 @@ final class CoreDataStack {
     }()
     
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: maangedObjectModel)
+        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: mangedObjectModel)
         
         do {
-            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType,
+            try coordinator.addPersistentStore(ofType: storeType.value,
                                                configurationName: nil,
                                                at: documentDirectory,
                                                options: nil)
@@ -58,7 +56,8 @@ final class CoreDataStack {
     }()
     
     // MARK: - Init
-    init(modelName: String) {
+    init(modelName: String, storeType: CoreDataPersistentStoreType) {
         self.modelName = modelName
+        self.storeType = storeType
     }
 }

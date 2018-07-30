@@ -10,5 +10,5 @@ import Foundation
 
 protocol PersistentStorageWorker {
     func getPlacemarks() -> [Placemark]
-    mutating func writePlacemarks(_ placemarks: [Placemark])
+    mutating func writePlacemarks(_ placemarks: [Placemark]) throws
 }

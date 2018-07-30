@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44417D40210F9B2900D64BAC /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44417D3F210F9B2800D64BAC /* CoreDataWorker.swift */; };
+		44417D42210F9BCC00D64BAC /* PlacemarkManaged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44417D41210F9BCC00D64BAC /* PlacemarkManaged.swift */; };
+		44417D47210F9F2100D64BAC /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44417D46210F9F2100D64BAC /* CoreDataTests.swift */; };
+		44417D49210F9F5600D64BAC /* CoreDataPersistentStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44417D48210F9F5600D64BAC /* CoreDataPersistentStoreType.swift */; };
 		4452C2FB210C70BD0040FD25 /* CarListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C2FA210C70BD0040FD25 /* CarListPresenter.swift */; };
 		4452C2FD210C70DA0040FD25 /* BaseCarListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C2FC210C70DA0040FD25 /* BaseCarListPresenter.swift */; };
 		4452C300210C71E00040FD25 /* PlacemarkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C2FF210C71E00040FD25 /* PlacemarkListViewModel.swift */; };
@@ -60,7 +64,6 @@
 		44FCBDAF210C610000EBBD30 /* PlacemarksNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDAE210C610000EBBD30 /* PlacemarksNetworkWorker.swift */; };
 		44FCBDB1210C617C00EBBD30 /* LocalPlacemarksNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDB0210C617C00EBBD30 /* LocalPlacemarksNetworkWorker.swift */; };
 		44FCBDBC210C6AAE00EBBD30 /* PersistentStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDBB210C6AAE00EBBD30 /* PersistentStorageWorker.swift */; };
-		44FCBDBE210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDBD210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift */; };
 		83B69AF0D3EF1FB4B1A604EC /* Pods_Carpool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43712416451CCCA2156A09E4 /* Pods_Carpool.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +93,10 @@
 
 /* Begin PBXFileReference section */
 		43712416451CCCA2156A09E4 /* Pods_Carpool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Carpool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44417D3F210F9B2800D64BAC /* CoreDataWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
+		44417D41210F9BCC00D64BAC /* PlacemarkManaged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkManaged.swift; sourceTree = "<group>"; };
+		44417D46210F9F2100D64BAC /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
+		44417D48210F9F5600D64BAC /* CoreDataPersistentStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPersistentStoreType.swift; sourceTree = "<group>"; };
 		4452C2FA210C70BD0040FD25 /* CarListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListPresenter.swift; sourceTree = "<group>"; };
 		4452C2FC210C70DA0040FD25 /* BaseCarListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCarListPresenter.swift; sourceTree = "<group>"; };
 		4452C2FF210C71E00040FD25 /* PlacemarkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkListViewModel.swift; sourceTree = "<group>"; };
@@ -147,7 +154,6 @@
 		44FCBDAE210C610000EBBD30 /* PlacemarksNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarksNetworkWorker.swift; sourceTree = "<group>"; };
 		44FCBDB0210C617C00EBBD30 /* LocalPlacemarksNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPlacemarksNetworkWorker.swift; sourceTree = "<group>"; };
 		44FCBDBB210C6AAE00EBBD30 /* PersistentStorageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageWorker.swift; sourceTree = "<group>"; };
-		44FCBDBD210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPersistentStorageWorker.swift; sourceTree = "<group>"; };
 		90803B8EECF025E3945B1B23 /* Pods-Carpool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carpool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Carpool/Pods-Carpool.debug.xcconfig"; sourceTree = "<group>"; };
 		BCD1543536E9695F59CDCEE6 /* Pods-Carpool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carpool.release.xcconfig"; path = "Pods/Target Support Files/Pods-Carpool/Pods-Carpool.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +179,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44417D43210F9EDA00D64BAC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				44417D46210F9F2100D64BAC /* CoreDataTests.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		4452C2FE210C71DA0040FD25 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +249,7 @@
 		4452C34F210DCEDB0040FD25 /* StorageTests */ = {
 			isa = PBXGroup;
 			children = (
+				44417D43210F9EDA00D64BAC /* CoreData */,
 				4452C34B210DCE240040FD25 /* InMemoryStorageTests.swift */,
 			);
 			path = StorageTests;
@@ -373,6 +388,7 @@
 			children = (
 				445BF4AB210C3D60000F3ED1 /* Placemark.swift */,
 				447784B7210E523300FE4812 /* VisualCondition.swift */,
+				44417D41210F9BCC00D64BAC /* PlacemarkManaged.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -408,8 +424,9 @@
 		447784EB210E589200FE4812 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				44417D3F210F9B2800D64BAC /* CoreDataWorker.swift */,
 				447784EC210E58A600FE4812 /* CoreDataStack.swift */,
-				44FCBDBD210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift */,
+				44417D48210F9F5600D64BAC /* CoreDataPersistentStoreType.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -670,13 +687,16 @@
 				44FCBDBC210C6AAE00EBBD30 /* PersistentStorageWorker.swift in Sources */,
 				44FCBDA4210C5C0200EBBD30 /* CarListCoordinator.swift in Sources */,
 				4452C300210C71E00040FD25 /* PlacemarkListViewModel.swift in Sources */,
+				44417D42210F9BCC00D64BAC /* PlacemarkManaged.swift in Sources */,
 				44FCBD87210C4B9E00EBBD30 /* AppCoordinator.swift in Sources */,
 				4452C33D210D15430040FD25 /* BaseMapViewInteractor.swift in Sources */,
 				4452C338210D150B0040FD25 /* BaseMapViewPresenter.swift in Sources */,
+				44417D49210F9F5600D64BAC /* CoreDataPersistentStoreType.swift in Sources */,
 				44FCBD8C210C4CBC00EBBD30 /* AppMainInteractor.swift in Sources */,
 				4452C33B210D15390040FD25 /* MapViewInteractor.swift in Sources */,
 				4452C314210CA9B40040FD25 /* MainInteractorState.swift in Sources */,
 				447784B8210E523300FE4812 /* VisualCondition.swift in Sources */,
+				44417D40210F9B2900D64BAC /* CoreDataWorker.swift in Sources */,
 				4477849D210E1DE700FE4812 /* AppImages.swift in Sources */,
 				447784BB210E53ED00FE4812 /* Carpool.xcdatamodeld in Sources */,
 				44FCBDAF210C610000EBBD30 /* PlacemarksNetworkWorker.swift in Sources */,
@@ -689,7 +709,6 @@
 				4452C306210C87310040FD25 /* CarListCell.swift in Sources */,
 				445BF4B5210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift in Sources */,
 				4452C312210CA8E20040FD25 /* CarListInteractor.swift in Sources */,
-				44FCBDBE210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift in Sources */,
 				4452C31E210CE7650040FD25 /* PlacemarkHandlerWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -700,6 +719,7 @@
 			files = (
 				4477849B210DD2E000FE4812 /* AppMainInteractorTests.swift in Sources */,
 				4452C34C210DCE240040FD25 /* InMemoryStorageTests.swift in Sources */,
+				44417D47210F9F2100D64BAC /* CoreDataTests.swift in Sources */,
 				445BF497210BB884000F3ED1 /* StubbedPlacemarksNetworkWorkerTests.swift in Sources */,
 				4452C352210DCF160040FD25 /* BaseMapInteractorTests.swift in Sources */,
 				4452C34A210DCC3E0040FD25 /* StubbedDataTests.swift in Sources */,

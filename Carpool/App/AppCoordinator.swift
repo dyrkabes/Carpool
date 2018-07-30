@@ -16,9 +16,7 @@ struct AppCoordinator: Coordinator {
         let tabBar = SceneBuilder.createTabBar()
         
         let networker = LocalPlacemarksNetworkWorker(placemarksData: StubDataProvider.locations.data)
-        let storageWorker = InMemoryStorage()
-        // TODO: Persist in core data
-//            CoreDataPersistentStorageWorker()
+        let storageWorker = CoreDataWorker(modelName: CPConstants.modelName, storeType: .SQLite)
         
         let tabBarInteractor = AppMainInteractor(networkWorker: networker, storageWorker: storageWorker)
         tabBar.setInteractor(tabBarInteractor)

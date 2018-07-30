@@ -17,7 +17,7 @@ struct InMemoryStorage: PersistentStorageWorker {
         return placemarks
     }
     
-    mutating func writePlacemarks(_ placemarks: [Placemark]) {
+    mutating func writePlacemarks(_ placemarks: [Placemark]) throws {
         self.placemarks = placemarks
     }
 }

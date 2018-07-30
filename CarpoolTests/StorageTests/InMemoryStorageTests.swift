@@ -15,7 +15,7 @@ class InMemoryStorageTests: XCTestCase {
         var inMemoryStorage = InMemoryStorage()
         
         // When
-        inMemoryStorage.writePlacemarks([])
+        try? inMemoryStorage.writePlacemarks([])
         
         // Then
         XCTAssertEqual(inMemoryStorage.getPlacemarks().count, 0)
@@ -26,7 +26,7 @@ class InMemoryStorageTests: XCTestCase {
         var inMemoryStorage = InMemoryStorage()
         
         // When
-        inMemoryStorage.writePlacemarks([Placemark.empty])
+        try? inMemoryStorage.writePlacemarks([Placemark.empty])
         
         // Then
         XCTAssertEqual(inMemoryStorage.getPlacemarks().count, 1)

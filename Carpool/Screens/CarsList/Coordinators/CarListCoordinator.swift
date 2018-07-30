@@ -17,7 +17,6 @@ struct CarListCoordinator: Coordinator {
     
     func start() -> UIViewController {
         let carListViewController = SceneBuilder.createCarListViewController()
-        carListViewController.title = AppTexts.list
         
         let carListInteractor = BaseCarListInteractor(parentInteractor: parentInteractor)
         let carListPresenter = BaseCarListPresenter(view: carListViewController, interactor: carListInteractor)

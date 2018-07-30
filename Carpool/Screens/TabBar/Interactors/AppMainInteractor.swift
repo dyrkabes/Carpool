@@ -35,12 +35,17 @@ final class AppMainInteractor: AppDataWorker {
         networkWorker.loadPlacemarks(success: { [weak self] (placemarks) in
             guard let strongSelf = self else { return }
             strongSelf.state = .hasLoaded
-            strongSelf.storageWorker.writePlacemarks(placemarks)
-            strongSelf.requestHandlers.forEach { $0.success(placemarks) }
-            success(placemarks)
+            strongSelf.savePlacemarks(placemarks)
+            DispatchQueue.main.async {
+                strongSelf.requestHandlers.forEach { $0.success(placemarks) }
+                success(placemarks)
+            }
             }, failure: { [weak self] error in
-                self?.requestHandlers.forEach { $0.failure(error) }
-                failure(error)
+                DispatchQueue.main.async {
+                    self?.requestHandlers.forEach { $0.failure(error) }
+                    failure(error)
+                }
+                
         })
     }
     
@@ -56,3 +61,15 @@ final class AppMainInteractor: AppDataWorker {
         }
     }
 }
+
+// MARK: - Helper functions
+extension AppMainInteractor {
+    private func savePlacemarks(_ placemarks: [Placemark]) {
+        do {
+            try storageWorker.writePlacemarks(placemarks)
+        } catch {
+            print("**** Error saving to persistent storage")
+        }
+    }
+}
+

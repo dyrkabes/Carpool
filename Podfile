@@ -14,3 +14,8 @@ target 'CPCommon' do
     project 'CPCommon/CPCommon.xcodeproj'
     pod 'MBProgressHUD', '~> 1.1.0'
 end
+
+target 'CPCommonTests' do
+    project 'CPCommon/CPCommon.xcodeproj'
+    pod 'MBProgressHUD', '~> 1.1.0'
+end
