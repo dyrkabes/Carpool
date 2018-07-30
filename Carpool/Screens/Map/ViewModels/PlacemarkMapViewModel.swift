@@ -6,9 +6,13 @@
 //  Copyright © 2018 Pavel Stepanov. All rights reserved.
 //
 
-import Foundation
 import MapKit
 
+/**
+ View model for displaying annotations on the map.
+ 
+ - Discussion: I decided not to include vin as I consider it as a more private information.
+ */
 final class PlacemarkMapViewModel: NSObject, MKAnnotation {
     let address: String
     let coordinate: CLLocationCoordinate2D
@@ -17,13 +21,12 @@ final class PlacemarkMapViewModel: NSObject, MKAnnotation {
     let fuel: Int
     let interior: VisualCondition
     let name: String
-    let vin: String
     
     var title: String? {
         return name
     }
     
-    init(address: String, coordinates: CGPoint, engineType: String, exterior: VisualCondition, fuel: Int, interior: VisualCondition, name: String, vin: String) {
+    init(address: String, coordinates: CGPoint, engineType: String, exterior: VisualCondition, fuel: Int, interior: VisualCondition, name: String) {
         self.address = address
         self.coordinate = CLLocationCoordinate2D(coordinates: coordinates)
         self.engineType = engineType
@@ -31,7 +34,6 @@ final class PlacemarkMapViewModel: NSObject, MKAnnotation {
         self.fuel = fuel
         self.interior = interior
         self.name = name
-        self.vin = vin
     }
 }
 

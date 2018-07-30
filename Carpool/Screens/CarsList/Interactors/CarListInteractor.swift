@@ -9,7 +9,7 @@
 import Foundation
 
 protocol CarListInteractor: class {
-    init(parentInteractor: MainInteractor)
+    init(parentInteractor: AppDataWorker)
     
     func getPlacemarks() -> [Placemark]
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct AppImages {
+enum AppImages {
     static let car: UIImage? = UIImage(named: "Car")
     static let carList: UIImage? = UIImage(named: "CarList")
     static let engine: UIImage? = UIImage(named: "Engine")

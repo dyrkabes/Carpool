@@ -9,9 +9,9 @@
 import CPCommon
 
 struct CarListCoordinator: Coordinator {
-    private let parentInteractor: MainInteractor
+    private let parentInteractor: AppDataWorker
     
-    init(parentInteractor interactor: MainInteractor) {
+    init(parentInteractor interactor: AppDataWorker) {
         self.parentInteractor = interactor
     }
     
@@ -24,7 +24,6 @@ struct CarListCoordinator: Coordinator {
         carListViewController.setPresenter(carListPresenter)
         
         let navigationController = UINavigationController(rootViewController: carListViewController)
-        navigationController.title = AppTexts.list
         
         navigationController.tabBarItem = UITabBarItem(title: AppTexts.list, image: AppImages.carList, tag: 0)
         

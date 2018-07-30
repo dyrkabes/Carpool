@@ -10,13 +10,13 @@ import Foundation
 
 final class BaseCarListInteractor: CarListInteractor {
     // MARK: - Injected
-    private unowned var parentInteractor: MainInteractor
+    private unowned var parentInteractor: AppDataWorker
     
     // MARK: - Instance properties
     fileprivate var placemarks: [Placemark] = []
     
     // MARK: - Init
-    init(parentInteractor: MainInteractor) {
+    init(parentInteractor: AppDataWorker) {
         self.parentInteractor = parentInteractor
     }
     

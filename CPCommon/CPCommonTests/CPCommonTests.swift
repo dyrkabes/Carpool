@@ -11,6 +11,7 @@ import XCTest
 
 class CPCommonTests: XCTestCase {
     func testIdentifiable() {
+        // Given and then :)
         XCTAssertEqual(IdentifiableClass.identifier, "IdentifiableClass")
     }
 }

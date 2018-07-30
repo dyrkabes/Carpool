@@ -11,5 +11,5 @@ import CPCommon
 protocol MapView: AppViewController {
     func setPresenter(_ presenter: MapViewPresenter)
     
-    func reload(withViewData viewData: [PlacemarkMapViewModel])
+    func populateMap(withViewData viewData: [PlacemarkMapViewModel])
 }

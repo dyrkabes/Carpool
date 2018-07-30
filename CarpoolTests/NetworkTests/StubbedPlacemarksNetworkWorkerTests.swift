@@ -19,6 +19,7 @@ class LocalPlacemarksNetworkWorkerTests: XCTestCase {
     }
     
     func testLoadPlacemarks() {
+        // Given
         localPlacemarkNetworkWorker = LocalPlacemarksNetworkWorker(placemarksData: StubDataProvider.locations.data)
         
         var placemarks: [Placemark] = []
@@ -26,6 +27,7 @@ class LocalPlacemarksNetworkWorkerTests: XCTestCase {
         
         let expectation = self.expectation(description: "NetworkResponse")
         
+        // When
         localPlacemarkNetworkWorker.loadPlacemarks(success: { (receivedPlacemarks) in
             placemarks = receivedPlacemarks
             expectation.fulfill()
@@ -36,11 +38,13 @@ class LocalPlacemarksNetworkWorkerTests: XCTestCase {
         
         waitForExpectations(timeout: 1.5, handler: nil)
         
+        // Then
         XCTAssertEqual(placemarks.count, 423)
         XCTAssertNil(fetchedError)
     }
     
-    func testLoadTreasurePlacemarks() {
+    func testEmptyData() {
+        // Given
         localPlacemarkNetworkWorker = LocalPlacemarksNetworkWorker(placemarksData: Data())
         
         var placemarks: [Placemark] = []
@@ -48,6 +52,7 @@ class LocalPlacemarksNetworkWorkerTests: XCTestCase {
         
         let expectation = self.expectation(description: "NetworkResponse")
         
+        // When
         localPlacemarkNetworkWorker.loadPlacemarks(success: { (receivedPlacemarks) in
             placemarks = receivedPlacemarks
             expectation.fulfill()
@@ -58,15 +63,15 @@ class LocalPlacemarksNetworkWorkerTests: XCTestCase {
         
         waitForExpectations(timeout: 1.5, handler: nil)
         
+        // Then
         XCTAssertEqual(placemarks.count, 0)
-        
         let networkError = fetchedError as? NetworkError
-        
         XCTAssertNotNil(networkError)
         XCTAssertEqual(networkError, NetworkError.parsingFailure)
     }
     
     func testLoadNoData() {
+        // Given
         localPlacemarkNetworkWorker = LocalPlacemarksNetworkWorker(placemarksData: nil)
         
         var placemarks: [Placemark] = []
@@ -74,6 +79,7 @@ class LocalPlacemarksNetworkWorkerTests: XCTestCase {
         
         let expectation = self.expectation(description: "NetworkResponse")
         
+        // When
         localPlacemarkNetworkWorker.loadPlacemarks(success: { (receivedPlacemarks) in
             placemarks = receivedPlacemarks
             expectation.fulfill()
@@ -84,10 +90,10 @@ class LocalPlacemarksNetworkWorkerTests: XCTestCase {
         
         waitForExpectations(timeout: 1.5, handler: nil)
         
+        // Then
         XCTAssertEqual(placemarks.count, 0)
         
         let networkError = fetchedError as? NetworkError
-        
         XCTAssertNotNil(networkError)
         XCTAssertEqual(networkError, NetworkError.unknown)
     }

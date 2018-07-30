@@ -1,3 +1,4 @@
+/* Presented in AppTexts */
 // parsingFailure
 "Parsing failure" = "Ошибка парсинга";
 // unknownError
@@ -7,7 +8,11 @@
 // map
 "Map" = "Карта";
 
+/* Not presented in AppTexts */
 "Interior:" = "Интерьер:";
 "Exterior:" = "Экстерьер:";
 "Address:" = "Адрес:";
 "Name:" = "Имя:";
+
+"good" = "Хорошее";
+"unacceptable" = "Неудовлетворительное";

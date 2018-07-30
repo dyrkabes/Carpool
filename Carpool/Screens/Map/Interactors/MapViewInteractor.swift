@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MapViewInteractor: class {
-    init(parentInteractor interactor: MainInteractor)
+    init(parentInteractor interactor: AppDataWorker)
     
     func getData(success: @escaping PlacemarksSuccessHandler, failure: @escaping ErrorHandler)
     func loadDataFromNetwork(success: @escaping PlacemarksSuccessHandler, failure: @escaping ErrorHandler)

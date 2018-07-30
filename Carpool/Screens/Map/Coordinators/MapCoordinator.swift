@@ -11,23 +11,26 @@ import CPCommon
 /// Creates map module.
 struct MapCoordinator: Coordinator {
     // MARK: - Injected
-    private let parentInteractor: MainInteractor
+    private let parentInteractor: AppDataWorker
     
     // MARK: - Init
-    init(parentInteractor interactor: MainInteractor) {
+    init(parentInteractor interactor: AppDataWorker) {
         self.parentInteractor = interactor
     }
     
     // MARK: - Public
     func start() -> UIViewController {
         let mapViewController = SceneBuilder.createMapViewController()
+        mapViewController.title = AppTexts.map
         
         let interactor = BaseMapViewInteractor(parentInteractor: parentInteractor)
         let presenter = BaseMapViewPresenter(view: mapViewController, interactor: interactor)
         mapViewController.setPresenter(presenter)
         
-        mapViewController.tabBarItem = UITabBarItem(title: AppTexts.map, image: AppImages.map, tag: 1)
+        let navigationController = UINavigationController(rootViewController: mapViewController)
         
-        return mapViewController
+        navigationController.tabBarItem = UITabBarItem(title: AppTexts.map, image: AppImages.map, tag: 1)
+        
+        return navigationController
     }
 }

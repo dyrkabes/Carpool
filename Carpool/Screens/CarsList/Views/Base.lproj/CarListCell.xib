@@ -13,11 +13,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CarListCell" customModule="Carpool" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hIi-Bf-7mS" userLabel="InnerContentView">
-                    <rect key="frame" x="4" y="0.0" width="367" height="100"/>
+                    <rect key="frame" x="4" y="0.0" width="367" height="102"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNc-43-hMR">
                             <rect key="frame" x="68" y="4" width="41" height="16.5"/>
@@ -155,6 +155,7 @@
                         <constraint firstAttribute="trailing" secondItem="5p8-b5-Xid" secondAttribute="trailing" id="25L-Z9-uho"/>
                         <constraint firstItem="gSK-p6-5JT" firstAttribute="top" secondItem="VRY-r7-hoX" secondAttribute="bottom" constant="3" id="4xv-UQ-FoG"/>
                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lT8-gi-GXP" secondAttribute="bottom" constant="6" id="7ZJ-Xy-xxv"/>
+                        <constraint firstItem="oei-lb-VeU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VNc-43-hMR" secondAttribute="trailing" priority="999" constant="12" id="9Ic-iJ-vU6"/>
                         <constraint firstItem="5p8-b5-Xid" firstAttribute="top" secondItem="0f0-If-Xcv" secondAttribute="bottom" constant="4" id="Anc-Nf-81k"/>
                         <constraint firstItem="6k9-AW-dg9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MSv-fJ-Lmr" secondAttribute="trailing" constant="12" id="Aof-qb-HER"/>
                         <constraint firstItem="0f0-If-Xcv" firstAttribute="leading" secondItem="hIi-Bf-7mS" secondAttribute="leading" constant="4" id="CsC-ej-wfy"/>
@@ -168,6 +169,7 @@
                         <constraint firstItem="MSv-fJ-Lmr" firstAttribute="leading" secondItem="5cW-P1-UgR" secondAttribute="leading" id="Pls-kN-PjE"/>
                         <constraint firstItem="MSv-fJ-Lmr" firstAttribute="leading" secondItem="gSK-p6-5JT" secondAttribute="trailing" constant="12" id="RHI-Cf-803"/>
                         <constraint firstItem="VNc-43-hMR" firstAttribute="top" secondItem="0f0-If-Xcv" secondAttribute="top" id="T7j-io-rrk"/>
+                        <constraint firstItem="5cW-P1-UgR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VRY-r7-hoX" secondAttribute="trailing" priority="999" constant="12" id="TRe-A7-ikH"/>
                         <constraint firstItem="5cW-P1-UgR" firstAttribute="leading" secondItem="oei-lb-VeU" secondAttribute="leading" id="Wrs-Yf-Hbx"/>
                         <constraint firstItem="lT8-gi-GXP" firstAttribute="leading" secondItem="iGT-yw-jcE" secondAttribute="trailing" constant="8.5" id="Ygy-t9-Efs"/>
                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iGT-yw-jcE" secondAttribute="bottom" constant="6" id="bbY-UX-mTt"/>
@@ -193,7 +195,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="hIi-Bf-7mS" secondAttribute="trailing" constant="4" id="A5i-m0-1I5"/>
                 <constraint firstItem="hIi-Bf-7mS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="Bm0-rY-TgD"/>
-                <constraint firstAttribute="bottom" secondItem="hIi-Bf-7mS" secondAttribute="bottom" constant="10" id="a6I-ef-1Fn"/>
+                <constraint firstAttribute="bottom" secondItem="hIi-Bf-7mS" secondAttribute="bottom" constant="4" id="a6I-ef-1Fn"/>
                 <constraint firstItem="hIi-Bf-7mS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ugO-oh-nE4"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

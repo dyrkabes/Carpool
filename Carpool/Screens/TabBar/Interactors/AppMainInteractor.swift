@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class AppMainInteractor: MainInteractor {
+final class AppMainInteractor: AppDataWorker {
     // MARK: - Injected
     private var networkWorker: PlacemarksNetworkWorker
     private var storageWorker: PersistentStorageWorker

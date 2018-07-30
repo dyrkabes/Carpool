@@ -13,10 +13,10 @@ final class BaseMapViewInteractor: MapViewInteractor {
     private var placemarks: [Placemark] = []
     
     // MARK: - Injected
-    private unowned var parentInteractor: MainInteractor
+    private unowned var parentInteractor: AppDataWorker
     
     // MARK: - Init
-    required init(parentInteractor interactor: MainInteractor) {
+    required init(parentInteractor interactor: AppDataWorker) {
         self.parentInteractor = interactor
     }
     

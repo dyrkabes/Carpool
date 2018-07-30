@@ -8,9 +8,15 @@
       location = "group:CPCommon/CPCommon.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:/Users/pavelstepanov/Development/Carpool/README.md">
+      location = "container:README.md">
    </FileRef>
    <FileRef
-      location = "group:../../../../Applications/LICENSE.md">
+      location = "container:LICENSE.md">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Carpool.xcodeproj">
    </FileRef>
 </Workspace>

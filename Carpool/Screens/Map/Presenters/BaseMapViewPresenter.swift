@@ -25,7 +25,7 @@ final class BaseMapViewPresenter: MapViewPresenter {
         interactor.getData(success: { [weak self] (placemarks) in
             guard let strongSelf = self else { return }
             strongSelf.view.finishLoading()
-            strongSelf.view.reload(withViewData: placemarks.map { strongSelf.getViewModel(forPlacemark: $0) })
+            strongSelf.view.populateMap(withViewData: placemarks.map { strongSelf.getViewModel(forPlacemark: $0) })
         }) { [weak self] (error) in
             self?.view.finishLoading()
             self?.view.showError(error: error)
@@ -36,7 +36,7 @@ final class BaseMapViewPresenter: MapViewPresenter {
         interactor.loadDataFromNetwork(success: { [weak self] (placemarks) in
             guard let strongSelf = self else { return }
             strongSelf.view.finishLoading()
-            strongSelf.view.reload(withViewData: placemarks.map { strongSelf.getViewModel(forPlacemark: $0) })
+            strongSelf.view.populateMap(withViewData: placemarks.map { strongSelf.getViewModel(forPlacemark: $0) })
         }) { [weak self] (error) in
             self?.view.finishLoading()
             self?.view.showError(error: error)
@@ -44,7 +44,7 @@ final class BaseMapViewPresenter: MapViewPresenter {
     }
 }
 
-// MARK: - Private func
+// MARK: - Helpers
 extension BaseMapViewPresenter {
     private func getViewModel(forPlacemark placemark: Placemark) -> PlacemarkMapViewModel {
         return PlacemarkMapViewModel(address: placemark.address,
@@ -53,7 +53,6 @@ extension BaseMapViewPresenter {
                                      exterior: placemark.exterior,
                                      fuel: placemark.fuel,
                                      interior: placemark.interior,
-                                     name: placemark.name,
-                                     vin: placemark.vin)
+                                     name: placemark.name)
     }
 }

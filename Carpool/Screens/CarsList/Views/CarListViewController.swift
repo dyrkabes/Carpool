@@ -37,7 +37,13 @@ final class CarListViewController: BaseViewController, CarListView {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.getPlacemarks()
+        getData()
+        subscribeToEnterForeground()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        unsubscribe()
     }
     
     // MARK: - Public func
@@ -45,28 +51,31 @@ final class CarListViewController: BaseViewController, CarListView {
         self.presenter = presenter
     }
     
+    override func finishLoading() {
+        super.finishLoading()
+        refreshControl.endRefreshing()
+    }
     
     func reloadData() {
         tableView.reloadData()
     }
     
+    @objc private func getData() {
+        presenter.getPlacemarks()
+    }
+    
     // MARK: - Actions
     @objc private func handleRefresh(_ refreshControl: UIRefreshControl) {
-        presenter.getPlacemarks() // TODO: Implement
+        presenter.reloadData()
     }
-}
-
-// MARK: - Private func
-extension CarListViewController {
-    private func setupView() {
-        let nib = UINib(nibName: CarListCell.identifier, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: CarListCell.identifier)
-        
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        tableView.estimatedRowHeight = 130
-        tableView.rowHeight = UITableViewAutomaticDimension
+    
+    // MARK: - Subscriptions
+    private func subscribeToEnterForeground() {
+        NotificationCenter.default.addObserver(self, selector: #selector(getData), name: .UIApplicationWillEnterForeground, object: nil)
+    }
+    
+    private func unsubscribe() {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -90,6 +99,23 @@ extension CarListViewController: UITableViewDataSource, UITableViewDelegate {
         return UIView()
     }
 }
+
+// MARK: - UI Helpers
+extension CarListViewController {
+    private func setupView() {
+        let nib = UINib(nibName: CarListCell.identifier, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: CarListCell.identifier)
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        tableView.estimatedRowHeight = 130
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        tableView.refreshControl = refreshControl
+    }
+}
+
 //
 //// MARK: - Searching
 //extension ProductsListViewController: UISearchResultsUpdating {

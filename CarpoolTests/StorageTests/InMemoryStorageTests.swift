@@ -1,5 +1,5 @@
 //
-//  StorageTests.swift
+//  InMemoryStorageTests.swift
 //  CarpoolTests
 //
 //  Created by Pavel Stepanov on 29/07/2018.
@@ -9,14 +9,26 @@
 import XCTest
 @testable import Carpool
 
-class StorageTests: XCTestCase {
-    func testInMemoryStorage() {
+class InMemoryStorageTests: XCTestCase {
+    func testWriteEmptyArray() {
+        // Given
         var inMemoryStorage = InMemoryStorage()
+        
+        // When
         inMemoryStorage.writePlacemarks([])
         
+        // Then
         XCTAssertEqual(inMemoryStorage.getPlacemarks().count, 0)
+    }
+    
+    func testWriteOneElement() {
+        // Given
+        var inMemoryStorage = InMemoryStorage()
         
+        // When
         inMemoryStorage.writePlacemarks([Placemark.empty])
+        
+        // Then
         XCTAssertEqual(inMemoryStorage.getPlacemarks().count, 1)
     }
 }

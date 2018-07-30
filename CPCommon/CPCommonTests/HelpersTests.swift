@@ -11,10 +11,11 @@ import XCTest
 
 final class HelperTests: XCTestCase {
     func testFileDataLoader() {
+        // Given
         let dataLoader = FileDataLoader()
-        
         let bundle = Bundle(for: type(of: self))
         
+        // Then
         XCTAssertNotNil(dataLoader.loadFromJSONFile("locations", bundle: bundle))
         XCTAssertNil(dataLoader.loadFromJSONFile("whatIsLifeAnswer", bundle: bundle))
     }

@@ -10,7 +10,7 @@ import UIKit
 
 fileprivate extension UIStoryboard {
     static var main: UIStoryboard {
-        return UIStoryboard(name: "Main", bundle: nil)
+        return UIStoryboard(name: "TabBar", bundle: nil)
     }
     
     static var carList: UIStoryboard {

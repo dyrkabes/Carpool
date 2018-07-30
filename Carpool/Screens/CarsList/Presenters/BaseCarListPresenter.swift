@@ -35,6 +35,8 @@ class BaseCarListPresenter: CarListPresenter {
     }
     
     func reloadData() {
+        view.startLoading()
+        
         interactor.reloadData(success: { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.view.finishLoading()
@@ -59,7 +61,7 @@ class BaseCarListPresenter: CarListPresenter {
     }
 }
 
-// MARK: - Private func
+// MARK: - Helpers 
 extension BaseCarListPresenter {
     private func getPlacemarkListViewModel(fromPlacemark placemark: Placemark) -> PlacemarkListViewModel {
         return PlacemarkListViewModel(address: placemark.address,
@@ -67,8 +69,7 @@ extension BaseCarListPresenter {
                                       exterior: placemark.exterior,
                                       fuel: placemark.fuel,
                                       interior: placemark.interior,
-                                      name: placemark.name,
-                                      vin: placemark.vin)
+                                      name: placemark.name)
     }
 }
 

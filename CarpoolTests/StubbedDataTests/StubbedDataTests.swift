@@ -11,8 +11,10 @@ import XCTest
 
 class StubbedDataTests: XCTestCase {
     func testStubbedData() {
+        // Given
         let locations = StubDataProvider.locations
         
+        // Then
         XCTAssertEqual(locations.fileName, "locations")
         XCTAssertNotNil(locations.data)
     }

@@ -7,31 +7,27 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 open class BaseViewController: UIViewController, AppViewController {
-    public func startLoading() {
-        print("Start loading")
+    open func startLoading() {
+        let progressHUD = MBProgressHUD.showAdded(to: destinationView(withNavBar: true), animated: true)
+        progressHUD.isUserInteractionEnabled = false
     }
     
-    public func finishLoading() {
-        print("End loading")
+    open func finishLoading() {
+        MBProgressHUD.hide(for: destinationView(withNavBar: true), animated: false)
     }
     
     public func showError(error: Error) {
-        
+        // TODO: Implement
     }
-}
-
-extension BaseViewController {
-//    public func startLoading() {
-//        //
-//    }
-//    
-//    public func finishLoading() {
-//        //
-//    }
-//    
-//    public func showError(error: Error) {
-//        
-//    }
+    
+    fileprivate func destinationView(withNavBar navBar: Bool) -> UIView {
+        if navBar, let navigationControllerView = navigationController?.view {
+            return navigationControllerView
+        } else {
+            return view
+        }
+    }
 }

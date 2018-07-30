@@ -8,18 +8,11 @@
 
 import Foundation
 
-extension UIButton {
-    override open func awakeFromNib() {
-        super.awakeFromNib()
-        setLocalized()
-    }
-    
-    func setLocalized() {
-        let title = self.title(for: .normal)?.localized()
-        self.setTitle(title, for: .normal)
-    }
-}
-
+/**
+ Set of extensions to localize
+ 
+ - Discussion: For UI components with attributedText another localization function should be implemented.
+ */
 extension UILabel {
     override open func awakeFromNib() {
         super.awakeFromNib()
@@ -28,17 +21,6 @@ extension UILabel {
     
     func setLocalized() {
         self.text = self.text?.localized()
-    }
-}
-
-extension UIBarButtonItem {
-    override open func awakeFromNib() {
-        super.awakeFromNib()
-        setLocalized()
-    }
-    
-    func setLocalized() {
-        self.title = self.title?.localized()
     }
 }
 

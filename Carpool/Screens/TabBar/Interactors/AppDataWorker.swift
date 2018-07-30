@@ -1,5 +1,5 @@
 //
-//  TabBarInteractor.swift
+//  AppDataWorker.swift
 //  Carpool
 //
 //  Created by Pavel Stepanov on 28/07/2018.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// Is responsible for getting and loading data.
-protocol MainInteractor: class {
+protocol AppDataWorker: class {
     /// Gets data from the persistent storage.
     func getData(success: @escaping PlacemarksSuccessHandler, failure: @escaping ErrorHandler)
     

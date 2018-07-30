@@ -15,7 +15,7 @@
 		4452C312210CA8E20040FD25 /* CarListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C310210CA8E10040FD25 /* CarListInteractor.swift */; };
 		4452C314210CA9B40040FD25 /* MainInteractorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C313210CA9B40040FD25 /* MainInteractorState.swift */; };
 		4452C316210CBB660040FD25 /* InMemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C315210CBB660040FD25 /* InMemoryStorage.swift */; };
-		4452C318210CDB400040FD25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4452C317210CDB400040FD25 /* Main.storyboard */; };
+		4452C318210CDB400040FD25 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4452C317210CDB400040FD25 /* TabBar.storyboard */; };
 		4452C31E210CE7650040FD25 /* PlacemarkHandlerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C31D210CE7650040FD25 /* PlacemarkHandlerWrapper.swift */; };
 		4452C333210D14690040FD25 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C332210D14690040FD25 /* MapView.swift */; };
 		4452C336210D14FD0040FD25 /* MapViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C335210D14FD0040FD25 /* MapViewPresenter.swift */; };
@@ -24,9 +24,8 @@
 		4452C33D210D15430040FD25 /* BaseMapViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C33C210D15430040FD25 /* BaseMapViewInteractor.swift */; };
 		4452C340210D1BE10040FD25 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C33F210D1BE10040FD25 /* MapCoordinator.swift */; };
 		4452C342210DAC890040FD25 /* ClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C341210DAC890040FD25 /* ClusterAnnotationView.swift */; };
-		4452C346210DC58F0040FD25 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4452C345210DC58F0040FD25 /* Info.plist */; };
 		4452C34A210DCC3E0040FD25 /* StubbedDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C349210DCC3E0040FD25 /* StubbedDataTests.swift */; };
-		4452C34C210DCE240040FD25 /* StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C34B210DCE240040FD25 /* StorageTests.swift */; };
+		4452C34C210DCE240040FD25 /* InMemoryStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C34B210DCE240040FD25 /* InMemoryStorageTests.swift */; };
 		4452C352210DCF160040FD25 /* BaseMapInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C351210DCF160040FD25 /* BaseMapInteractorTests.swift */; };
 		445BF480210BB883000F3ED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF47F210BB883000F3ED1 /* AppDelegate.swift */; };
 		445BF482210BB883000F3ED1 /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF481210BB883000F3ED1 /* CarListViewController.swift */; };
@@ -52,7 +51,7 @@
 		44FCBD87210C4B9E00EBBD30 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD86210C4B9E00EBBD30 /* AppCoordinator.swift */; };
 		44FCBD8A210C4C8B00EBBD30 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD89210C4C8B00EBBD30 /* TabBarController.swift */; };
 		44FCBD8C210C4CBC00EBBD30 /* AppMainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD8B210C4CBC00EBBD30 /* AppMainInteractor.swift */; };
-		44FCBD8E210C4CF100EBBD30 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD8D210C4CF100EBBD30 /* MainInteractor.swift */; };
+		44FCBD8E210C4CF100EBBD30 /* AppDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD8D210C4CF100EBBD30 /* AppDataWorker.swift */; };
 		44FCBD90210C4DA500EBBD30 /* SceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD8F210C4DA500EBBD30 /* SceneBuilder.swift */; };
 		44FCBD97210C51C400EBBD30 /* CarListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD96210C51C400EBBD30 /* CarListView.swift */; };
 		44FCBD9C210C541600EBBD30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 44FCBD9E210C541600EBBD30 /* InfoPlist.strings */; };
@@ -62,6 +61,7 @@
 		44FCBDB1210C617C00EBBD30 /* LocalPlacemarksNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDB0210C617C00EBBD30 /* LocalPlacemarksNetworkWorker.swift */; };
 		44FCBDBC210C6AAE00EBBD30 /* PersistentStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDBB210C6AAE00EBBD30 /* PersistentStorageWorker.swift */; };
 		44FCBDBE210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBDBD210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift */; };
+		83B69AF0D3EF1FB4B1A604EC /* Pods_Carpool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43712416451CCCA2156A09E4 /* Pods_Carpool.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +89,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		43712416451CCCA2156A09E4 /* Pods_Carpool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Carpool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4452C2FA210C70BD0040FD25 /* CarListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListPresenter.swift; sourceTree = "<group>"; };
 		4452C2FC210C70DA0040FD25 /* BaseCarListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCarListPresenter.swift; sourceTree = "<group>"; };
 		4452C2FF210C71E00040FD25 /* PlacemarkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkListViewModel.swift; sourceTree = "<group>"; };
@@ -97,7 +98,7 @@
 		4452C310210CA8E10040FD25 /* CarListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarListInteractor.swift; sourceTree = "<group>"; };
 		4452C313210CA9B40040FD25 /* MainInteractorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorState.swift; sourceTree = "<group>"; };
 		4452C315210CBB660040FD25 /* InMemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryStorage.swift; sourceTree = "<group>"; };
-		4452C317210CDB400040FD25 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4452C317210CDB400040FD25 /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		4452C31D210CE7650040FD25 /* PlacemarkHandlerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkHandlerWrapper.swift; sourceTree = "<group>"; };
 		4452C332210D14690040FD25 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		4452C335210D14FD0040FD25 /* MapViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewPresenter.swift; sourceTree = "<group>"; };
@@ -108,7 +109,7 @@
 		4452C341210DAC890040FD25 /* ClusterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterAnnotationView.swift; sourceTree = "<group>"; };
 		4452C345210DC58F0040FD25 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4452C349210DCC3E0040FD25 /* StubbedDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubbedDataTests.swift; sourceTree = "<group>"; };
-		4452C34B210DCE240040FD25 /* StorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTests.swift; sourceTree = "<group>"; };
+		4452C34B210DCE240040FD25 /* InMemoryStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryStorageTests.swift; sourceTree = "<group>"; };
 		4452C351210DCF160040FD25 /* BaseMapInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMapInteractorTests.swift; sourceTree = "<group>"; };
 		445BF47C210BB883000F3ED1 /* Carpool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carpool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		445BF47F210BB883000F3ED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,7 +138,7 @@
 		44FCBD86210C4B9E00EBBD30 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		44FCBD89210C4C8B00EBBD30 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		44FCBD8B210C4CBC00EBBD30 /* AppMainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainInteractor.swift; sourceTree = "<group>"; };
-		44FCBD8D210C4CF100EBBD30 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		44FCBD8D210C4CF100EBBD30 /* AppDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataWorker.swift; sourceTree = "<group>"; };
 		44FCBD8F210C4DA500EBBD30 /* SceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneBuilder.swift; sourceTree = "<group>"; };
 		44FCBD96210C51C400EBBD30 /* CarListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListView.swift; sourceTree = "<group>"; };
 		44FCBD9D210C541600EBBD30 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -147,6 +148,8 @@
 		44FCBDB0210C617C00EBBD30 /* LocalPlacemarksNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPlacemarksNetworkWorker.swift; sourceTree = "<group>"; };
 		44FCBDBB210C6AAE00EBBD30 /* PersistentStorageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageWorker.swift; sourceTree = "<group>"; };
 		44FCBDBD210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPersistentStorageWorker.swift; sourceTree = "<group>"; };
+		90803B8EECF025E3945B1B23 /* Pods-Carpool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carpool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Carpool/Pods-Carpool.debug.xcconfig"; sourceTree = "<group>"; };
+		BCD1543536E9695F59CDCEE6 /* Pods-Carpool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carpool.release.xcconfig"; path = "Pods/Target Support Files/Pods-Carpool/Pods-Carpool.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,7 @@
 			files = (
 				44FCBD72210C423E00EBBD30 /* CPCommon.framework in Frameworks */,
 				44FCBD6C210C418D00EBBD30 /* MapKit.framework in Frameworks */,
+				83B69AF0D3EF1FB4B1A604EC /* Pods_Carpool.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +235,7 @@
 		4452C34F210DCEDB0040FD25 /* StorageTests */ = {
 			isa = PBXGroup;
 			children = (
-				4452C34B210DCE240040FD25 /* StorageTests.swift */,
+				4452C34B210DCE240040FD25 /* InMemoryStorageTests.swift */,
 			);
 			path = StorageTests;
 			sourceTree = "<group>";
@@ -251,6 +255,7 @@
 				445BF495210BB884000F3ED1 /* CarpoolTests */,
 				445BF47D210BB883000F3ED1 /* Products */,
 				44FCBD68210C413F00EBBD30 /* Frameworks */,
+				CE4C96CE10F07F8445BBED7F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -303,7 +308,6 @@
 		445BF4A4210BB8F5000F3ED1 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				44FCBD9F210C55A800EBBD30 /* Localization */,
 				445BF47F210BB883000F3ED1 /* AppDelegate.swift */,
 				44FCBD86210C4B9E00EBBD30 /* AppCoordinator.swift */,
 				44FCBD8F210C4DA500EBBD30 /* SceneBuilder.swift */,
@@ -387,7 +391,8 @@
 				44FCBD77210C440600EBBD30 /* Map.storyboard */,
 				445BF4B4210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift */,
 				4452C341210DAC890040FD25 /* ClusterAnnotationView.swift */,
-				44FCBD74210C439D00EBBD30 /* ViewControllers */,
+				4452C332210D14690040FD25 /* MapView.swift */,
+				445BF483210BB883000F3ED1 /* MapViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				447784EC210E58A600FE4812 /* CoreDataStack.swift */,
+				44FCBDBD210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -413,33 +419,16 @@
 			children = (
 				44FCBD71210C423E00EBBD30 /* CPCommon.framework */,
 				44FCBD6B210C418D00EBBD30 /* MapKit.framework */,
+				43712416451CCCA2156A09E4 /* Pods_Carpool.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		44FCBD74210C439D00EBBD30 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				4452C332210D14690040FD25 /* MapView.swift */,
-				445BF483210BB883000F3ED1 /* MapViewController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		44FCBD75210C43D300EBBD30 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				44FCBD96210C51C400EBBD30 /* CarListView.swift */,
-				445BF481210BB883000F3ED1 /* CarListViewController.swift */,
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		44FCBD76210C43F200EBBD30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4452C317210CDB400040FD25 /* Main.storyboard */,
-				44FCBD88210C4C7100EBBD30 /* ViewControllers */,
+				4452C317210CDB400040FD25 /* TabBar.storyboard */,
+				44FCBD89210C4C8B00EBBD30 /* TabBarController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -447,10 +436,11 @@
 		44FCBD79210C440C00EBBD30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				44FCBD96210C51C400EBBD30 /* CarListView.swift */,
+				445BF481210BB883000F3ED1 /* CarListViewController.swift */,
 				44FCBD7A210C441800EBBD30 /* CarList.storyboard */,
 				4452C305210C87310040FD25 /* CarListCell.swift */,
 				447784AB210E2F6100FE4812 /* CarListCell.xib */,
-				44FCBD75210C43D300EBBD30 /* ViewControllers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -458,27 +448,12 @@
 		44FCBD85210C4B3C00EBBD30 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
-				44FCBD8D210C4CF100EBBD30 /* MainInteractor.swift */,
+				44FCBD8D210C4CF100EBBD30 /* AppDataWorker.swift */,
 				44FCBD8B210C4CBC00EBBD30 /* AppMainInteractor.swift */,
 				4452C313210CA9B40040FD25 /* MainInteractorState.swift */,
 				4452C31D210CE7650040FD25 /* PlacemarkHandlerWrapper.swift */,
 			);
 			path = Interactors;
-			sourceTree = "<group>";
-		};
-		44FCBD88210C4C7100EBBD30 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				44FCBD89210C4C8B00EBBD30 /* TabBarController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		44FCBD9F210C55A800EBBD30 /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Localization;
 			sourceTree = "<group>";
 		};
 		44FCBDA2210C5BF100EBBD30 /* Coordinators */ = {
@@ -513,11 +488,19 @@
 			children = (
 				447784EB210E589200FE4812 /* CoreData */,
 				44FCBDBB210C6AAE00EBBD30 /* PersistentStorageWorker.swift */,
-				44FCBDBD210C6B0100EBBD30 /* CoreDataPersistentStorageWorker.swift */,
 				4452C315210CBB660040FD25 /* InMemoryStorage.swift */,
 				447784B9210E53ED00FE4812 /* Carpool.xcdatamodeld */,
 			);
 			path = PersistenStorage;
+			sourceTree = "<group>";
+		};
+		CE4C96CE10F07F8445BBED7F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90803B8EECF025E3945B1B23 /* Pods-Carpool.debug.xcconfig */,
+				BCD1543536E9695F59CDCEE6 /* Pods-Carpool.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -527,10 +510,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 445BF49B210BB884000F3ED1 /* Build configuration list for PBXNativeTarget "Carpool" */;
 			buildPhases = (
+				A265C263E10A3E1A00C87961 /* [CP] Check Pods Manifest.lock */,
 				445BF478210BB883000F3ED1 /* Sources */,
 				445BF479210BB883000F3ED1 /* Frameworks */,
 				445BF47A210BB883000F3ED1 /* Resources */,
 				44FCBD70210C422B00EBBD30 /* Embed Frameworks */,
+				7D399EC564882D075E257D57 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -607,7 +592,7 @@
 				445BF48C210BB884000F3ED1 /* LaunchScreen.storyboard in Resources */,
 				44FCBD9C210C541600EBBD30 /* InfoPlist.strings in Resources */,
 				447784A9210E2F6100FE4812 /* CarListCell.xib in Resources */,
-				4452C318210CDB400040FD25 /* Main.storyboard in Resources */,
+				4452C318210CDB400040FD25 /* TabBar.storyboard in Resources */,
 				445BF489210BB884000F3ED1 /* Assets.xcassets in Resources */,
 				44FCBD78210C440600EBBD30 /* Map.storyboard in Resources */,
 				445BF4A2210BB8B1000F3ED1 /* locations.json in Resources */,
@@ -619,11 +604,49 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4452C346210DC58F0040FD25 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D399EC564882D075E257D57 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Carpool/Pods-Carpool-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Carpool/Pods-Carpool-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A265C263E10A3E1A00C87961 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Carpool-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		445BF478210BB883000F3ED1 /* Sources */ = {
@@ -632,7 +655,7 @@
 			files = (
 				4452C342210DAC890040FD25 /* ClusterAnnotationView.swift in Sources */,
 				44FCBD8A210C4C8B00EBBD30 /* TabBarController.swift in Sources */,
-				44FCBD8E210C4CF100EBBD30 /* MainInteractor.swift in Sources */,
+				44FCBD8E210C4CF100EBBD30 /* AppDataWorker.swift in Sources */,
 				4452C336210D14FD0040FD25 /* MapViewPresenter.swift in Sources */,
 				44FCBDB1210C617C00EBBD30 /* LocalPlacemarksNetworkWorker.swift in Sources */,
 				44FCBD90210C4DA500EBBD30 /* SceneBuilder.swift in Sources */,
@@ -676,7 +699,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4477849B210DD2E000FE4812 /* AppMainInteractorTests.swift in Sources */,
-				4452C34C210DCE240040FD25 /* StorageTests.swift in Sources */,
+				4452C34C210DCE240040FD25 /* InMemoryStorageTests.swift in Sources */,
 				445BF497210BB884000F3ED1 /* StubbedPlacemarksNetworkWorkerTests.swift in Sources */,
 				4452C352210DCF160040FD25 /* BaseMapInteractorTests.swift in Sources */,
 				4452C34A210DCC3E0040FD25 /* StubbedDataTests.swift in Sources */,
@@ -840,6 +863,7 @@
 		};
 		445BF49C210BB884000F3ED1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90803B8EECF025E3945B1B23 /* Pods-Carpool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -859,6 +883,7 @@
 		};
 		445BF49D210BB884000F3ED1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCD1543536E9695F59CDCEE6 /* Pods-Carpool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

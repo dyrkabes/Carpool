@@ -28,7 +28,13 @@ final class MapViewController: BaseViewController, MapView {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.getPlacemarks()
+        getData()
+        subscribeToEnterForeground()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        unsubscribe()
     }
     
     // MARK: - Public func
@@ -36,8 +42,23 @@ final class MapViewController: BaseViewController, MapView {
         self.presenter = presenter
     }
     
-    func reload(withViewData viewData: [PlacemarkMapViewModel]) {
+    // TODO: Think about a better solution
+    func populateMap(withViewData viewData: [PlacemarkMapViewModel]) {
+        mapView.removeAnnotations(mapView.annotations)
         mapView.addAnnotations(viewData)
+    }
+    
+    @objc private func getData() {
+        presenter.getPlacemarks()
+    }
+    
+    // MARK: - Subscriptions
+    private func subscribeToEnterForeground() {
+        NotificationCenter.default.addObserver(self, selector: #selector(getData), name: .UIApplicationWillEnterForeground, object: nil)
+    }
+    
+    private func unsubscribe() {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -53,16 +74,18 @@ extension MapViewController: MKMapViewDelegate {
             dequeuedView.annotation = annotation
             view = dequeuedView
         } else {
-            view = PlacemarkAnnotationView(annotation: annotation, reuseIdentifier: identifier)  // TODO: unify register identifier
+            view = PlacemarkAnnotationView(annotation: annotation, reuseIdentifier: identifier)  
             view.canShowCallout = true
             view.calloutOffset = CGPoint(x: -5, y: 5)
             view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
+        
+        view.clusteringIdentifier = PlacemarkAnnotationView.identifier
         return view
     }
 }
 
-// MARK: - Private func
+// MARK: - Helpers
 extension MapViewController {
     private func setupView() {
         mapView.delegate = self

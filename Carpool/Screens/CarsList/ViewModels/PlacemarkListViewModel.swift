@@ -6,8 +6,11 @@
 //  Copyright © 2018 Pavel Stepanov. All rights reserved.
 //
 
-import Foundation
-
+/**
+ View model for displaying cells in the list.
+ 
+ - Discussion: I decided not to include vin as I consider it as a more private information.
+ */
 struct PlacemarkListViewModel {
     let address: String
     let engineType: String
@@ -15,9 +18,8 @@ struct PlacemarkListViewModel {
     let fuel: Int
     let interior: VisualCondition
     let name: String
-    let vin: String
     
     static var empty: PlacemarkListViewModel {
-        return PlacemarkListViewModel(address: "", engineType: "", exterior: .unacceptable, fuel: 0, interior: .unacceptable, name: "", vin: "")
+        return PlacemarkListViewModel(address: "", engineType: "", exterior: .unacceptable, fuel: 0, interior: .unacceptable, name: "")
     }
 }

@@ -15,20 +15,10 @@ final class PlacemarkAnnotationView: MKMarkerAnnotationView, Identifiable {
     // MARK: - Init
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        
-//        collisionMode = .circle
-//        displayPriority = .required
-        
         clusteringIdentifier = PlacemarkAnnotationView.identifier
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func prepareForDisplay() {
-        super.prepareForDisplay()
-        print("Prepare")
-        displayPriority = .required
     }
 }
