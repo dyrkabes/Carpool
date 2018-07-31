@@ -50,6 +50,7 @@
 		44417D50210FAC1800D64BAC /* CPConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPConstants.swift; sourceTree = "<group>"; };
 		44417D52210FAFE800D64BAC /* Pods_CPCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_CPCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44417D55210FB03300D64BAC /* Pods_CPCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_CPCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4451794E2111000A008DD568 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4452C301210C813F0040FD25 /* Collection+try.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+try.swift"; sourceTree = "<group>"; };
 		4452C303210C818B0040FD25 /* CollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTests.swift; sourceTree = "<group>"; };
 		4452C343210DC51B0040FD25 /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = locations.json; path = ../Carpool/Resources/locations.json; sourceTree = SOURCE_ROOT; };
@@ -471,6 +472,7 @@
 			children = (
 				447784B2210E304500FE4812 /* de */,
 				447784B3210E304A00FE4812 /* ru */,
+				4451794E2111000A008DD568 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

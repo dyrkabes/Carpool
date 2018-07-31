@@ -47,6 +47,7 @@ final class MapViewController: BaseViewController, MapView {
     func populateMap(withViewData viewData: [PlacemarkMapViewModel]) {
         mapView.removeAnnotations(mapView.annotations)
         mapView.addAnnotations(viewData)
+        print(viewData.count)
     }
     
     @objc private func getData() {
@@ -66,24 +67,57 @@ final class MapViewController: BaseViewController, MapView {
 // MARK: - MKMapViewDelegate
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        
+//        if annotation is MKClusterAnnotation {
+//            return MKPinAnnotationView(annotation: annotation, reuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+//        }
+        
         guard let annotation = annotation as? PlacemarkMapViewModel else { return nil }
         let identifier = PlacemarkAnnotationView.identifier
         var view: PlacemarkAnnotationView
         
-        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
             as? PlacemarkAnnotationView {
-            dequeuedView.annotation = annotation
-            view = dequeuedView
+            annotationView.annotation = annotation
+            view = annotationView
         } else {
             view = PlacemarkAnnotationView(annotation: annotation, reuseIdentifier: identifier)  
             view.canShowCallout = true
             view.calloutOffset = CGPoint(x: -5, y: 5)
             view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
-        
-        view.clusteringIdentifier = ClusterAnnotationView.identifier
+ 
+        view.delegate = self
+        view.clusteringIdentifier = ClusterAnnotation.identifier
         return view
     }
+    
+    func mapView(_ mapView: MKMapView, clusterAnnotationForMemberAnnotations memberAnnotations: [MKAnnotation]) -> MKClusterAnnotation {
+        let cluster = ClusterAnnotation(memberAnnotations: memberAnnotations)
+        return cluster
+    }
+}
+
+// MARK: - PlacemarkAnnotationViewDelegate
+// TODO: Write possible optimiz
+extension MapViewController: PlacemarkAnnotationViewDelegate {
+    func didChangeAnnotation(_ annotation: MKAnnotation?, toSelectedState isSelected: Bool) {
+        guard let annotation = annotation else {
+            print("JKJJ")
+            return
+        }
+        if isSelected {
+            mapView.removeAnnotations(mapView.annotations.filter { $0 !== annotation })
+        } else {
+            // get data is called twice. This method is called twice. It should not. And it should not result in 2 additions -> 1
+            // and it should not be called twice. It happens due to some deselection
+            print("ÄA")
+            getData()
+        }
+    }
+    
+    // TODO: To presentar
 }
 
 // MARK: - Helpers
@@ -101,7 +135,7 @@ extension MapViewController {
     
     private func registerAnnotationViewClass() {
         mapView.register(PlacemarkAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
-        mapView.register(ClusterAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
+//        mapView.register(ClusterAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
     }
     
     private func createLocationManager() -> CLLocationManager {
