@@ -10,7 +10,6 @@ import XCTest
 import CPCommon
 @testable import Carpool
 
-// TODO: Adopt "Given When Then"
 class AppMainInteractorTests: XCTestCase {
     var appMainInteractor: AppMainInteractor!
     private var placemarksNetworkerFake: PlacemarksNetworkWorkerFake!
@@ -33,8 +32,10 @@ class AppMainInteractorTests: XCTestCase {
     }
     
     func testLoadData() {
+        // Given
         let expectation = self.expectation(description: "NetworkResponse")
         
+        // When
         appMainInteractor.loadDataFromNetwork(success: { (receivedPlacemarks) in
             expectation.fulfill()
         }) { (error) in
@@ -43,17 +44,20 @@ class AppMainInteractorTests: XCTestCase {
         
         waitForExpectations(timeout: 1, handler: nil)
         
+        // Then
         XCTAssertEqual(placemarksNetworkerFake.loadPlacemarksCallsCount, 1)
         XCTAssertEqual(persistentStorageWorkerFake.writesCount, 1)
         XCTAssertEqual(persistentStorageWorkerFake.placemarks.count, 1)
     }
     
     func testGetData() {
+        // Given
         let expectation1 = self.expectation(description: "FirstNetworkResponse")
         placemarksNetworkerFake.shouldSucceed = true
         
         var fetchedError: Error?
         
+        // When
         appMainInteractor.getData(success: { _ in
             expectation1.fulfill()
         }) { (error) in
@@ -62,8 +66,10 @@ class AppMainInteractorTests: XCTestCase {
         
         waitForExpectations(timeout: 1, handler: nil)
         
+        // Then
         XCTAssertEqual(placemarksNetworkerFake.loadPlacemarksCallsCount, 1)
         
+        // When
         let expectation2 = self.expectation(description: "SecondNetworkResponse")
         appMainInteractor.getData(success: { _ in
             expectation2.fulfill()
@@ -74,16 +80,19 @@ class AppMainInteractorTests: XCTestCase {
         
         waitForExpectations(timeout: 1, handler: nil)
         
+        // Then
         XCTAssertEqual(placemarksNetworkerFake.loadPlacemarksCallsCount, 1)
         XCTAssertNil(fetchedError)
     }
     
     func testGetError() {
+        // Given
         let expectation1 = self.expectation(description: "ErrorNetworkResponse")
         placemarksNetworkerFake.shouldSucceed = false
         
         var fetchedError: Error?
         
+        // When
         appMainInteractor.getData(success: { (_) in
             expectation1.fulfill()
         }) { (error) in
@@ -93,6 +102,7 @@ class AppMainInteractorTests: XCTestCase {
         
         waitForExpectations(timeout: 1, handler: nil)
         
+        // Then
         XCTAssertEqual(placemarksNetworkerFake.loadPlacemarksCallsCount, 1)
         XCTAssertEqual(persistentStorageWorkerFake.placemarks.count, 0)
         XCTAssertEqual(persistentStorageWorkerFake.writesCount, 0)
@@ -101,10 +111,12 @@ class AppMainInteractorTests: XCTestCase {
     }
     
     func testMultipleGetData() {
+        // Given
         let expectation1 = self.expectation(description: "FirstNetworkResponse")
         let expectation2 = self.expectation(description: "FirstNetworkResponse")
         let expectation3 = self.expectation(description: "FirstNetworkResponse")
         
+        // When
         appMainInteractor.getData(success: { (receivedPlacemarks) in
             expectation1.fulfill()
         }) { (error) in
@@ -125,6 +137,7 @@ class AppMainInteractorTests: XCTestCase {
         
         waitForExpectations(timeout: 1, handler: nil)
         
+        // Then
         XCTAssertEqual(placemarksNetworkerFake.loadPlacemarksCallsCount, 1)
         XCTAssertEqual(persistentStorageWorkerFake.placemarks.count, 1)
         XCTAssertEqual(persistentStorageWorkerFake.writesCount, 1)
