@@ -16,7 +16,3 @@ final class ClusterAnnotation: MKClusterAnnotation, Identifiable {
         subtitle = nil
     }
 }
-//
-//protocol ClusterAnnotationDelegate {
-//    func ClusterAnnotation(_ annotation: ClusterAnnotation, )
-//}

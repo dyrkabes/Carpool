@@ -43,11 +43,9 @@ final class MapViewController: BaseViewController, MapView {
         self.presenter = presenter
     }
     
-    // TODO: Think about a better solution
     func populateMap(withViewData viewData: [PlacemarkMapViewModel]) {
         mapView.removeAnnotations(mapView.annotations)
         mapView.addAnnotations(viewData)
-        print(viewData.count)
     }
     
     @objc private func getData() {
@@ -67,12 +65,6 @@ final class MapViewController: BaseViewController, MapView {
 // MARK: - MKMapViewDelegate
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
-        
-//        if annotation is MKClusterAnnotation {
-//            return MKPinAnnotationView(annotation: annotation, reuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
-//        }
-        
         guard let annotation = annotation as? PlacemarkMapViewModel else { return nil }
         let identifier = PlacemarkAnnotationView.identifier
         var view: PlacemarkAnnotationView
@@ -88,7 +80,6 @@ extension MapViewController: MKMapViewDelegate {
             view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
  
-        view.delegate = self
         view.clusteringIdentifier = ClusterAnnotation.identifier
         return view
     }
@@ -97,27 +88,19 @@ extension MapViewController: MKMapViewDelegate {
         let cluster = ClusterAnnotation(memberAnnotations: memberAnnotations)
         return cluster
     }
-}
-
-// MARK: - PlacemarkAnnotationViewDelegate
-// TODO: Write possible optimiz
-extension MapViewController: PlacemarkAnnotationViewDelegate {
-    func didChangeAnnotation(_ annotation: MKAnnotation?, toSelectedState isSelected: Bool) {
-        guard let annotation = annotation else {
-            print("JKJJ")
-            return
-        }
-        if isSelected {
-            mapView.removeAnnotations(mapView.annotations.filter { $0 !== annotation })
-        } else {
-            // get data is called twice. This method is called twice. It should not. And it should not result in 2 additions -> 1
-            // and it should not be called twice. It happens due to some deselection
-            print("ÄA")
-            getData()
-        }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let view = view as? PlacemarkAnnotationView else { return }
+        view.showCallout()
+        guard let annotation = view.annotation else { return }
+        mapView.removeAnnotations(mapView.annotations.filter { $0 !== annotation })
     }
     
-    // TODO: To presentar
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        guard let view = view as? PlacemarkAnnotationView else { return }
+        view.hideCallout()
+        getData()
+    }
 }
 
 // MARK: - Helpers
@@ -135,7 +118,6 @@ extension MapViewController {
     
     private func registerAnnotationViewClass() {
         mapView.register(PlacemarkAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
-//        mapView.register(ClusterAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
     }
     
     private func createLocationManager() -> CLLocationManager {

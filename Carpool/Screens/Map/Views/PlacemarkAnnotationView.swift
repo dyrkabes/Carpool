@@ -11,9 +11,46 @@ import MapKit
 import CPCommon
 
 final class PlacemarkAnnotationView: MKMarkerAnnotationView, Identifiable {
-    
     private lazy var nameLabel: UIView = {
+        return createCalloutView()
+    }()
+    
+    // MARK: - Init
+    override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
+        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        clusteringIdentifier = ClusterAnnotation.identifier
+        displayPriority = .required
+        collisionMode = .circle
+        titleVisibility = .hidden
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        titleVisibility = .hidden
+    }
+    
+    // MARK: - View lifecycle
+    override func prepareForDisplay() {
+        super.prepareForDisplay()
+        canShowCallout = false
+    }
+    
+    // MARK: - Public func
+    func showCallout() {
+        addSubview(nameLabel)
+    }
+    
+    func hideCallout() {
+        nameLabel.removeFromSuperview()
+    }
+}
+
+// MARK: - UI Helpers
+extension PlacemarkAnnotationView {
+    private func createCalloutView() -> UIView {
         let calloutView = UIView()
+        calloutView.backgroundColor = CPConstants.Colors.calloutBackground
+        
         let label = UILabel(frame: CGRect.zero)
         if let title = self.annotation?.title {
             label.text = title
@@ -22,83 +59,28 @@ final class PlacemarkAnnotationView: MKMarkerAnnotationView, Identifiable {
         label.textColor = UIColor(hex: 0x4B4B4B)
         label.sizeToFit()
         
-        let viewWidth = label.frame.width + 10
-        let viewHeight = label.frame.height + 10
+        let viewWidth = label.frame.width + Constants.horizontalPadding
+        let viewHeight = label.frame.height + Constants.verticalPadding
         
         calloutView.addSubview(label)
-        calloutView.frame = CGRect(x: -viewWidth/2 + self.frame.width/2, y: -70, width: viewWidth, height: viewHeight)
-        calloutView.backgroundColor = UIColor(hex: 0xCBCBCB)
+        calloutView.frame = CGRect(x: -viewWidth/2 + self.frame.width/2,
+                                   y: -Constants.selectedMarkerHeight,
+                                   width: viewWidth,
+                                   height: viewHeight)
         calloutView.layer.cornerRadius = viewHeight / 2
         
-        label.frame.origin = label.frame.origin.applying(CGAffineTransform(translationX: 5, y: 5))
+        label.frame.origin = label.frame.origin.applying(CGAffineTransform(translationX: Constants.horizontalPadding/2,
+                                                                           y: Constants.verticalPadding/2))
+        
+        calloutView.setupCardShadow(offset: CGSize(width: 0, height: 2), path: nil)
         
         return calloutView
-    }()
-    
-    weak var delegate: PlacemarkAnnotationViewDelegate?
-    
-    // MARK: - Init
-    override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
-        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        clusteringIdentifier = ClusterAnnotation.identifier
-        displayPriority = .required
-        collisionMode = .circle
-        isEnabled = true
-        canShowCallout = false
-        isEnabled = true
-        
-        titleVisibility = .hidden
-        
-//        canShowCallout = false
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        canShowCallout = false
-        isEnabled = true
-        
-        titleVisibility = .hidden
-    }
-    
-    override func prepareForDisplay() {
-        super.prepareForDisplay()
-//        self.glyphImage = #imageLiteral(resourceName: "Engine")
-        
-//        canShowCallout = false
-        
-//        titleVisibility = MKFeatureVisibility.hidden
-        
-        isEnabled = true
-        canShowCallout = false
-        isEnabled = true
-        
-        titleVisibility = .hidden
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-//        canShowCallout = false
-//        titleVisibility = MKFeatureVisibility.hidden
-        canShowCallout = false
-        isEnabled = true
-        
-        titleVisibility = .hidden
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-//        nameLabel.isHidden = true
-        
-        if isSelected {
-            addSubview(nameLabel)
-        } else {
-            nameLabel.removeFromSuperview()
-        }
-        
-        delegate?.didChangeAnnotation(annotation, toSelectedState: isSelected)
     }
 }
 
-protocol PlacemarkAnnotationViewDelegate: class {
-    func didChangeAnnotation(_ annotation: MKAnnotation?, toSelectedState isSelected: Bool)
+private enum Constants {
+    static let horizontalPadding: CGFloat = 20.0
+    static let verticalPadding: CGFloat = 10.0
+    
+    static let selectedMarkerHeight: CGFloat = 72.0
 }

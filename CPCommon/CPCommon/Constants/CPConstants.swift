@@ -8,4 +8,13 @@
 
 public enum CPConstants {
     public static let modelName = "Carpool"
+    
+    /**
+     App's color constants.
+     
+     - Discussion: In case a different color palette is needed implement injectable object and pass it via the app coordinator.
+    */
+    public enum Colors {
+        public static let calloutBackground: UIColor = UIColor(hex: 0xECECEC)
+    }
 }
