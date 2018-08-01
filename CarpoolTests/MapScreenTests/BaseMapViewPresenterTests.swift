@@ -44,6 +44,9 @@ class BaseMapViewPresenterTests: XCTestCase {
         XCTAssertEqual(mapViewFake.showErrorCount, 0)
         XCTAssertNil(mapViewFake.showedError)
         
+        XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.count, 1)
+        XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.first?.name, "")
+        
         XCTAssertEqual(mapViewInteractorFake.getDataCount, 1)
         XCTAssertEqual(mapViewInteractorFake.loadDataCount, 0)
     }
@@ -61,6 +64,9 @@ class BaseMapViewPresenterTests: XCTestCase {
         XCTAssertEqual(mapViewFake.finishLoadingCount, 1)
         XCTAssertEqual(mapViewFake.showErrorCount, 0)
         XCTAssertNil(mapViewFake.showedError)
+        
+        XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.count, 1)
+        XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.first?.name, "")
         
         XCTAssertEqual(mapViewInteractorFake.getDataCount, 0)
         XCTAssertEqual(mapViewInteractorFake.loadDataCount, 1)
@@ -80,6 +86,9 @@ class BaseMapViewPresenterTests: XCTestCase {
         XCTAssertEqual(mapViewFake.showErrorCount, 1)
         XCTAssertEqual(mapViewFake.showedError as? NetworkError, .unknown)
         
+        XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.count, 0)
+        XCTAssertNil(mapViewFake.receivedPlacemarksViewModels.first?.name)
+        
         XCTAssertEqual(mapViewInteractorFake.getDataCount, 1)
         XCTAssertEqual(mapViewInteractorFake.loadDataCount, 0)
     }
@@ -98,6 +107,8 @@ class BaseMapViewPresenterTests: XCTestCase {
         XCTAssertEqual(mapViewFake.showErrorCount, 1)
         XCTAssertEqual(mapViewFake.showedError as? NetworkError, .unknown)
         
+        XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.count, 0)
+        XCTAssertNil(mapViewFake.receivedPlacemarksViewModels.first?.name)
         
         XCTAssertEqual(mapViewInteractorFake.getDataCount, 0)
         XCTAssertEqual(mapViewInteractorFake.loadDataCount, 1)
@@ -141,10 +152,13 @@ private class MapViewFake: MapView {
     var showErrorCount = 0
     var showedError: Error?
     
+    var receivedPlacemarksViewModels: [PlacemarkMapViewModel] = []
+    
     func setPresenter(_ presenter: MapViewPresenter) {}
     
     func populateMap(withViewData viewData: [PlacemarkMapViewModel]) {
         populateMapCount += 1
+        receivedPlacemarksViewModels = viewData
     }
     
     func startLoading() {
