@@ -145,12 +145,8 @@ private class MapViewInteractorFake: MapViewInteractor {
     }
 }
 
-private class MapViewFake: MapView {
+private class MapViewFake: BaseViewFake, MapView {
     var populateMapCount = 0
-    var startLoadingCount = 0
-    var finishLoadingCount = 0
-    var showErrorCount = 0
-    var showedError: Error?
     
     var receivedPlacemarksViewModels: [PlacemarkMapViewModel] = []
     
@@ -159,18 +155,5 @@ private class MapViewFake: MapView {
     func populateMap(withViewData viewData: [PlacemarkMapViewModel]) {
         populateMapCount += 1
         receivedPlacemarksViewModels = viewData
-    }
-    
-    func startLoading() {
-        startLoadingCount += 1
-    }
-    
-    func finishLoading() {
-        finishLoadingCount += 1
-    }
-    
-    func showError(error: Error) {
-        showErrorCount += 1
-        showedError = error
     }
 }
