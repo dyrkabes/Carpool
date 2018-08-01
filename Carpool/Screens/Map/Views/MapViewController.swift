@@ -43,7 +43,6 @@ final class MapViewController: BaseViewController, MapView {
         self.presenter = presenter
     }
     
-    // TODO: Think about a better solution
     func populateMap(withViewData viewData: [PlacemarkMapViewModel]) {
         mapView.removeAnnotations(mapView.annotations)
         mapView.addAnnotations(viewData)
@@ -70,19 +69,37 @@ extension MapViewController: MKMapViewDelegate {
         let identifier = PlacemarkAnnotationView.identifier
         var view: PlacemarkAnnotationView
         
-        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
             as? PlacemarkAnnotationView {
-            dequeuedView.annotation = annotation
-            view = dequeuedView
+            annotationView.annotation = annotation
+            view = annotationView
         } else {
             view = PlacemarkAnnotationView(annotation: annotation, reuseIdentifier: identifier)  
             view.canShowCallout = true
             view.calloutOffset = CGPoint(x: -5, y: 5)
             view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
-        
-        view.clusteringIdentifier = PlacemarkAnnotationView.identifier
+ 
+        view.clusteringIdentifier = ClusterAnnotation.identifier
         return view
+    }
+    
+    func mapView(_ mapView: MKMapView, clusterAnnotationForMemberAnnotations memberAnnotations: [MKAnnotation]) -> MKClusterAnnotation {
+        let cluster = ClusterAnnotation(memberAnnotations: memberAnnotations)
+        return cluster
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let view = view as? PlacemarkAnnotationView else { return }
+        view.showCallout()
+        guard let annotation = view.annotation else { return }
+        mapView.removeAnnotations(mapView.annotations.filter { $0 !== annotation })
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        guard let view = view as? PlacemarkAnnotationView else { return }
+        view.hideCallout()
+        getData()
     }
 }
 
@@ -92,21 +109,26 @@ extension MapViewController {
         mapView.delegate = self
         registerAnnotationViewClass()
         
+        // TODO: User's location
         let center = CLLocationCoordinate2DMake(53.54, 10.1)
-        let region = MKCoordinateRegionMakeWithDistance(center, 30000, 30000)
-        mapView.setRegion(region, animated: false)
+        centerMap(center: center, isAnimated: false)
         
         title = AppTexts.map
     }
     
     private func registerAnnotationViewClass() {
-        mapView.register(PlacemarkAnnotationView.self, forAnnotationViewWithReuseIdentifier: PlacemarkAnnotationView.identifier)
+        mapView.register(PlacemarkAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
     }
     
     private func createLocationManager() -> CLLocationManager {
         let manager = CLLocationManager()
         manager.startUpdatingLocation()
         return manager
+    }
+    
+    private func centerMap(center: CLLocationCoordinate2D, isAnimated: Bool) {
+        let region = MKCoordinateRegionMakeWithDistance(center, 30000, 30000)
+        mapView.setRegion(region, animated: false)
     }
 }
 

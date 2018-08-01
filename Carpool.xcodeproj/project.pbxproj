@@ -27,7 +27,7 @@
 		4452C33B210D15390040FD25 /* MapViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C33A210D15390040FD25 /* MapViewInteractor.swift */; };
 		4452C33D210D15430040FD25 /* BaseMapViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C33C210D15430040FD25 /* BaseMapViewInteractor.swift */; };
 		4452C340210D1BE10040FD25 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C33F210D1BE10040FD25 /* MapCoordinator.swift */; };
-		4452C342210DAC890040FD25 /* ClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C341210DAC890040FD25 /* ClusterAnnotationView.swift */; };
+		4452C342210DAC890040FD25 /* ClusterAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C341210DAC890040FD25 /* ClusterAnnotation.swift */; };
 		4452C34A210DCC3E0040FD25 /* StubbedDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C349210DCC3E0040FD25 /* StubbedDataTests.swift */; };
 		4452C34C210DCE240040FD25 /* InMemoryStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C34B210DCE240040FD25 /* InMemoryStorageTests.swift */; };
 		4452C352210DCF160040FD25 /* BaseMapInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452C351210DCF160040FD25 /* BaseMapInteractorTests.swift */; };
@@ -113,7 +113,7 @@
 		4452C33A210D15390040FD25 /* MapViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewInteractor.swift; sourceTree = "<group>"; };
 		4452C33C210D15430040FD25 /* BaseMapViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMapViewInteractor.swift; sourceTree = "<group>"; };
 		4452C33F210D1BE10040FD25 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
-		4452C341210DAC890040FD25 /* ClusterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterAnnotationView.swift; sourceTree = "<group>"; };
+		4452C341210DAC890040FD25 /* ClusterAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterAnnotation.swift; sourceTree = "<group>"; };
 		4452C345210DC58F0040FD25 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4452C349210DCC3E0040FD25 /* StubbedDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubbedDataTests.swift; sourceTree = "<group>"; };
 		4452C34B210DCE240040FD25 /* InMemoryStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryStorageTests.swift; sourceTree = "<group>"; };
@@ -352,11 +352,11 @@
 		445BF4A7210C3CF6000F3ED1 /* CarsList */ = {
 			isa = PBXGroup;
 			children = (
-				4452C30E210CA8CB0040FD25 /* Interactors */,
 				44FCBDA2210C5BF100EBBD30 /* Coordinators */,
-				4452C2FE210C71DA0040FD25 /* ViewModels */,
+				4452C30E210CA8CB0040FD25 /* Interactors */,
 				44FCBDB9210C68A500EBBD30 /* Presenters */,
 				44FCBD79210C440C00EBBD30 /* Views */,
+				4452C2FE210C71DA0040FD25 /* ViewModels */,
 			);
 			path = CarsList;
 			sourceTree = "<group>";
@@ -377,8 +377,8 @@
 			isa = PBXGroup;
 			children = (
 				44FCBD85210C4B3C00EBBD30 /* Interactors */,
-				44FCBD76210C43F200EBBD30 /* Views */,
 				445BF4AA210C3D4D000F3ED1 /* Entities */,
+				44FCBD76210C43F200EBBD30 /* Views */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -406,7 +406,7 @@
 			children = (
 				44FCBD77210C440600EBBD30 /* Map.storyboard */,
 				445BF4B4210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift */,
-				4452C341210DAC890040FD25 /* ClusterAnnotationView.swift */,
+				4452C341210DAC890040FD25 /* ClusterAnnotation.swift */,
 				4452C332210D14690040FD25 /* MapView.swift */,
 				445BF483210BB883000F3ED1 /* MapViewController.swift */,
 			);
@@ -670,7 +670,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4452C342210DAC890040FD25 /* ClusterAnnotationView.swift in Sources */,
+				4452C342210DAC890040FD25 /* ClusterAnnotation.swift in Sources */,
 				44FCBD8A210C4C8B00EBBD30 /* TabBarController.swift in Sources */,
 				44FCBD8E210C4CF100EBBD30 /* AppDataWorker.swift in Sources */,
 				4452C336210D14FD0040FD25 /* MapViewPresenter.swift in Sources */,
