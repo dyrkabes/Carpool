@@ -8,11 +8,11 @@
 
 import Foundation
 
-/// Is responsible for getting and loading data.
+/// Responsible for getting and loading data.
 protocol AppDataWorker: class {
     /// Gets data from the persistent storage.
     func getData(success: @escaping PlacemarksSuccessHandler, failure: @escaping ErrorHandler)
-    
+
     /// Updates data from network.
     func loadDataFromNetwork(success: @escaping PlacemarksSuccessHandler, failure: @escaping ErrorHandler)
 }

@@ -12,36 +12,36 @@ fileprivate extension UIStoryboard {
     static var main: UIStoryboard {
         return UIStoryboard(name: "TabBar", bundle: nil)
     }
-    
+
     static var carList: UIStoryboard {
         return UIStoryboard(name: "CarList", bundle: nil)
     }
-    
+
     static var map: UIStoryboard {
         return UIStoryboard(name: "Map", bundle: nil)
     }
 }
 
+/// Instantiates view controllers from storyboards.
 enum SceneBuilder {
     static func createTabBar() -> TabBarController {
-        guard let tabBarController = UIStoryboard.main.instantiateViewController(withIdentifier: "TabBarController") as? TabBarController else {
+        guard let tabBarController = UIStoryboard.main.instantiateViewController(withIdentifier: TabBarController.identifier) as? TabBarController else {
             fatalError("Tabbar cannot be initialized")
         }
         return tabBarController
     }
-    
+
     static func createCarListViewController() -> CarListViewController {
         guard let carListVC = UIStoryboard.carList.instantiateInitialViewController() as? CarListViewController else {
             fatalError("Car list cannot be initialized")
         }
         return carListVC
     }
-    
+
     static func createMapViewController() -> MapViewController {
         guard let mapViewController = UIStoryboard.map.instantiateInitialViewController() as? MapViewController else {
             fatalError("MapView cannot be initialized")
         }
-        
         return mapViewController
     }
 }

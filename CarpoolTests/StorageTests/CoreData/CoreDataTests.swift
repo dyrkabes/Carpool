@@ -10,7 +10,7 @@ import XCTest
 import CPCommon
 @testable import Carpool
 
-class CoreDataTests: XCTestCase {
+final class CoreDataTests: XCTestCase {
     var coreDataWorker: CoreDataWorker!
     
     override func setUp() {

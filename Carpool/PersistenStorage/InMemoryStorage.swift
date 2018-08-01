@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Stores placemarks in memory.
 struct InMemoryStorage: PersistentStorageWorker {
     // MARK: - Instance properties
     fileprivate var placemarks: [Placemark] = []

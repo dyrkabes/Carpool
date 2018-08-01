@@ -16,13 +16,13 @@ final class AppMainInteractor: AppDataWorker {
     // MARK: - Instance properties
     fileprivate var state: MainInteractorState = .hasNotLoaded
     fileprivate var requestHandlers: [PlacemarkHandlerWrapper] = []
-    
+
     // MARK: - Init
     init(networkWorker: PlacemarksNetworkWorker, storageWorker: PersistentStorageWorker) {
         self.networkWorker = networkWorker
         self.storageWorker = storageWorker
     }
-    
+
     // MARK: - Public func
     func loadDataFromNetwork(success: @escaping PlacemarksSuccessHandler, failure: @escaping ErrorHandler) {
         guard state != .isLoading else {
@@ -30,7 +30,7 @@ final class AppMainInteractor: AppDataWorker {
             requestHandlers.append(hanlderWrapper)
             return
         }
-        
+
         state = .isLoading
         networkWorker.loadPlacemarks(success: { [weak self] (placemarks) in
             guard let strongSelf = self else { return }
@@ -45,10 +45,9 @@ final class AppMainInteractor: AppDataWorker {
                     self?.requestHandlers.forEach { $0.failure(error) }
                     failure(error)
                 }
-                
         })
     }
-    
+
     func getData(success: @escaping PlacemarksSuccessHandler, failure: @escaping ErrorHandler) {
         switch state {
         case .hasNotLoaded:
@@ -72,4 +71,3 @@ extension AppMainInteractor {
         }
     }
 }
-

@@ -21,7 +21,7 @@ final class PlacemarkMapViewModel: NSObject, MKAnnotation {
     let fuel: Int
     let interior: VisualCondition
     let name: String
-    
+
     var title: String? {
         return name
     }
@@ -36,4 +36,3 @@ final class PlacemarkMapViewModel: NSObject, MKAnnotation {
         self.name = name
     }
 }
-

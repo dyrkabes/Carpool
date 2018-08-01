@@ -10,10 +10,6 @@ import UIKit
 import MapKit
 import CPCommon
 
-//fileprivate let searchController = UISearchController(searchResultsController: nil)
-//fileprivate var filteredProducts: [ProductViewModel] = []
-// Filter ??
-
 final class CarListViewController: BaseViewController, CarListView {
     // MARK: - Injected
     private var presenter: CarListPresenter!
@@ -121,48 +117,3 @@ extension CarListViewController {
 private enum Constants {
     static let estimatedRowHeight: CGFloat = 120.0
 }
-
-//
-//// MARK: - Searching
-//extension ProductsListViewController: UISearchResultsUpdating {
-//    fileprivate func setupSearchController() {
-//        searchController.searchResultsUpdater = self
-//        searchController.dimsBackgroundDuringPresentation = false
-//        // TODO: there is a bug with nav bar when this property set to true
-//        searchController.hidesNavigationBarDuringPresentation = false
-//        searchController.searchBar.placeholder = AppTexts.search
-//        definesPresentationContext = true
-//
-//        let searchBar = searchController.searchBar
-//        searchBar.tintColor = .white
-//        searchBar.barTintColor = .black
-//        searchBar.searchField?.backgroundColor = AppTheme.Colors.NavBar.tint
-//        searchBar.searchField?.tintColor = AppTheme.Colors.text
-//        searchBar.searchField?.textColor = AppTheme.Colors.gray
-//    }
-//
-//    fileprivate func isSearchBarEmpty() -> Bool {
-//        return searchController.searchBar.text?.isEmpty ?? true
-//    }
-//
-//    fileprivate func isFiltering() -> Bool {
-//        return searchController.isActive && !isSearchBarEmpty()
-//    }
-//
-//    // MARK: - UISearchResultsUpdating Delegate
-//    func updateSearchResults(for searchController: UISearchController) {
-//        filteredProducts = interactor.filterProductsForSearchText(searchController.searchBar.text)
-//        tableView.reloadData()
-//    }
-//}
-
-//// MARK: - SectionsFilterViewControllerDelegate
-//extension ProductsListViewController: SectionsFilterViewControllerDelegate {
-//    func sectionsFilterViewController(_ viewController: SectionsFilterViewController,
-//                                      didSelectFilter filter: ProductsListFilter) {
-//        interactor.filter = filter
-//        reloadTable() { [weak self] in
-//            self?.scrollTableToFilteredSection()
-//        }
-//    }
-//}

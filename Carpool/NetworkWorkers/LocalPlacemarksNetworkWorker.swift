@@ -11,27 +11,27 @@ import CPCommon
 struct LocalPlacemarksNetworkWorker: PlacemarksNetworkWorker {
     // MARK: - Instance properties
     private let placemarksData: Data?
-    
+
     // MARK: - Init
     init(placemarksData: Data?) {
         self.placemarksData = placemarksData
     }
-    
+
     // MARK: - Public func
     func loadPlacemarks(success: @escaping PlacemarksSuccessHandler, failure: @escaping ErrorHandler) {
         let decoder = JSONDecoder()
-        
+
         guard let placemarksData = placemarksData else {
             failure(NetworkError.unknown)
             return
         }
-        
+
         guard let placemarksDictionary: [String: [Placemark]] = try? decoder.decode([String: [Placemark]].self, from: placemarksData),
             let placemarks = placemarksDictionary[Keys.placemarks] else {
             failure(NetworkError.parsingFailure)
             return
         }
-        
+
         DispatchQueue.global().asyncAfter(deadline: .now() + 0.8) {
             success(placemarks)
         }

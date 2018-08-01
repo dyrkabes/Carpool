@@ -17,19 +17,18 @@ struct MapCoordinator: Coordinator {
     init(parentInteractor interactor: AppDataWorker) {
         self.parentInteractor = interactor
     }
-    
+
     // MARK: - Public
     func start() -> UIViewController {
         let mapViewController = SceneBuilder.createMapViewController()
-        
+
         let interactor = BaseMapViewInteractor(parentInteractor: parentInteractor)
         let presenter = BaseMapViewPresenter(view: mapViewController, interactor: interactor)
         mapViewController.setPresenter(presenter)
-        
+
         let navigationController = UINavigationController(rootViewController: mapViewController)
-        
         navigationController.tabBarItem = UITabBarItem(title: AppTexts.map, image: AppImages.map, tag: 1)
-        
+
         return navigationController
     }
 }

@@ -8,21 +8,14 @@
 
 import CPCommon
 
+/// Loads data from local file.
 enum StubDataProvider {
     case locations
-    
+
     var fileName: String {
         return "\(self)"
     }
-    
-    // enum Status { // TODO
-    // case success
-    // case failure
-    // }
-    
-    // func data(status: Status) -> Data {
-    
-    // Or even make a server
+
     var data: Data? {
         guard let data = FileDataLoader().loadFromJSONFile(fileName) else { return nil }
         return data

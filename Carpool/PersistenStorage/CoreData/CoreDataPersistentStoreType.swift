@@ -8,6 +8,7 @@
 
 import CoreData
 
+/// Core data initialization helper.
 enum CoreDataPersistentStoreType {
     case SQLite
     case inMemory

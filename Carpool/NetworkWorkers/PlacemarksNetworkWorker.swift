@@ -8,9 +8,9 @@
 
 import Foundation
 
-typealias EmptySuccessHandler = () -> ()
-typealias PlacemarksSuccessHandler = ([Placemark]) -> ()
-typealias ErrorHandler = (Error) -> ()
+typealias EmptySuccessHandler = () -> Void
+typealias PlacemarksSuccessHandler = ([Placemark]) -> Void
+typealias ErrorHandler = (Error) -> Void
 
 protocol PlacemarksNetworkWorker {
     func loadPlacemarks(success: @escaping PlacemarksSuccessHandler, failure: @escaping ErrorHandler)

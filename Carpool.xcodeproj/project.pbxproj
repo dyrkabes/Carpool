@@ -388,7 +388,6 @@
 			children = (
 				445BF4AB210C3D60000F3ED1 /* Placemark.swift */,
 				447784B7210E523300FE4812 /* VisualCondition.swift */,
-				44417D41210F9BCC00D64BAC /* PlacemarkManaged.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -413,6 +412,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		446167582112342A001858CA /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				44417D41210F9BCC00D64BAC /* PlacemarkManaged.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		44778499210DD2D500FE4812 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +431,7 @@
 		447784EB210E589200FE4812 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				446167582112342A001858CA /* Entities */,
 				44417D3F210F9B2800D64BAC /* CoreDataWorker.swift */,
 				447784EC210E58A600FE4812 /* CoreDataStack.swift */,
 				44417D48210F9F5600D64BAC /* CoreDataPersistentStoreType.swift */,

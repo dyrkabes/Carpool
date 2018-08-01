@@ -12,13 +12,13 @@ final class BaseMapViewPresenter: MapViewPresenter {
     // MARK: - Injected
     private unowned var view: MapView
     private var interactor: MapViewInteractor
-    
+
     // MARK: - Init
     required init(view: MapView, interactor: MapViewInteractor) {
         self.view = view
         self.interactor = interactor
     }
-    
+
     // MARK: - Public func
     func getPlacemarks() {
         view.startLoading()
@@ -26,21 +26,22 @@ final class BaseMapViewPresenter: MapViewPresenter {
             guard let strongSelf = self else { return }
             strongSelf.view.finishLoading()
             strongSelf.view.populateMap(withViewData: placemarks.map { strongSelf.getViewModel(forPlacemark: $0) })
-        }) { [weak self] (error) in
+        }, failure: { [weak self] (error) in
             self?.view.finishLoading()
             self?.view.showError(error: error)
-        }
+        })
     }
-    
+
     func reloadData() {
+        view.startLoading()
         interactor.loadDataFromNetwork(success: { [weak self] (placemarks) in
             guard let strongSelf = self else { return }
             strongSelf.view.finishLoading()
             strongSelf.view.populateMap(withViewData: placemarks.map { strongSelf.getViewModel(forPlacemark: $0) })
-        }) { [weak self] (error) in
+        }, failure: { [weak self] (error) in
             self?.view.finishLoading()
             self?.view.showError(error: error)
-        }
+        })
     }
 }
 

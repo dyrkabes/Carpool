@@ -52,6 +52,11 @@ final class MapViewController: BaseViewController, MapView {
         presenter.getPlacemarks()
     }
     
+    // MARK: - Action
+    @IBAction func refreshData(_ sender: UIBarButtonItem) {
+        presenter.reloadData()
+    }
+    
     // MARK: - Subscriptions
     private func subscribeToEnterForeground() {
         NotificationCenter.default.addObserver(self, selector: #selector(getData), name: .UIApplicationWillEnterForeground, object: nil)

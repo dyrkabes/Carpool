@@ -14,25 +14,22 @@ struct AppCoordinator: Coordinator {
     func start() -> UIViewController {
         // MARK: - TabBar
         let tabBar = SceneBuilder.createTabBar()
-        
+
         let networker = LocalPlacemarksNetworkWorker(placemarksData: StubDataProvider.locations.data)
         let storageWorker = CoreDataWorker(modelName: CPConstants.modelName, storeType: .SQLite)
-        
+
         let tabBarInteractor = AppMainInteractor(networkWorker: networker, storageWorker: storageWorker)
         tabBar.setInteractor(tabBarInteractor)
-        
-        
+
         // MARK: - CarList
         let carListCoordinator = CarListCoordinator(parentInteractor: tabBarInteractor)
         let carListViewController = carListCoordinator.start()
-        
+
         // MARK: - Map
         let mapCoordinator = MapCoordinator(parentInteractor: tabBarInteractor)
         let mapViewController = mapCoordinator.start()
-        
-        
+
         tabBar.viewControllers = [carListViewController, mapViewController]
-        
         return tabBar
     }
 }

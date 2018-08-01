@@ -22,7 +22,7 @@ struct Placemark: Decodable {
     let interior: VisualCondition
     let name: String
     let vin: String
-    
+
     // MARK: - Init
     static var empty: Placemark {
         return Placemark(address: "", coordinates: CGPoint.zero, engineType: "", exterior: .unacceptable, fuel: 0, interior: .unacceptable, name: "", vin: "")
@@ -38,7 +38,7 @@ struct Placemark: Decodable {
         self.name = name
         self.vin = vin
     }
-    
+
     init?(managedObject: PlacemarkManaged) {
         guard let address = managedObject.address,
             let engineType = managedObject.engineType,
@@ -46,7 +46,7 @@ struct Placemark: Decodable {
             let interior = managedObject.interior,
             let name = managedObject.name,
             let vin = managedObject.vin else { return nil }
-        
+
         self.address = address
         self.coordinates = CGPoint(x: managedObject.xCoordinate, y: managedObject.yCoordinate)
         self.engineType = engineType

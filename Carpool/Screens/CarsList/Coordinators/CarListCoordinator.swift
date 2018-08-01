@@ -8,13 +8,17 @@
 
 import CPCommon
 
+/// Creates car list module.
 struct CarListCoordinator: Coordinator {
+    // MARK: - Injected
     private let parentInteractor: AppDataWorker
     
+    // MARK: - Init
     init(parentInteractor interactor: AppDataWorker) {
         self.parentInteractor = interactor
     }
     
+    // MARK: - Public func
     func start() -> UIViewController {
         let carListViewController = SceneBuilder.createCarListViewController()
         

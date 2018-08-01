@@ -5,14 +5,18 @@ inhibit_all_warnings!
 
 workspace 'Carpool'
 
+def all_pods
+    pod 'MBProgressHUD', '~> 1.1.0'
+end
+
 target 'Carpool' do
     project 'Carpool.xcodeproj'
-    pod 'MBProgressHUD', '~> 1.1.0'
+    all_pods
 end
 
 target 'CPCommon' do
     project 'CPCommon/CPCommon.xcodeproj'
-    pod 'MBProgressHUD', '~> 1.1.0'
+    all_pods
 end
 
 target 'CPCommonTests' do

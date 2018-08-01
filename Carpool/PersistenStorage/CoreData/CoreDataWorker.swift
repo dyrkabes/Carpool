@@ -1,5 +1,5 @@
 //
-//  CoreDataPersistentStorageWorker.swift
+//  CoreDataWorker.swift
 //  Carpool
 //
 //  Created by Pavel Stepanov on 28/07/2018.
@@ -8,11 +8,12 @@
 
 import CoreData
 
-// TODO: Implement proper protocol
 final class CoreDataWorker: PersistentStorageWorker {
+    // MARK: - Instance properties
     private let modelName: String
     private let storeType: CoreDataPersistentStoreType
     
+    // MARK: - Injected
     private lazy var stack: CoreDataStack = {
         return CoreDataStack(modelName: modelName, storeType: storeType)
     }()
@@ -46,10 +47,6 @@ final class CoreDataWorker: PersistentStorageWorker {
     }
     
     // MARK: - Storage functions
-    private func instantiateManagedEntity<T: NSManagedObject>() -> T {
-        return T(context: stack.context)
-    }
-    
     private func delete(_ object: NSManagedObject) {
         stack.context.delete(object)
     }

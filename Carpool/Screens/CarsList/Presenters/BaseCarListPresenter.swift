@@ -9,7 +9,7 @@
 import Foundation
 import CPCommon
 
-class BaseCarListPresenter: CarListPresenter {
+final class BaseCarListPresenter: CarListPresenter {
     // MARK: - Injected
     private var interactor: CarListInteractor
     private unowned var view: CarListView
@@ -28,10 +28,10 @@ class BaseCarListPresenter: CarListPresenter {
             guard let strongSelf = self else { return }
             strongSelf.view.finishLoading()
             strongSelf.view.reloadData()
-        }) { [weak self] (error) in
+        }, failure: { [weak self] (error) in
             self?.view.finishLoading()
             self?.view.showError(error: error)
-        }
+        })
     }
     
     func reloadData() {
@@ -41,10 +41,10 @@ class BaseCarListPresenter: CarListPresenter {
             guard let strongSelf = self else { return }
             strongSelf.view.finishLoading()
             strongSelf.view.reloadData()
-        }) { [weak self] (error) in
+        }, failure: { [weak self] (error) in
             self?.view.finishLoading()
             self?.view.showError(error: error)
-        }
+        })
     }
     
     func getViewModelForRow(row: Int) -> PlacemarkListViewModel {
