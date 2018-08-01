@@ -18,15 +18,12 @@ final class PlacemarkAnnotationView: MKMarkerAnnotationView, Identifiable {
     // MARK: - Init
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        clusteringIdentifier = ClusterAnnotation.identifier
-        displayPriority = .required
-        collisionMode = .circle
-        titleVisibility = .hidden
+        configureAnnotationView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        titleVisibility = .hidden
+        configureAnnotationView()
     }
     
     // MARK: - View lifecycle
@@ -47,6 +44,13 @@ final class PlacemarkAnnotationView: MKMarkerAnnotationView, Identifiable {
 
 // MARK: - UI Helpers
 extension PlacemarkAnnotationView {
+    private func configureAnnotationView() {
+        clusteringIdentifier = ClusterAnnotation.identifier
+        displayPriority = .required
+        collisionMode = .circle
+        titleVisibility = .hidden
+    }
+    
     private func createCalloutView() -> UIView {
         let calloutView = UIView()
         calloutView.backgroundColor = CPConstants.Colors.calloutBackground
@@ -56,7 +60,7 @@ extension PlacemarkAnnotationView {
             label.text = title
         }
         label.font = label.font.withSize(14)
-        label.textColor = UIColor(hex: 0x4B4B4B)
+        label.textColor = CPConstants.Colors.mainTextColor
         label.sizeToFit()
         
         let viewWidth = label.frame.width + Constants.horizontalPadding

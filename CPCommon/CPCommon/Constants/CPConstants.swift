@@ -16,5 +16,7 @@ public enum CPConstants {
     */
     public enum Colors {
         public static let calloutBackground: UIColor = UIColor(hex: 0xECECEC)
+        public static let mainTextColor: UIColor = UIColor(hex: 0x4B4B4B)
+        public static let shadowColor: CGColor = UIColor(hex: 0xC4CAD6).cgColor
     }
 }

@@ -23,5 +23,5 @@ private enum Constants {
     static let shadowOffset = CGSize(width: 1, height: 0.5)
     static let shadowRadius: CGFloat = 1.0
     static let shadowOpacity: Float = 1.0
-    static let shadowColor = UIColor(hex: 0xC4CAD6).cgColor
+    static let shadowColor = CPConstants.Colors.shadowColor
 }

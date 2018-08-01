@@ -1,5 +1,5 @@
 //
-//  ClusterAnnotationView.swift
+//  ClusterAnnotation.swift
 //  Carpool
 //
 //  Created by Pavel Stepanov on 29/07/2018.
