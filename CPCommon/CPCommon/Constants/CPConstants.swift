@@ -26,5 +26,7 @@ public enum CPConstants {
     public enum Location {
         public static let startingRegionMeters: CLLocationDistance = 30000
         public static let startingLocationAccuracy: CLLocationAccuracy? = CLLocationAccuracy(exactly: 1000)
+        
+        public static let defaultLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 53.5511, longitude: 9.9937)
     }
 }

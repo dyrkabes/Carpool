@@ -22,6 +22,7 @@
 		447784AF210E302E00FE4812 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 447784B1210E302E00FE4812 /* Localizable.strings */; };
 		44ECB877211345B800EE5561 /* LocationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB876211345B700EE5561 /* LocationError.swift */; };
 		44ECB87B2113646C00EE5561 /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB87A2113646C00EE5561 /* UIViewController+ShowAlert.swift */; };
+		44ECB88F2113AE4C00EE5561 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB88E2113AE4C00EE5561 /* Platform.swift */; };
 		44FCBD59210C3F2000EBBD30 /* CPCommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD58210C3F2000EBBD30 /* CPCommonTests.swift */; };
 		44FCBD5B210C3F2000EBBD30 /* CPCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 44FCBD4D210C3F2000EBBD30 /* CPCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		44FCBD67210C40F600EBBD30 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD66210C40F600EBBD30 /* Identifiable.swift */; };
@@ -66,6 +67,7 @@
 		447784B3210E304A00FE4812 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		44ECB876211345B700EE5561 /* LocationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationError.swift; sourceTree = "<group>"; };
 		44ECB87A2113646C00EE5561 /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
+		44ECB88E2113AE4C00EE5561 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		44FCBD4A210C3F2000EBBD30 /* CPCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CPCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FCBD4D210C3F2000EBBD30 /* CPCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPCommon.h; sourceTree = "<group>"; };
 		44FCBD4E210C3F2000EBBD30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				44FCBD7D210C464900EBBD30 /* FileDataLoader.swift */,
+				44ECB88E2113AE4C00EE5561 /* Platform.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44ECB88F2113AE4C00EE5561 /* Platform.swift in Sources */,
 				44417D51210FAC1800D64BAC /* CPConstants.swift in Sources */,
 				44ECB87B2113646C00EE5561 /* UIViewController+ShowAlert.swift in Sources */,
 				44ECB877211345B800EE5561 /* LocationError.swift in Sources */,

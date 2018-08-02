@@ -60,6 +60,7 @@
 		44ECB8872113A1CD00EE5561 /* CarListInteractorStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB8862113A1CD00EE5561 /* CarListInteractorStub.swift */; };
 		44ECB8892113A1FE00EE5561 /* CarListViewStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB8882113A1FE00EE5561 /* CarListViewStub.swift */; };
 		44ECB88B2113A24500EE5561 /* MapViewStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB88A2113A24500EE5561 /* MapViewStub.swift */; };
+		44ECB88D2113A66200EE5561 /* PlacemarkCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB88C2113A66200EE5561 /* PlacemarkCalloutView.swift */; };
 		44FCBD6C210C418D00EBBD30 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCBD6B210C418D00EBBD30 /* MapKit.framework */; };
 		44FCBD72210C423E00EBBD30 /* CPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCBD71210C423E00EBBD30 /* CPCommon.framework */; };
 		44FCBD73210C423E00EBBD30 /* CPCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCBD71210C423E00EBBD30 /* CPCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -164,6 +165,7 @@
 		44ECB8862113A1CD00EE5561 /* CarListInteractorStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListInteractorStub.swift; sourceTree = "<group>"; };
 		44ECB8882113A1FE00EE5561 /* CarListViewStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewStub.swift; sourceTree = "<group>"; };
 		44ECB88A2113A24500EE5561 /* MapViewStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewStub.swift; sourceTree = "<group>"; };
+		44ECB88C2113A66200EE5561 /* PlacemarkCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkCalloutView.swift; sourceTree = "<group>"; };
 		44FCBD6B210C418D00EBBD30 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		44FCBD71210C423E00EBBD30 /* CPCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CPCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FCBD77210C440600EBBD30 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 			children = (
 				44FCBD77210C440600EBBD30 /* Map.storyboard */,
 				445BF4B4210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift */,
+				44ECB88C2113A66200EE5561 /* PlacemarkCalloutView.swift */,
 				4452C341210DAC890040FD25 /* ClusterAnnotation.swift */,
 				4452C332210D14690040FD25 /* MapView.swift */,
 				445BF483210BB883000F3ED1 /* MapViewController.swift */,
@@ -796,6 +799,7 @@
 				4452C306210C87310040FD25 /* CarListCell.swift in Sources */,
 				445BF4B5210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift in Sources */,
 				4452C312210CA8E20040FD25 /* CarListInteractor.swift in Sources */,
+				44ECB88D2113A66200EE5561 /* PlacemarkCalloutView.swift in Sources */,
 				4452C31E210CE7650040FD25 /* PlacemarkHandlerWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

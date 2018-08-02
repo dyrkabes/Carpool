@@ -33,7 +33,6 @@ final class BaseMapViewPresenter: NSObject, MapViewPresenter {
         if let userLocation = locationManager.location {
             view.centerMap(center: userLocation.coordinate, isAnimated: true)
         } else {
-            view.startLoading()
             if let startingLocationAccuracy = CPConstants.Location.startingLocationAccuracy {
                 locationManager.desiredAccuracy = startingLocationAccuracy
             }
@@ -70,13 +69,13 @@ extension BaseMapViewPresenter: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         view.centerMap(center: location.coordinate, isAnimated: true)
-        view.finishLoading()
     }
 
     @objc func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        view.finishLoading()
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            view.showError(message: error.localizedDescription)
+            if !Platform.isSimulator {
+                view.showError(message: error.localizedDescription)
+            }
         }
     }
     
@@ -86,11 +85,13 @@ extension BaseMapViewPresenter: CLLocationManagerDelegate {
             break
         case .restricted, .denied:
             view.showError(message: LocationError.userDeclined.localizedDescription)
+            view.centerMap(center: CPConstants.Location.defaultLocation, isAnimated: true)
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
         }
     }
 }
+
 
 // MARK: - Helpers
 extension BaseMapViewPresenter {
