@@ -9,7 +9,7 @@
 import XCTest
 @testable import Carpool
 
-class StubbedDataTests: XCTestCase {
+final class StubbedDataTests: XCTestCase {
     func testStubbedData() {
         // Given
         let locations = StubDataProvider.locations

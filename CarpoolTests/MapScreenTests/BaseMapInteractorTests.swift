@@ -10,9 +10,9 @@ import XCTest
 import CPCommon
 @testable import Carpool
 
-class BaseMapInteractorTests: XCTestCase {
+final class BaseMapInteractorTests: XCTestCase {
     var baseMapViewInteractor: BaseMapViewInteractor!
-    private var mainInteractorFake: MainInteractorFake!
+    private var mainInteractorStub: MainInteractorStub!
     
     var successCount = 0
     var failureCount = 0
@@ -22,14 +22,14 @@ class BaseMapInteractorTests: XCTestCase {
     
     override func tearDown() {
         baseMapViewInteractor = nil
-        mainInteractorFake = nil
+        mainInteractorStub = nil
         super.tearDown()
     }
     
     func testGetData() {
         // Given
-        mainInteractorFake = MainInteractorFake(isSuccess: true)
-        baseMapViewInteractor = BaseMapViewInteractor(parentInteractor: mainInteractorFake)
+        mainInteractorStub = MainInteractorStub(isSuccess: true)
+        baseMapViewInteractor = BaseMapViewInteractor(parentInteractor: mainInteractorStub)
         
         // When
         baseMapViewInteractor.getData(success: { (placemarks) in
@@ -43,16 +43,16 @@ class BaseMapInteractorTests: XCTestCase {
         // Then
         XCTAssertEqual(successCount, 1)
         XCTAssertEqual(failureCount, 0)
-        XCTAssertEqual(mainInteractorFake.getDataCount, 1)
-        XCTAssertEqual(mainInteractorFake.loadDataCount, 0)
+        XCTAssertEqual(mainInteractorStub.getDataCount, 1)
+        XCTAssertEqual(mainInteractorStub.loadDataCount, 0)
         XCTAssertEqual(fetchedPlacemarks.count, 1)
         XCTAssertNil(fetchedError)
     }
     
     func testLoadData() {
         // Given
-        mainInteractorFake = MainInteractorFake(isSuccess: true)
-        baseMapViewInteractor = BaseMapViewInteractor(parentInteractor: mainInteractorFake)
+        mainInteractorStub = MainInteractorStub(isSuccess: true)
+        baseMapViewInteractor = BaseMapViewInteractor(parentInteractor: mainInteractorStub)
         
         // When
         baseMapViewInteractor.loadDataFromNetwork(success: { (placemarks) in
@@ -66,16 +66,16 @@ class BaseMapInteractorTests: XCTestCase {
         // Then
         XCTAssertEqual(successCount, 1)
         XCTAssertEqual(failureCount, 0)
-        XCTAssertEqual(mainInteractorFake.getDataCount, 0)
-        XCTAssertEqual(mainInteractorFake.loadDataCount, 1)
+        XCTAssertEqual(mainInteractorStub.getDataCount, 0)
+        XCTAssertEqual(mainInteractorStub.loadDataCount, 1)
         XCTAssertEqual(fetchedPlacemarks.count, 1)
         XCTAssertNil(fetchedError)
     }
     
     func testFailGetData() {
         // Given
-        mainInteractorFake = MainInteractorFake(isSuccess: false)
-        baseMapViewInteractor = BaseMapViewInteractor(parentInteractor: mainInteractorFake)
+        mainInteractorStub = MainInteractorStub(isSuccess: false)
+        baseMapViewInteractor = BaseMapViewInteractor(parentInteractor: mainInteractorStub)
         
         // When
         baseMapViewInteractor.getData(success: { (placemarks) in
@@ -89,16 +89,16 @@ class BaseMapInteractorTests: XCTestCase {
         // Then
         XCTAssertEqual(successCount, 0)
         XCTAssertEqual(failureCount, 1)
-        XCTAssertEqual(mainInteractorFake.getDataCount, 1)
-        XCTAssertEqual(mainInteractorFake.loadDataCount, 0)
+        XCTAssertEqual(mainInteractorStub.getDataCount, 1)
+        XCTAssertEqual(mainInteractorStub.loadDataCount, 0)
         XCTAssertEqual(fetchedPlacemarks.count, 0)
         XCTAssertEqual(fetchedError as? NetworkError, NetworkError.unknown)
     }
     
     func testFailLoadData() {
         // Given
-        mainInteractorFake = MainInteractorFake(isSuccess: false)
-        baseMapViewInteractor = BaseMapViewInteractor(parentInteractor: mainInteractorFake)
+        mainInteractorStub = MainInteractorStub(isSuccess: false)
+        baseMapViewInteractor = BaseMapViewInteractor(parentInteractor: mainInteractorStub)
         
         // When
         baseMapViewInteractor.loadDataFromNetwork(success: { (placemarks) in
@@ -112,8 +112,8 @@ class BaseMapInteractorTests: XCTestCase {
         // Then
         XCTAssertEqual(successCount, 0)
         XCTAssertEqual(failureCount, 1)
-        XCTAssertEqual(mainInteractorFake.getDataCount, 0)
-        XCTAssertEqual(mainInteractorFake.loadDataCount, 1)
+        XCTAssertEqual(mainInteractorStub.getDataCount, 0)
+        XCTAssertEqual(mainInteractorStub.loadDataCount, 1)
         XCTAssertEqual(fetchedPlacemarks.count, 0)
         XCTAssertEqual(fetchedError as? NetworkError, NetworkError.unknown)
     }

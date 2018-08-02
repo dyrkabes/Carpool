@@ -10,9 +10,9 @@ import XCTest
 import CPCommon
 @testable import Carpool
 
-class BaseCarListInteractorTests: XCTestCase {
+final class BaseCarListInteractorTests: XCTestCase {
     var baseCarListInteractor: BaseCarListInteractor!
-    private var mainInteractorFake: MainInteractorFake!
+    private var mainInteractorStub: MainInteractorStub!
     
     var successCount = 0
     var failureCount = 0
@@ -24,14 +24,14 @@ class BaseCarListInteractorTests: XCTestCase {
     
     override func tearDown() {
         baseCarListInteractor = nil
-        mainInteractorFake = nil
+        mainInteractorStub = nil
         super.tearDown()
     }
     
     func testGetData() {
         // Given
-        mainInteractorFake = MainInteractorFake(isSuccess: true)
-        baseCarListInteractor = BaseCarListInteractor(parentInteractor: mainInteractorFake)
+        mainInteractorStub = MainInteractorStub(isSuccess: true)
+        baseCarListInteractor = BaseCarListInteractor(parentInteractor: mainInteractorStub)
         
         // When
         baseCarListInteractor.getData(success: {
@@ -44,16 +44,16 @@ class BaseCarListInteractorTests: XCTestCase {
         // Then
         XCTAssertEqual(successCount, 1)
         XCTAssertEqual(failureCount, 0)
-        XCTAssertEqual(mainInteractorFake.getDataCount, 1)
-        XCTAssertEqual(mainInteractorFake.loadDataCount, 0)
+        XCTAssertEqual(mainInteractorStub.getDataCount, 1)
+        XCTAssertEqual(mainInteractorStub.loadDataCount, 0)
         XCTAssertEqual(fetchedPlacemarks.count, 1)
         XCTAssertNil(fetchedError)
     }
     
     func testLoadData() {
         // Given
-        mainInteractorFake = MainInteractorFake(isSuccess: true)
-        baseCarListInteractor = BaseCarListInteractor(parentInteractor: mainInteractorFake)
+        mainInteractorStub = MainInteractorStub(isSuccess: true)
+        baseCarListInteractor = BaseCarListInteractor(parentInteractor: mainInteractorStub)
         
         // When
         baseCarListInteractor.reloadData(success: {
@@ -66,16 +66,16 @@ class BaseCarListInteractorTests: XCTestCase {
         // Then
         XCTAssertEqual(successCount, 1)
         XCTAssertEqual(failureCount, 0)
-        XCTAssertEqual(mainInteractorFake.getDataCount, 0)
-        XCTAssertEqual(mainInteractorFake.loadDataCount, 1)
+        XCTAssertEqual(mainInteractorStub.getDataCount, 0)
+        XCTAssertEqual(mainInteractorStub.loadDataCount, 1)
         XCTAssertEqual(fetchedPlacemarks.count, 1)
         XCTAssertNil(fetchedError)
     }
     
     func testFailGetData() {
         // Given
-        mainInteractorFake = MainInteractorFake(isSuccess: false)
-        baseCarListInteractor = BaseCarListInteractor(parentInteractor: mainInteractorFake)
+        mainInteractorStub = MainInteractorStub(isSuccess: false)
+        baseCarListInteractor = BaseCarListInteractor(parentInteractor: mainInteractorStub)
         
         // When
         baseCarListInteractor.getData(success: {
@@ -88,16 +88,16 @@ class BaseCarListInteractorTests: XCTestCase {
         // Then
         XCTAssertEqual(successCount, 0)
         XCTAssertEqual(failureCount, 1)
-        XCTAssertEqual(mainInteractorFake.getDataCount, 1)
-        XCTAssertEqual(mainInteractorFake.loadDataCount, 0)
+        XCTAssertEqual(mainInteractorStub.getDataCount, 1)
+        XCTAssertEqual(mainInteractorStub.loadDataCount, 0)
         XCTAssertEqual(fetchedPlacemarks.count, 0)
         XCTAssertEqual(fetchedError as? NetworkError, NetworkError.unknown)
     }
     
     func testFailLoadData() {
         // Given
-        mainInteractorFake = MainInteractorFake(isSuccess: false)
-        baseCarListInteractor = BaseCarListInteractor(parentInteractor: mainInteractorFake)
+        mainInteractorStub = MainInteractorStub(isSuccess: false)
+        baseCarListInteractor = BaseCarListInteractor(parentInteractor: mainInteractorStub)
         
         // When
         baseCarListInteractor.reloadData(success: {
@@ -110,8 +110,8 @@ class BaseCarListInteractorTests: XCTestCase {
         // Then
         XCTAssertEqual(successCount, 0)
         XCTAssertEqual(failureCount, 1)
-        XCTAssertEqual(mainInteractorFake.getDataCount, 0)
-        XCTAssertEqual(mainInteractorFake.loadDataCount, 1)
+        XCTAssertEqual(mainInteractorStub.getDataCount, 0)
+        XCTAssertEqual(mainInteractorStub.loadDataCount, 1)
         XCTAssertEqual(fetchedPlacemarks.count, 0)
         XCTAssertEqual(fetchedError as? NetworkError, NetworkError.unknown)
     }

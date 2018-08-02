@@ -9,7 +9,7 @@
 import XCTest
 @testable import Carpool
 
-class InMemoryStorageTests: XCTestCase {
+final class InMemoryStorageTests: XCTestCase {
     func testWriteEmptyArray() {
         // Given
         var inMemoryStorage = InMemoryStorage()

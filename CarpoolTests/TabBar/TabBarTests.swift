@@ -10,33 +10,18 @@
 import XCTest
 @testable import Carpool
 
-class TabBarTests: XCTestCase {
+final class TabBarTests: XCTestCase {
     func testOnEnterForeground() {
         // Given
         let tabBar = SceneBuilder.createTabBar()
-        let mainInteractorFake = AppMainInteractorFake()
-        tabBar.setInteractor(mainInteractorFake)
+        let mainInteractorStub = MainInteractorStub()
+        tabBar.setInteractor(mainInteractorStub)
         
         // When
         tabBar.onEnterForeground()
         
         // Then
-        XCTAssertEqual(mainInteractorFake.getDataCount, 0)
-        XCTAssertEqual(mainInteractorFake.loadDataCount, 1)
+        XCTAssertEqual(mainInteractorStub.getDataCount, 0)
+        XCTAssertEqual(mainInteractorStub.loadDataCount, 1)
     }
-}
-
-private class AppMainInteractorFake: AppDataWorker {
-    var getDataCount = 0
-    var loadDataCount = 0
-    
-    func getData(success: @escaping PlacemarksSuccessHandler, failure: @escaping ErrorHandler) {
-        getDataCount += 1
-    }
-    
-    func loadDataFromNetwork(success: @escaping PlacemarksSuccessHandler, failure: @escaping ErrorHandler) {
-        loadDataCount += 1
-    }
-    
-    
 }

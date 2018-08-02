@@ -10,24 +10,24 @@ import XCTest
 import CPCommon
 @testable import Carpool
 
-class AppMainInteractorTests: XCTestCase {
+final class AppMainInteractorTests: XCTestCase {
     var appMainInteractor: AppMainInteractor!
-    private var placemarksNetworkerFake: PlacemarksNetworkWorkerFake!
-    private var persistentStorageWorkerFake: PersistentStorageWorkerFake!
+    private var placemarksNetworkerStub: PlacemarksNetworkWorkerStub!
+    private var persistentStorageWorkerStub: PersistentStorageWorkerStub!
     
     override func setUp() {
         super.setUp()
         
-        placemarksNetworkerFake = PlacemarksNetworkWorkerFake()
-        persistentStorageWorkerFake = PersistentStorageWorkerFake()
+        placemarksNetworkerStub = PlacemarksNetworkWorkerStub()
+        persistentStorageWorkerStub = PersistentStorageWorkerStub()
         
-        appMainInteractor = AppMainInteractor(networkWorker: placemarksNetworkerFake, storageWorker: persistentStorageWorkerFake)
+        appMainInteractor = AppMainInteractor(networkWorker: placemarksNetworkerStub, storageWorker: persistentStorageWorkerStub)
     }
     
     override func tearDown() {
         appMainInteractor = nil
-        placemarksNetworkerFake = nil
-        persistentStorageWorkerFake = nil
+        placemarksNetworkerStub = nil
+        persistentStorageWorkerStub = nil
         super.tearDown()
     }
     
@@ -45,15 +45,15 @@ class AppMainInteractorTests: XCTestCase {
         waitForExpectations(timeout: 1, handler: nil)
         
         // Then
-        XCTAssertEqual(placemarksNetworkerFake.loadPlacemarksCallsCount, 1)
-        XCTAssertEqual(persistentStorageWorkerFake.writesCount, 1)
-        XCTAssertEqual(persistentStorageWorkerFake.placemarks.count, 1)
+        XCTAssertEqual(placemarksNetworkerStub.loadPlacemarksCallsCount, 1)
+        XCTAssertEqual(persistentStorageWorkerStub.writesCount, 1)
+        XCTAssertEqual(persistentStorageWorkerStub.placemarks.count, 1)
     }
     
     func testGetData() {
         // Given
         let expectation1 = self.expectation(description: "FirstNetworkResponse")
-        placemarksNetworkerFake.shouldSucceed = true
+        placemarksNetworkerStub.shouldSucceed = true
         
         var fetchedError: Error?
         
@@ -67,7 +67,7 @@ class AppMainInteractorTests: XCTestCase {
         waitForExpectations(timeout: 1, handler: nil)
         
         // Then
-        XCTAssertEqual(placemarksNetworkerFake.loadPlacemarksCallsCount, 1)
+        XCTAssertEqual(placemarksNetworkerStub.loadPlacemarksCallsCount, 1)
         
         // When
         let expectation2 = self.expectation(description: "SecondNetworkResponse")
@@ -81,14 +81,14 @@ class AppMainInteractorTests: XCTestCase {
         waitForExpectations(timeout: 1, handler: nil)
         
         // Then
-        XCTAssertEqual(placemarksNetworkerFake.loadPlacemarksCallsCount, 1)
+        XCTAssertEqual(placemarksNetworkerStub.loadPlacemarksCallsCount, 1)
         XCTAssertNil(fetchedError)
     }
     
     func testGetError() {
         // Given
         let expectation1 = self.expectation(description: "ErrorNetworkResponse")
-        placemarksNetworkerFake.shouldSucceed = false
+        placemarksNetworkerStub.shouldSucceed = false
         
         var fetchedError: Error?
         
@@ -103,9 +103,9 @@ class AppMainInteractorTests: XCTestCase {
         waitForExpectations(timeout: 1, handler: nil)
         
         // Then
-        XCTAssertEqual(placemarksNetworkerFake.loadPlacemarksCallsCount, 1)
-        XCTAssertEqual(persistentStorageWorkerFake.placemarks.count, 0)
-        XCTAssertEqual(persistentStorageWorkerFake.writesCount, 0)
+        XCTAssertEqual(placemarksNetworkerStub.loadPlacemarksCallsCount, 1)
+        XCTAssertEqual(persistentStorageWorkerStub.placemarks.count, 0)
+        XCTAssertEqual(persistentStorageWorkerStub.writesCount, 0)
         XCTAssertNotNil(fetchedError)
         XCTAssertEqual(fetchedError as? NetworkError, NetworkError.unknown)
     }
@@ -138,40 +138,8 @@ class AppMainInteractorTests: XCTestCase {
         waitForExpectations(timeout: 1, handler: nil)
         
         // Then
-        XCTAssertEqual(placemarksNetworkerFake.loadPlacemarksCallsCount, 1)
-        XCTAssertEqual(persistentStorageWorkerFake.placemarks.count, 1)
-        XCTAssertEqual(persistentStorageWorkerFake.writesCount, 1)
-    }
-}
-
-private class PlacemarksNetworkWorkerFake: PlacemarksNetworkWorker {
-    var loadPlacemarksCallsCount = 0
-    var shouldSucceed: Bool = true
-    
-    func loadPlacemarks(success: @escaping PlacemarksSuccessHandler, failure: @escaping ErrorHandler) {
-        loadPlacemarksCallsCount += 1
-        if shouldSucceed {
-            DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
-                success([Placemark.empty])
-            }
-        } else {
-            DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
-                failure(NetworkError.unknown)
-            }
-        }
-    }
-}
-
-private class PersistentStorageWorkerFake: PersistentStorageWorker {
-    var placemarks: [Placemark] = []
-    var writesCount = 0
-    
-    func getPlacemarks() -> [Placemark] {
-        return placemarks
-    }
-    
-    func writePlacemarks(_ placemarks: [Placemark]) {
-        writesCount += 1
-        self.placemarks = placemarks
+        XCTAssertEqual(placemarksNetworkerStub.loadPlacemarksCallsCount, 1)
+        XCTAssertEqual(persistentStorageWorkerStub.placemarks.count, 1)
+        XCTAssertEqual(persistentStorageWorkerStub.writesCount, 1)
     }
 }

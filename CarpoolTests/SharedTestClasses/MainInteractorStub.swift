@@ -1,5 +1,5 @@
 //
-//  MainInteractorFake.swift
+//  MainInteractorStub.swift
 //  CarpoolTests
 //
 //  Created by Pavel Stepanov on 01/08/2018.
@@ -9,7 +9,7 @@
 import CPCommon
 @testable import Carpool
 
-class MainInteractorFake: AppDataWorker {
+final class MainInteractorStub: AppDataWorker {
     var getDataCount = 0
     var loadDataCount = 0
     var isSuccess: Bool

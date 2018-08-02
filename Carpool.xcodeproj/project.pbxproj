@@ -42,17 +42,24 @@
 		445BF4AF210C3D89000F3ED1 /* PlacemarkMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF4AE210C3D89000F3ED1 /* PlacemarkMapViewModel.swift */; };
 		445BF4B5210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445BF4B4210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift */; };
 		4461675D21124537001858CA /* TabBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461675C21124537001858CA /* TabBarTests.swift */; };
-		4461676021124A8A001858CA /* MainInteractorFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461675F21124A8A001858CA /* MainInteractorFake.swift */; };
+		4461676021124A8A001858CA /* MainInteractorStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461675F21124A8A001858CA /* MainInteractorStub.swift */; };
 		4461676221124ADC001858CA /* BaseMapViewPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461676121124ADC001858CA /* BaseMapViewPresenterTests.swift */; };
 		4461676621125229001858CA /* BaseCarListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461676421125229001858CA /* BaseCarListInteractorTests.swift */; };
 		4461676721125229001858CA /* BaseCarListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461676521125229001858CA /* BaseCarListPresenterTests.swift */; };
-		44616769211253B4001858CA /* BaseViewFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44616768211253B4001858CA /* BaseViewFake.swift */; };
+		44616769211253B4001858CA /* BaseViewStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44616768211253B4001858CA /* BaseViewStub.swift */; };
 		4477849B210DD2E000FE4812 /* AppMainInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4477849A210DD2E000FE4812 /* AppMainInteractorTests.swift */; };
 		4477849D210E1DE700FE4812 /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4477849C210E1DE700FE4812 /* AppImages.swift */; };
 		447784A9210E2F6100FE4812 /* CarListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 447784AB210E2F6100FE4812 /* CarListCell.xib */; };
 		447784B8210E523300FE4812 /* VisualCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447784B7210E523300FE4812 /* VisualCondition.swift */; };
 		447784BB210E53ED00FE4812 /* Carpool.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 447784B9210E53ED00FE4812 /* Carpool.xcdatamodeld */; };
 		447784ED210E58A600FE4812 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447784EC210E58A600FE4812 /* CoreDataStack.swift */; };
+		44ECB87D2113A08000EE5561 /* PersistentStorgateWorkerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB87C2113A08000EE5561 /* PersistentStorgateWorkerStub.swift */; };
+		44ECB87F2113A0B000EE5561 /* PlacemarkNetworkWorkerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB87E2113A0B000EE5561 /* PlacemarkNetworkWorkerStub.swift */; };
+		44ECB8822113A11600EE5561 /* Placemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB8812113A11600EE5561 /* Placemark.swift */; };
+		44ECB8852113A13A00EE5561 /* CPTestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB8842113A13A00EE5561 /* CPTestConstants.swift */; };
+		44ECB8872113A1CD00EE5561 /* CarListInteractorStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB8862113A1CD00EE5561 /* CarListInteractorStub.swift */; };
+		44ECB8892113A1FE00EE5561 /* CarListViewStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB8882113A1FE00EE5561 /* CarListViewStub.swift */; };
+		44ECB88B2113A24500EE5561 /* MapViewStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB88A2113A24500EE5561 /* MapViewStub.swift */; };
 		44FCBD6C210C418D00EBBD30 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCBD6B210C418D00EBBD30 /* MapKit.framework */; };
 		44FCBD72210C423E00EBBD30 /* CPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCBD71210C423E00EBBD30 /* CPCommon.framework */; };
 		44FCBD73210C423E00EBBD30 /* CPCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44FCBD71210C423E00EBBD30 /* CPCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -138,11 +145,11 @@
 		445BF4AE210C3D89000F3ED1 /* PlacemarkMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkMapViewModel.swift; sourceTree = "<group>"; };
 		445BF4B4210C3E2E000F3ED1 /* PlacemarkAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkAnnotationView.swift; sourceTree = "<group>"; };
 		4461675C21124537001858CA /* TabBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTests.swift; sourceTree = "<group>"; };
-		4461675F21124A8A001858CA /* MainInteractorFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorFake.swift; sourceTree = "<group>"; };
+		4461675F21124A8A001858CA /* MainInteractorStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorStub.swift; sourceTree = "<group>"; };
 		4461676121124ADC001858CA /* BaseMapViewPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMapViewPresenterTests.swift; sourceTree = "<group>"; };
 		4461676421125229001858CA /* BaseCarListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCarListInteractorTests.swift; sourceTree = "<group>"; };
 		4461676521125229001858CA /* BaseCarListPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCarListPresenterTests.swift; sourceTree = "<group>"; };
-		44616768211253B4001858CA /* BaseViewFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewFake.swift; sourceTree = "<group>"; };
+		44616768211253B4001858CA /* BaseViewStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewStub.swift; sourceTree = "<group>"; };
 		4477849A210DD2E000FE4812 /* AppMainInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainInteractorTests.swift; sourceTree = "<group>"; };
 		4477849C210E1DE700FE4812 /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
 		447784AA210E2F6100FE4812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CarListCell.xib; sourceTree = "<group>"; };
@@ -150,6 +157,13 @@
 		447784B7210E523300FE4812 /* VisualCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualCondition.swift; sourceTree = "<group>"; };
 		447784BA210E53ED00FE4812 /* Carpool.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Carpool.xcdatamodel; sourceTree = "<group>"; };
 		447784EC210E58A600FE4812 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		44ECB87C2113A08000EE5561 /* PersistentStorgateWorkerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorgateWorkerStub.swift; sourceTree = "<group>"; };
+		44ECB87E2113A0B000EE5561 /* PlacemarkNetworkWorkerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkNetworkWorkerStub.swift; sourceTree = "<group>"; };
+		44ECB8812113A11600EE5561 /* Placemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemark.swift; sourceTree = "<group>"; };
+		44ECB8842113A13A00EE5561 /* CPTestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTestConstants.swift; sourceTree = "<group>"; };
+		44ECB8862113A1CD00EE5561 /* CarListInteractorStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListInteractorStub.swift; sourceTree = "<group>"; };
+		44ECB8882113A1FE00EE5561 /* CarListViewStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewStub.swift; sourceTree = "<group>"; };
+		44ECB88A2113A24500EE5561 /* MapViewStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewStub.swift; sourceTree = "<group>"; };
 		44FCBD6B210C418D00EBBD30 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		44FCBD71210C423E00EBBD30 /* CPCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CPCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FCBD77210C440600EBBD30 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
@@ -272,6 +286,7 @@
 			children = (
 				4452C351210DCF160040FD25 /* BaseMapInteractorTests.swift */,
 				4461676121124ADC001858CA /* BaseMapViewPresenterTests.swift */,
+				44ECB88A2113A24500EE5561 /* MapViewStub.swift */,
 			);
 			path = MapScreenTests;
 			sourceTree = "<group>";
@@ -313,6 +328,8 @@
 		445BF495210BB884000F3ED1 /* CarpoolTests */ = {
 			isa = PBXGroup;
 			children = (
+				44ECB8832113A13100EE5561 /* Constants */,
+				44ECB8802113A10D00EE5561 /* TestExtensions */,
 				4461675E21124A76001858CA /* SharedTestClasses */,
 				44778499210DD2D500FE4812 /* App */,
 				4461675B2112451A001858CA /* TabBar */,
@@ -447,8 +464,8 @@
 		4461675E21124A76001858CA /* SharedTestClasses */ = {
 			isa = PBXGroup;
 			children = (
-				4461675F21124A8A001858CA /* MainInteractorFake.swift */,
-				44616768211253B4001858CA /* BaseViewFake.swift */,
+				4461675F21124A8A001858CA /* MainInteractorStub.swift */,
+				44616768211253B4001858CA /* BaseViewStub.swift */,
 			);
 			path = SharedTestClasses;
 			sourceTree = "<group>";
@@ -458,6 +475,8 @@
 			children = (
 				4461676421125229001858CA /* BaseCarListInteractorTests.swift */,
 				4461676521125229001858CA /* BaseCarListPresenterTests.swift */,
+				44ECB8882113A1FE00EE5561 /* CarListViewStub.swift */,
+				44ECB8862113A1CD00EE5561 /* CarListInteractorStub.swift */,
 			);
 			path = CarListTests;
 			sourceTree = "<group>";
@@ -466,6 +485,8 @@
 			isa = PBXGroup;
 			children = (
 				4477849A210DD2E000FE4812 /* AppMainInteractorTests.swift */,
+				44ECB87C2113A08000EE5561 /* PersistentStorgateWorkerStub.swift */,
+				44ECB87E2113A0B000EE5561 /* PlacemarkNetworkWorkerStub.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -479,6 +500,22 @@
 				44417D48210F9F5600D64BAC /* CoreDataPersistentStoreType.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		44ECB8802113A10D00EE5561 /* TestExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				44ECB8812113A11600EE5561 /* Placemark.swift */,
+			);
+			path = TestExtensions;
+			sourceTree = "<group>";
+		};
+		44ECB8832113A13100EE5561 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				44ECB8842113A13A00EE5561 /* CPTestConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		44FCBD68210C413F00EBBD30 /* Frameworks */ = {
@@ -767,17 +804,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44ECB8852113A13A00EE5561 /* CPTestConstants.swift in Sources */,
+				44ECB87F2113A0B000EE5561 /* PlacemarkNetworkWorkerStub.swift in Sources */,
 				4461676621125229001858CA /* BaseCarListInteractorTests.swift in Sources */,
 				4477849B210DD2E000FE4812 /* AppMainInteractorTests.swift in Sources */,
-				44616769211253B4001858CA /* BaseViewFake.swift in Sources */,
+				44616769211253B4001858CA /* BaseViewStub.swift in Sources */,
+				44ECB8822113A11600EE5561 /* Placemark.swift in Sources */,
 				4452C34C210DCE240040FD25 /* InMemoryStorageTests.swift in Sources */,
-				4461676021124A8A001858CA /* MainInteractorFake.swift in Sources */,
+				4461676021124A8A001858CA /* MainInteractorStub.swift in Sources */,
 				44417D47210F9F2100D64BAC /* CoreDataTests.swift in Sources */,
 				4461676221124ADC001858CA /* BaseMapViewPresenterTests.swift in Sources */,
+				44ECB8872113A1CD00EE5561 /* CarListInteractorStub.swift in Sources */,
 				445BF497210BB884000F3ED1 /* StubbedPlacemarksNetworkWorkerTests.swift in Sources */,
 				4461675D21124537001858CA /* TabBarTests.swift in Sources */,
+				44ECB8892113A1FE00EE5561 /* CarListViewStub.swift in Sources */,
+				44ECB87D2113A08000EE5561 /* PersistentStorgateWorkerStub.swift in Sources */,
 				4452C352210DCF160040FD25 /* BaseMapInteractorTests.swift in Sources */,
 				4461676721125229001858CA /* BaseCarListPresenterTests.swift in Sources */,
+				44ECB88B2113A24500EE5561 /* MapViewStub.swift in Sources */,
 				4452C34A210DCC3E0040FD25 /* StubbedDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

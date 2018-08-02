@@ -17,110 +17,110 @@ import CoreLocation
  */
 class BaseMapViewPresenterTests: XCTestCase {
     private var baseMapViewPresenter: BaseMapViewPresenter!
-    private var mapViewInteractorFake: MapViewInteractorFake!
-    private var mapViewFake: MapViewFake!
+    private var mapViewInteractorStub: MapViewInteractorStub!
+    private var mapViewStub: MapViewStub!
     
     override func setUp() {
         super.setUp()
         
-        mapViewFake = MapViewFake()
-        mapViewInteractorFake = MapViewInteractorFake(isSuccess: true)
-        baseMapViewPresenter = BaseMapViewPresenter(view: mapViewFake, interactor: mapViewInteractorFake)
+        mapViewStub = MapViewStub()
+        mapViewInteractorStub = MapViewInteractorStub(isSuccess: true)
+        baseMapViewPresenter = BaseMapViewPresenter(view: mapViewStub, interactor: mapViewInteractorStub)
     }
     
     override func tearDown() {
         baseMapViewPresenter = nil
-        mapViewFake = nil
-        mapViewInteractorFake = nil
+        mapViewStub = nil
+        mapViewInteractorStub = nil
         super.tearDown()
     }
     
     func testSuccessfulGetData() {
         // Given
-        mapViewInteractorFake.isSuccess = true
+        mapViewInteractorStub.isSuccess = true
         
         // When
         baseMapViewPresenter.getPlacemarks()
         
         // Then
-        XCTAssertEqual(mapViewFake.populateMapCount, 1)
-        XCTAssertEqual(mapViewFake.startLoadingCount, 1)
-        XCTAssertEqual(mapViewFake.finishLoadingCount, 1)
-        XCTAssertEqual(mapViewFake.showErrorCount, 0)
-        XCTAssertNil(mapViewFake.showedErrorText)
+        XCTAssertEqual(mapViewStub.populateMapCount, 1)
+        XCTAssertEqual(mapViewStub.startLoadingCount, 1)
+        XCTAssertEqual(mapViewStub.finishLoadingCount, 1)
+        XCTAssertEqual(mapViewStub.showErrorCount, 0)
+        XCTAssertNil(mapViewStub.showedErrorText)
         
-        XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.count, 1)
-        XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.first?.name, "")
+        XCTAssertEqual(mapViewStub.receivedPlacemarksViewModels.count, 1)
+        XCTAssertEqual(mapViewStub.receivedPlacemarksViewModels.first?.name, "")
         
-        XCTAssertEqual(mapViewInteractorFake.getDataCount, 1)
-        XCTAssertEqual(mapViewInteractorFake.loadDataCount, 0)
+        XCTAssertEqual(mapViewInteractorStub.getDataCount, 1)
+        XCTAssertEqual(mapViewInteractorStub.loadDataCount, 0)
     }
     
     func testSuccessfulLoadData() {
         // Given
-        mapViewInteractorFake.isSuccess = true
+        mapViewInteractorStub.isSuccess = true
         
         // When
         baseMapViewPresenter.reloadData()
         
         // Then
-        XCTAssertEqual(mapViewFake.populateMapCount, 1)
-        XCTAssertEqual(mapViewFake.startLoadingCount, 1)
-        XCTAssertEqual(mapViewFake.finishLoadingCount, 1)
-        XCTAssertEqual(mapViewFake.showErrorCount, 0)
-        XCTAssertNil(mapViewFake.showedErrorText)
+        XCTAssertEqual(mapViewStub.populateMapCount, 1)
+        XCTAssertEqual(mapViewStub.startLoadingCount, 1)
+        XCTAssertEqual(mapViewStub.finishLoadingCount, 1)
+        XCTAssertEqual(mapViewStub.showErrorCount, 0)
+        XCTAssertNil(mapViewStub.showedErrorText)
         
-        XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.count, 1)
-        XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.first?.name, "")
+        XCTAssertEqual(mapViewStub.receivedPlacemarksViewModels.count, 1)
+        XCTAssertEqual(mapViewStub.receivedPlacemarksViewModels.first?.name, "")
         
-        XCTAssertEqual(mapViewInteractorFake.getDataCount, 0)
-        XCTAssertEqual(mapViewInteractorFake.loadDataCount, 1)
+        XCTAssertEqual(mapViewInteractorStub.getDataCount, 0)
+        XCTAssertEqual(mapViewInteractorStub.loadDataCount, 1)
     }
     
     func testFailureGetData() {
         // Given
-        mapViewInteractorFake.isSuccess = false
+        mapViewInteractorStub.isSuccess = false
         
         // When
         baseMapViewPresenter.getPlacemarks()
         
         // Then
-        XCTAssertEqual(mapViewFake.populateMapCount, 0)
-        XCTAssertEqual(mapViewFake.startLoadingCount, 1)
-        XCTAssertEqual(mapViewFake.finishLoadingCount, 1)
-        XCTAssertEqual(mapViewFake.showErrorCount, 1)
-        XCTAssertEqual(mapViewFake.showedErrorText, NetworkError.unknown.localizedDescription)
+        XCTAssertEqual(mapViewStub.populateMapCount, 0)
+        XCTAssertEqual(mapViewStub.startLoadingCount, 1)
+        XCTAssertEqual(mapViewStub.finishLoadingCount, 1)
+        XCTAssertEqual(mapViewStub.showErrorCount, 1)
+        XCTAssertEqual(mapViewStub.showedErrorText, NetworkError.unknown.localizedDescription)
         
-        XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.count, 0)
-        XCTAssertNil(mapViewFake.receivedPlacemarksViewModels.first?.name)
+        XCTAssertEqual(mapViewStub.receivedPlacemarksViewModels.count, 0)
+        XCTAssertNil(mapViewStub.receivedPlacemarksViewModels.first?.name)
         
-        XCTAssertEqual(mapViewInteractorFake.getDataCount, 1)
-        XCTAssertEqual(mapViewInteractorFake.loadDataCount, 0)
+        XCTAssertEqual(mapViewInteractorStub.getDataCount, 1)
+        XCTAssertEqual(mapViewInteractorStub.loadDataCount, 0)
     }
     
     func testFailureLoadData() {
         // Given
-        mapViewInteractorFake.isSuccess = false
+        mapViewInteractorStub.isSuccess = false
         
         // When
         baseMapViewPresenter.reloadData()
         
         // Then
-        XCTAssertEqual(mapViewFake.populateMapCount, 0)
-        XCTAssertEqual(mapViewFake.startLoadingCount, 1)
-        XCTAssertEqual(mapViewFake.finishLoadingCount, 1)
-        XCTAssertEqual(mapViewFake.showErrorCount, 1)
-        XCTAssertEqual(mapViewFake.showedErrorText, NetworkError.unknown.localizedDescription)
+        XCTAssertEqual(mapViewStub.populateMapCount, 0)
+        XCTAssertEqual(mapViewStub.startLoadingCount, 1)
+        XCTAssertEqual(mapViewStub.finishLoadingCount, 1)
+        XCTAssertEqual(mapViewStub.showErrorCount, 1)
+        XCTAssertEqual(mapViewStub.showedErrorText, NetworkError.unknown.localizedDescription)
         
-        XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.count, 0)
-        XCTAssertNil(mapViewFake.receivedPlacemarksViewModels.first?.name)
+        XCTAssertEqual(mapViewStub.receivedPlacemarksViewModels.count, 0)
+        XCTAssertNil(mapViewStub.receivedPlacemarksViewModels.first?.name)
         
-        XCTAssertEqual(mapViewInteractorFake.getDataCount, 0)
-        XCTAssertEqual(mapViewInteractorFake.loadDataCount, 1)
+        XCTAssertEqual(mapViewInteractorStub.getDataCount, 0)
+        XCTAssertEqual(mapViewInteractorStub.loadDataCount, 1)
     }
 }
 
-private class MapViewInteractorFake: MapViewInteractor {
+private class MapViewInteractorStub: MapViewInteractor {
     var isSuccess: Bool = true
     var getDataCount = 0
     var loadDataCount = 0
@@ -148,19 +148,4 @@ private class MapViewInteractorFake: MapViewInteractor {
             failure(NetworkError.unknown)
         }
     }
-}
-
-private class MapViewFake: BaseViewFake, MapView {
-    var populateMapCount = 0
-    
-    var receivedPlacemarksViewModels: [PlacemarkMapViewModel] = []
-    
-    func setPresenter(_ presenter: MapViewPresenter) {}
-    
-    func populateMap(withViewData viewData: [PlacemarkMapViewModel]) {
-        populateMapCount += 1
-        receivedPlacemarksViewModels = viewData
-    }
-    
-    func centerMap(center: CLLocationCoordinate2D, isAnimated: Bool) { }
 }

@@ -10,7 +10,7 @@ import XCTest
 import CPCommon
 @testable import Carpool
 
-class LocalPlacemarksNetworkWorkerTests: XCTestCase {
+final class LocalPlacemarksNetworkWorkerTests: XCTestCase {
     var localPlacemarkNetworkWorker: LocalPlacemarksNetworkWorker!
     
     override func tearDown() {

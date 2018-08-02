@@ -1,5 +1,5 @@
 //
-//  BaseViewFake.swift
+//  BaseViewStub.swift
 //  CarpoolTests
 //
 //  Created by Pavel Stepanov on 01/08/2018.
@@ -8,7 +8,7 @@
 
 @testable import Carpool
 
-class BaseViewFake {
+class BaseViewStub {
     var startLoadingCount = 0
     var finishLoadingCount = 0
     var showErrorCount = 0
