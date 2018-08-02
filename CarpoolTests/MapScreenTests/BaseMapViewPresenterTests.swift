@@ -8,8 +8,13 @@
 
 import XCTest
 import CPCommon
+import CoreLocation
 @testable import Carpool
 
+/**
+ - Note:
+ When CLLocationManager is used via protocol test `centerMap(center:isAnimated:)` function.
+ */
 class BaseMapViewPresenterTests: XCTestCase {
     private var baseMapViewPresenter: BaseMapViewPresenter!
     private var mapViewInteractorFake: MapViewInteractorFake!
@@ -42,7 +47,7 @@ class BaseMapViewPresenterTests: XCTestCase {
         XCTAssertEqual(mapViewFake.startLoadingCount, 1)
         XCTAssertEqual(mapViewFake.finishLoadingCount, 1)
         XCTAssertEqual(mapViewFake.showErrorCount, 0)
-        XCTAssertNil(mapViewFake.showedError)
+        XCTAssertNil(mapViewFake.showedErrorText)
         
         XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.count, 1)
         XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.first?.name, "")
@@ -63,7 +68,7 @@ class BaseMapViewPresenterTests: XCTestCase {
         XCTAssertEqual(mapViewFake.startLoadingCount, 1)
         XCTAssertEqual(mapViewFake.finishLoadingCount, 1)
         XCTAssertEqual(mapViewFake.showErrorCount, 0)
-        XCTAssertNil(mapViewFake.showedError)
+        XCTAssertNil(mapViewFake.showedErrorText)
         
         XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.count, 1)
         XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.first?.name, "")
@@ -84,7 +89,7 @@ class BaseMapViewPresenterTests: XCTestCase {
         XCTAssertEqual(mapViewFake.startLoadingCount, 1)
         XCTAssertEqual(mapViewFake.finishLoadingCount, 1)
         XCTAssertEqual(mapViewFake.showErrorCount, 1)
-        XCTAssertEqual(mapViewFake.showedError as? NetworkError, .unknown)
+        XCTAssertEqual(mapViewFake.showedErrorText, NetworkError.unknown.localizedDescription)
         
         XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.count, 0)
         XCTAssertNil(mapViewFake.receivedPlacemarksViewModels.first?.name)
@@ -105,7 +110,7 @@ class BaseMapViewPresenterTests: XCTestCase {
         XCTAssertEqual(mapViewFake.startLoadingCount, 1)
         XCTAssertEqual(mapViewFake.finishLoadingCount, 1)
         XCTAssertEqual(mapViewFake.showErrorCount, 1)
-        XCTAssertEqual(mapViewFake.showedError as? NetworkError, .unknown)
+        XCTAssertEqual(mapViewFake.showedErrorText, NetworkError.unknown.localizedDescription)
         
         XCTAssertEqual(mapViewFake.receivedPlacemarksViewModels.count, 0)
         XCTAssertNil(mapViewFake.receivedPlacemarksViewModels.first?.name)
@@ -156,4 +161,6 @@ private class MapViewFake: BaseViewFake, MapView {
         populateMapCount += 1
         receivedPlacemarksViewModels = viewData
     }
+    
+    func centerMap(center: CLLocationCoordinate2D, isAnimated: Bool) { }
 }

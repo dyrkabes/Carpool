@@ -42,7 +42,7 @@ class BaseCarListPresenterTests: XCTestCase {
         XCTAssertEqual(carListView.startLoadingCount, 1)
         XCTAssertEqual(carListView.finishLoadingCount, 1)
         XCTAssertEqual(carListView.showErrorCount, 0)
-        XCTAssertNil(carListView.showedError)
+        XCTAssertNil(carListView.showedErrorText)
         
         XCTAssertEqual(carListInteractorFake.getDataCount, 1)
         XCTAssertEqual(carListInteractorFake.loadDataCount, 0)
@@ -60,7 +60,7 @@ class BaseCarListPresenterTests: XCTestCase {
         XCTAssertEqual(carListView.startLoadingCount, 1)
         XCTAssertEqual(carListView.finishLoadingCount, 1)
         XCTAssertEqual(carListView.showErrorCount, 0)
-        XCTAssertNil(carListView.showedError)
+        XCTAssertNil(carListView.showedErrorText)
         
         XCTAssertEqual(carListInteractorFake.getDataCount, 0)
         XCTAssertEqual(carListInteractorFake.loadDataCount, 1)
@@ -78,11 +78,8 @@ class BaseCarListPresenterTests: XCTestCase {
         XCTAssertEqual(carListView.startLoadingCount, 1)
         XCTAssertEqual(carListView.finishLoadingCount, 1)
         XCTAssertEqual(carListView.showErrorCount, 1)
-        XCTAssertEqual(carListView.showedError as? NetworkError, .unknown)
+        XCTAssertEqual(carListView.showedErrorText, NetworkError.unknown.localizedDescription)
         
-//        XCTAssertEqual(carListView.reloadDataCount.count, 0)
-//        XCTAssertNil(carListView.receivedPlacemarksViewModels.first?.name)
-//
         XCTAssertEqual(carListInteractorFake.getDataCount, 1)
         XCTAssertEqual(carListInteractorFake.loadDataCount, 0)
     }
@@ -99,7 +96,7 @@ class BaseCarListPresenterTests: XCTestCase {
         XCTAssertEqual(carListView.startLoadingCount, 1)
         XCTAssertEqual(carListView.finishLoadingCount, 1)
         XCTAssertEqual(carListView.showErrorCount, 1)
-        XCTAssertEqual(carListView.showedError as? NetworkError, .unknown)
+        XCTAssertEqual(carListView.showedErrorText, NetworkError.unknown.localizedDescription)
         
         XCTAssertEqual(carListInteractorFake.getDataCount, 0)
         XCTAssertEqual(carListInteractorFake.loadDataCount, 1)

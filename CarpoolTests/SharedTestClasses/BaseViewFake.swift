@@ -12,7 +12,7 @@ class BaseViewFake {
     var startLoadingCount = 0
     var finishLoadingCount = 0
     var showErrorCount = 0
-    var showedError: Error?
+    var showedErrorText: String?
     
     func startLoading() {
         startLoadingCount += 1
@@ -22,8 +22,8 @@ class BaseViewFake {
         finishLoadingCount += 1
     }
     
-    func showError(error: Error) {
+    func showError(message: String) {
         showErrorCount += 1
-        showedError = error
+        showedErrorText = message
     }
 }

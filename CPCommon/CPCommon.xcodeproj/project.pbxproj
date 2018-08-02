@@ -20,6 +20,8 @@
 		447784A1210E233C00FE4812 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447784A0210E233C00FE4812 /* UIColor+hex.swift */; };
 		447784A8210E2B1D00FE4812 /* UI+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447784A7210E2B1D00FE4812 /* UI+Localized.swift */; };
 		447784AF210E302E00FE4812 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 447784B1210E302E00FE4812 /* Localizable.strings */; };
+		44ECB877211345B800EE5561 /* LocationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB876211345B700EE5561 /* LocationError.swift */; };
+		44ECB87B2113646C00EE5561 /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ECB87A2113646C00EE5561 /* UIViewController+ShowAlert.swift */; };
 		44FCBD59210C3F2000EBBD30 /* CPCommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD58210C3F2000EBBD30 /* CPCommonTests.swift */; };
 		44FCBD5B210C3F2000EBBD30 /* CPCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 44FCBD4D210C3F2000EBBD30 /* CPCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		44FCBD67210C40F600EBBD30 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FCBD66210C40F600EBBD30 /* Identifiable.swift */; };
@@ -62,6 +64,8 @@
 		447784A7210E2B1D00FE4812 /* UI+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI+Localized.swift"; sourceTree = "<group>"; };
 		447784B2210E304500FE4812 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		447784B3210E304A00FE4812 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		44ECB876211345B700EE5561 /* LocationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationError.swift; sourceTree = "<group>"; };
+		44ECB87A2113646C00EE5561 /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
 		44FCBD4A210C3F2000EBBD30 /* CPCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CPCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FCBD4D210C3F2000EBBD30 /* CPCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPCommon.h; sourceTree = "<group>"; };
 		44FCBD4E210C3F2000EBBD30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				44778492210DD16300FE4812 /* NetworkError.swift */,
+				44ECB876211345B700EE5561 /* LocationError.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				447784A6210E2B0F00FE4812 /* Localization */,
+				44ECB87A2113646C00EE5561 /* UIViewController+ShowAlert.swift */,
 				44FCBDB7210C63AE00EBBD30 /* String+Localized.swift */,
 				4452C301210C813F0040FD25 /* Collection+try.swift */,
 				4452C347210DCBF30040FD25 /* CLLocationCoordinate2D+Init.swift */,
@@ -429,6 +435,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				44417D51210FAC1800D64BAC /* CPConstants.swift in Sources */,
+				44ECB87B2113646C00EE5561 /* UIViewController+ShowAlert.swift in Sources */,
+				44ECB877211345B800EE5561 /* LocationError.swift in Sources */,
 				44778498210DD1E100FE4812 /* AppTexts.swift in Sources */,
 				4452C302210C813F0040FD25 /* Collection+try.swift in Sources */,
 				44FCBDB8210C63AE00EBBD30 /* String+Localized.swift in Sources */,

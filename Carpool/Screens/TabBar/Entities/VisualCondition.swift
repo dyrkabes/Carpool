@@ -9,7 +9,8 @@
 /**
  Represents exterior and interior values.
  
- - Discussion: In the case there're more condition types and they could change dynamically I would make a dictionary so cases could be loaded from a separate route in form of [index: description]<Int, String>. In case the uppercased values are important I would make another init :) but I'd still use an enum because this way we're not connected to just a string representation and we could for instance use stars instead of labels.
+ - Note:
+ In the case there're more condition types and they could change dynamically I would make a dictionary so cases could be loaded from a separate route in form of [index: description]<Int, String>. In case the uppercased values are important I would make another init :) but I'd still use an enum because this way we're not connected to just a string representation and we could for instance use stars instead of labels.
  */
 enum VisualCondition: String, Decodable, CustomStringConvertible {
     case good = "good"

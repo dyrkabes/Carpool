@@ -11,5 +11,5 @@ import UIKit
 public protocol AppViewController: class {
     func startLoading()
     func finishLoading()
-    func showError(error: Error)
+    func showError(message: String)
 }

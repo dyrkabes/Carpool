@@ -10,6 +10,10 @@ import UIKit
 import MapKit
 import CPCommon
 
+/**
+ - Note:
+ If the logic in the UITableViewDataSource and UITableViewDelegate extension was more complex I would move it to presenter.
+ */
 final class CarListViewController: BaseViewController, CarListView {
     // MARK: - Injected
     private var presenter: CarListPresenter!
@@ -47,8 +51,11 @@ final class CarListViewController: BaseViewController, CarListView {
         self.presenter = presenter
     }
     
+    override func startLoading() {
+        refreshControl.beginRefreshing()
+    }
+    
     override func finishLoading() {
-        super.finishLoading()
         refreshControl.endRefreshing()
     }
     

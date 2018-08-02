@@ -11,7 +11,8 @@ import MapKit
 /**
  View model for displaying annotations on the map.
  
- - Discussion: I decided not to include vin as I consider it as a more private information.
+ - Note:
+ I decided not to include vin as I consider it as a more private information.
  */
 final class PlacemarkMapViewModel: NSObject, MKAnnotation {
     let address: String

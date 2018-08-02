@@ -6,11 +6,12 @@
 //  Copyright © 2018 Pavel Stepanov. All rights reserved.
 //
 
-import Foundation
+import CoreLocation
 
 protocol MapViewPresenter: class {
     init(view: MapView, interactor: MapViewInteractor)
     
+    func viewDidLoad()
     func getPlacemarks()
     func reloadData()
 }

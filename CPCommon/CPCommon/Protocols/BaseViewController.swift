@@ -19,8 +19,8 @@ open class BaseViewController: UIViewController, AppViewController {
         MBProgressHUD.hide(for: destinationView(withNavBar: true), animated: false)
     }
     
-    public func showError(error: Error) {
-        // TODO: Implement
+    public func showError(message: String) {
+        showAlert(message: message)
     }
     
     fileprivate func destinationView(withNavBar navBar: Bool) -> UIView {

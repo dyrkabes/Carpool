@@ -9,7 +9,8 @@
 /**
  View model for displaying cells in the list.
  
- - Discussion: I decided not to include vin as I consider it as a more private information.
+ - Note:
+ I decided not to include vin as I consider it as a more private information.
  */
 struct PlacemarkListViewModel {
     let address: String

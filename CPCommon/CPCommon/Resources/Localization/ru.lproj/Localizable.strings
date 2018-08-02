@@ -16,3 +16,9 @@
 
 "good" = "Хорошее";
 "unacceptable" = "Неудовлетворительное";
+
+// userDeclinedError
+"You cannot see your location if you do not allow the use of geolocation service." = "Вы не сможете увидеть свою геопозицию, так как вы не разрешили использование сервиса геолокации.";
+
+// Ok
+"Ok" = "Ок";

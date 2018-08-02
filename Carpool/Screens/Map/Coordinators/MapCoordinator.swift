@@ -7,6 +7,7 @@
 //
 
 import CPCommon
+import CoreLocation
 
 /// Creates map module.
 struct MapCoordinator: Coordinator {
@@ -23,6 +24,7 @@ struct MapCoordinator: Coordinator {
         let mapViewController = SceneBuilder.createMapViewController()
 
         let interactor = BaseMapViewInteractor(parentInteractor: parentInteractor)
+        
         let presenter = BaseMapViewPresenter(view: mapViewController, interactor: interactor)
         mapViewController.setPresenter(presenter)
 

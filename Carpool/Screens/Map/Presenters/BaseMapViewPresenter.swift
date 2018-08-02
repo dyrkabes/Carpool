@@ -6,12 +6,18 @@
 //  Copyright © 2018 Pavel Stepanov. All rights reserved.
 //
 
-import Foundation
+import CoreLocation
+import CPCommon
 
-final class BaseMapViewPresenter: MapViewPresenter {
+/**
+ - TODO:
+ Use location manager via protocol to ensure proper testing.
+ */
+final class BaseMapViewPresenter: NSObject, MapViewPresenter {
     // MARK: - Injected
-    private unowned var view: MapView
-    private var interactor: MapViewInteractor
+    private unowned let view: MapView
+    private let interactor: MapViewInteractor
+    private lazy var locationManager: CLLocationManager = CLLocationManager()
 
     // MARK: - Init
     required init(view: MapView, interactor: MapViewInteractor) {
@@ -20,6 +26,20 @@ final class BaseMapViewPresenter: MapViewPresenter {
     }
 
     // MARK: - Public func
+    func viewDidLoad() {
+        locationManager.delegate = self
+        locationManager.requestLocation()
+        
+        if let userLocation = locationManager.location {
+            view.centerMap(center: userLocation.coordinate, isAnimated: true)
+        } else {
+            view.startLoading()
+            if let startingLocationAccuracy = CPConstants.Location.startingLocationAccuracy {
+                locationManager.desiredAccuracy = startingLocationAccuracy
+            }
+        }
+    }
+    
     func getPlacemarks() {
         view.startLoading()
         interactor.getData(success: { [weak self] (placemarks) in
@@ -28,7 +48,7 @@ final class BaseMapViewPresenter: MapViewPresenter {
             strongSelf.view.populateMap(withViewData: placemarks.map { strongSelf.getViewModel(forPlacemark: $0) })
         }, failure: { [weak self] (error) in
             self?.view.finishLoading()
-            self?.view.showError(error: error)
+            self?.view.showError(message: error.localizedDescription)
         })
     }
 
@@ -40,8 +60,35 @@ final class BaseMapViewPresenter: MapViewPresenter {
             strongSelf.view.populateMap(withViewData: placemarks.map { strongSelf.getViewModel(forPlacemark: $0) })
         }, failure: { [weak self] (error) in
             self?.view.finishLoading()
-            self?.view.showError(error: error)
+            self?.view.showError(message: error.localizedDescription)
         })
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
+extension BaseMapViewPresenter: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else { return }
+        view.centerMap(center: location.coordinate, isAnimated: true)
+        view.finishLoading()
+    }
+
+    @objc func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        view.finishLoading()
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            view.showError(message: error.localizedDescription)
+        }
+    }
+    
+    @objc func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            break
+        case .restricted, .denied:
+            view.showError(message: LocationError.userDeclined.localizedDescription)
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        }
     }
 }
 

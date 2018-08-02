@@ -11,7 +11,8 @@ import UIKit
 /**
  Represents a placemark model received from the backend.
  
- - Discussion: I was not sure what fields are required so.. I made all of them required :)
+ - Important:
+ I was not sure what fields are required so.. I made all of them required :)
  */
 struct Placemark: Decodable {
     let address: String

@@ -30,7 +30,7 @@ final class BaseCarListPresenter: CarListPresenter {
             strongSelf.view.reloadData()
         }, failure: { [weak self] (error) in
             self?.view.finishLoading()
-            self?.view.showError(error: error)
+            self?.view.showError(message: error.localizedDescription)
         })
     }
     
@@ -43,7 +43,7 @@ final class BaseCarListPresenter: CarListPresenter {
             strongSelf.view.reloadData()
         }, failure: { [weak self] (error) in
             self?.view.finishLoading()
-            self?.view.showError(error: error)
+            self?.view.showError(message: error.localizedDescription)
         })
     }
     

@@ -7,9 +7,11 @@
 //
 
 import CPCommon
+import CoreLocation
 
 protocol MapView: AppViewController {
     func setPresenter(_ presenter: MapViewPresenter)
     
+    func centerMap(center: CLLocationCoordinate2D, isAnimated: Bool)
     func populateMap(withViewData viewData: [PlacemarkMapViewModel])
 }

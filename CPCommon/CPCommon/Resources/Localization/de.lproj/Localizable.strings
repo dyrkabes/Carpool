@@ -1,5 +1,5 @@
 // parsingFailure
-"Parsing failure" = "Fehler beim Parsen";
+"Parsing failure" = "Fehler des Parsing";
 // unknownError
 "Unknown error" = "Unbekannter Fehler";
 // list
@@ -9,8 +9,14 @@
 
 "Interior:" = "Interieur:";
 "Exterior:" = "Äußere:";
-"Address:" = "Addresse:";
+"Address:" = "Adresse:";
 "Name:" = "Name:";
 
 "good" = "gut";
 "unacceptable" = "unannehmbar";
+
+// userDeclinedError
+"You cannot see your location if you do not allow the use of geolocation service." = "Sie kann nich Ihre Standort sehen weil Sie die geolocation Service verwenden ächten.";
+
+// Ok
+"Ok" = "Ok";

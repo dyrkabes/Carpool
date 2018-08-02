@@ -11,7 +11,8 @@ import Foundation
 /**
  Set of extensions to localize
  
- - Discussion: For UI components with attributedText another localization function should be implemented.
+ - Important:
+ For UI components with attributedText another localization function should be implemented.
  */
 extension UILabel {
     override open func awakeFromNib() {
