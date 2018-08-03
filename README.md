@@ -29,8 +29,7 @@ Download the repository and run the `pod install` command in the project's direc
 The tests cover most of the interactions between different layers though there's always some place to test more. 
 
 ## Next steps
-I'd like to enrich the project with the following features and enchancements:
-First priority:
+I'd like to enrich the project with the following features and enchancements. 
  - App Icon!
  - Add filter and search to the car list.
  - Make generic function to unify views registering.
@@ -40,7 +39,7 @@ First priority:
  
 "Would be nice to have"
  - Implement a server which sends the data which is local now.
- - Add some random car images. Without images it's a bit boring. And I already have the placholders!
+ - Add some random car images. Without images it's a bit boring. And I already have the placeholders!
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
@@ -49,11 +48,11 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 For my small project I used a couple of icons from [The Noun Project](https://thenounproject.com). I mutated a couple of them and I hope you can't tell what are the exact ones :) Just kidding.
 
 So, the icons and the authors:
-Engine by Lloyd Humphreys, DK 
-dashboard by hans draiman 
-Car by jeff
-Map by Rena, US 
-List by unlimicon, ID 
-Cars by ChangHoon Baek, CA 
+- Engine by Lloyd Humphreys, DK 
+- da shboard by hans draiman 
+- Car by jeff
+- Map by Rena, US 
+- List by unlimicon, ID 
+- Cars by ChangHoon Baek, CA 
 
 And, well, what developer could forget about the great swift and stackoverflow community? Not me :)
