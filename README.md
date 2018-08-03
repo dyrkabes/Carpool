@@ -19,8 +19,11 @@ The main module uses CPCommon module where objects that are not related to any s
 ### Storyboards
 Every storyboard consists of only one screen because in case of further project's growth it would be to overloaded to put everything in the tab bar storyboard. It's also more easy to connect and assemble everything with separate coordinators so I decided to keep it that way. Though this way screens relations are missing.
 
-### Installing
-Download the repository and run the `pod install` command in the project's directory.
+## Additional info
+The project is localized. Its main language is english but russian and deutch are also presented.
+
+## Installing
+Download the repository and run the `pod install` command in the project's directory. Run the `Carpool.xcworkspace` file so the project includes `CPCommon` module and the pods. 
 
 ## Running the tests
 The tests cover most of the interactions between different layers though there's always some place to test more. 
