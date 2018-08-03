@@ -9,7 +9,7 @@ Carpool is a small test application that shows cars avaiable for sharing. It con
 
 ## Technical details
 ### Overview
-Basically the app utilizes SOLID principles though a couple of places could be enchanced. I used a MVP - VIP variation with coordinators. The basic flow is the following: the `AppCoordinator` creates a UITabBar subclass with the main data provider `AppDataWorker`. Then it asks the `CarListCoordinator` and the `MapCoordinator` for the TabBar's view controllers. Each view controller is configred inside its coordinator.
+Basically the app utilizes SOLID principles. I used a MVP - VIP variation with coordinators. The basic flow is the following: the `AppCoordinator` creates a UITabBar subclass with the main data provider `AppDataWorker`. Then it asks the `CarListCoordinator` and the `MapCoordinator` for the TabBar's view controllers. Each view controller is configred inside its coordinator.
 
 A screen consists of the following entities: View, Presenter and Interactor. Their responsibilities are similar to their siblings from VIPER.
 
@@ -25,7 +25,7 @@ The main module uses CPCommon module where objects that are not related to any s
 Every storyboard consists of only one screen because in case of further project's growth it would be to overloaded to put everything in the tab bar storyboard. It's also more easy to connect and assemble everything with separate coordinators so I decided to keep it that way. Though this way screens relations are missing.
 
 ## Additional info
-The project is localized. Its main language is english but russian and deutch are also presented.
+The project is localized. Its main language is English but Russian and German are also presented.
 
 ## Installing
 Download the repository and run the `pod install` command in the project's directory. Run the `Carpool.xcworkspace` file so the project includes `CPCommon` module and the pods. 
@@ -35,7 +35,7 @@ The tests cover most of the interactions between different layers though there's
 
 ## Next steps
 I'd like to enrich the project with the following features and enchancements. 
- - App Icon!
+ - Enhance map view controller and car list view controller to better represent SOILD principles.
  - Add filter and search to the car list.
  - Make generic function to unify views registering.
  - Add declusterising.
