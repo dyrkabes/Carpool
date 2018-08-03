@@ -1,3 +1,8 @@
+<p align="center">
+<img src="https://github.com/dyrkabes/Carpool/blob/master/AppIcongithub.jpg"
+width=300>
+</p>
+
 # Carpool
 
 Carpool is a small test application that shows cars avaiable for sharing. It consists of two screens. One is a list of cars and the other is a map with cars' locations.
