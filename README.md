@@ -28,7 +28,7 @@ Every storyboard consists of only one screen because in case of further project'
 The project is localized. Its main language is English but Russian and German are also presented.
 
 ## Installing
-Download the repository and run the `pod install` command in the project's directory. Run the `Carpool.xcworkspace` file so the project includes `CPCommon` module and the pods. 
+Download the repository. The pods are already installed. Run the `Carpool.xcworkspace` file so the project includes `CPCommon` module and the pods. 
 
 ## Running the tests
 The tests cover most of the interactions between different layers though there's always some place to test more. 
